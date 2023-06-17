@@ -1,12 +1,13 @@
 body{
     background-image: url(../images/spacebg.jpg);
     background-size: cover;
+    font-family: sans-serif;
    
 }
 
 #mainhead{
     color: ivory;
-    font-family: Arial, Helvetica, sans-serif;
+   
     font-size: 40px;
     
 
@@ -14,7 +15,7 @@ body{
 
 .heading{
     color: ivory;
-    font-family: Arial, Helvetica, sans-serif;
+    
     font-size: 40px;
     
 
@@ -52,7 +53,7 @@ div.biography{
     border: 5px solid black;
     
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+    
 
 
 }
@@ -105,5 +106,10 @@ table {
   }
 
   a:hover{
+    color: blue;
+  }
+
+  span{
+    font-weight: bold;
     color: red;
   }

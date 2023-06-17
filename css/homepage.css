@@ -71,6 +71,9 @@ div.work{
     color: black;
     width: 50%;
     margin-left: 26%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    
     
 
 }
@@ -112,7 +115,7 @@ table {
   }
 
   a:hover{
-    color: blue;
+    color: yellow
   }
 
   span{

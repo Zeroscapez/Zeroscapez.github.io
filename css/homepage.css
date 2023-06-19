@@ -123,6 +123,10 @@ table {
     color: red;
   }
 
-  div.valid{
+#valid{
     float: right;
-  }
+}
+
+#validationimg{
+    border:0;width:88px;height:31px
+}

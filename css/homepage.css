@@ -122,3 +122,7 @@ table {
     font-weight: bold;
     color: red;
   }
+
+  div.valid{
+    float: right;
+  }

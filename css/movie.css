@@ -1,3 +1,7 @@
+/*Agyei Lomini*/
+/*Section ACS15 Summer 2023*/
+/*Description: Make a movie review site*/
+
 body{
     background-image: url(../images/tmntpage/background.png);
     font-size: 8pt;
@@ -5,6 +9,8 @@ body{
     padding: 0;
     margin: 0 auto;
 }
+
+/*Header Elements*/
 
 div#banner{
     background-image: url(../images/tmntpage/bannerbackground.png);
@@ -29,6 +35,8 @@ div#banner{
     text-align: center;
 }
 
+
+/*Body Elements (Main Section, Reviews, Overview)*/
 main#tmntrev{
     border: solid gray 4px;
     width: 800px;
@@ -99,6 +107,7 @@ div#validationbox{
     
 }
 
+/*Columns*/
 
 .revcolm{
     column-count: 2;
@@ -119,6 +128,8 @@ div#validationbox{
     break-inside: avoid;
     float: right;
 }
+
+/*Review Boxes*/
 
 p.revbox{
     border: solid gray 2px;

@@ -1,3 +1,4 @@
-theme: jekyll-theme-minimal
-title: Agyei Lomini Homepage
-description: Bookmark this to keep an eye on my project updates!
+title: Agyei Lomini - Portfolio
+description: Game Developer Portfolio
+theme: minima
+markdown: kramdown

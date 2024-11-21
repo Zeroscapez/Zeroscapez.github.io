@@ -1,0 +1,128 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    /* White background */
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background-color: #3498db;
+    /* Blue accent */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header .site-title {
+    font-size: 2em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+footer {
+    background-color: #3498db;
+    /* Blue accent */
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+footer .social-links {
+    list-style: none;
+    padding: 0;
+}
+
+footer .social-links li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer .social-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+/* Layout */
+.content-wrapper {
+    display: flex;
+    padding: 20px;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 15px;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+.sidebar h2 {
+    color: #3498db;
+    /* Blue accent */
+    font-size: 1.5em;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+.main-content {
+    flex: 1;
+}
+
+.page-title {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+h1,
+h2,
+h3 {
+    color: #333;
+}
+
+p {
+    line-height: 1.6;
+}
+
+a {
+    color: #3498db;
+    /* Blue accent */
+}
+
+a:hover {
+    text-decoration: underline;
+}

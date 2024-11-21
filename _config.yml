@@ -1,4 +1,5 @@
 title: Agyei Lomini - Portfolio
 description: Game Developer Portfolio
-theme: minima
+#theme: jekyll-theme-minimal
 markdown: kramdown
+baseurl: ""

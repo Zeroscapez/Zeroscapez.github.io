@@ -11,32 +11,39 @@ On this site, you’ll find my game development projects, the skills I’ve gain
 
 I also love creating experiences and telling stories through games, and I have many more stories to share.
 
-## Featured Projects
+## Featured Projects - Larger Projects made for Events or Submissons
 
 Here are some of the key projects I’ve worked on:
 
-- **[Game Project 1](https://ultima2b.itch.io/greatest-shinobi)**: Pirate Jam 15 is a game jam held by a previous blizzard employee,
+- **[Greatest Shinobi](https://ultima2b.itch.io/greatest-shinobi)**: My team's submisson for Pirate Jam 15,a game jam held by previous Blizzard Entertainment employee,
                         and youtuber, PirateSoftware, the theme of the Game Jam was Shadow and Alchemy.
+
+
 - **[Game Project 2](#)**: A brief description of another project with key features.
 - **[Other Projects](#)**: More projects coming soon!
 
+
+## Learning Projects - Projects made for college assignements or for learning to create mechanics.
+
+
+
 ## Skills & Tools
 
-- **Game Development**: Unity, Unreal Engine, C#
-- **Programming**: C++, Python, JavaScript
-- **Version Control**: Git, GitHub, Bitbucket
-- **Game Engines**: Unity, Unreal Engine
-- **Tools**: Jira, Trello, Visual Studio
+- **Game Development**: Unity, C#
+- **Programming**: C#, Java, Javascript, SQL, HTML
+- **Version Control**: Git, GitHub
+- **Game Engines**: Unity
+- **Tools**: Visual Studio, Clip Studio Paint
 
 ## Resume
 
-You can view my resume [here](#) or download it by clicking the link below:
+You can view or download my resume by clicking the link below:
 
-- [Download Resume](#)
+- [Download Resume](https://zeroscapez.github.io/files/Resume_AgyeiLomini.pdf)
 
 ## Let's Connect
 
 Feel free to reach out if you have any questions or are interested in collaborating!
 
 - Email: [agyeilomini@gmail.com](mailto:agyeilomini@gmail.com)
-- LinkedIn: [your LinkedIn](#)
+- [My LinkedIn](https://www.linkedin.com/in/agyei-lomini-067340266/)

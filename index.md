@@ -11,6 +11,8 @@ On this site, you’ll find my game development projects, the skills I’ve gain
 
 I also love creating experiences and telling stories through games, and I have many more stories to share.
 
+<br>
+
 ## Featured Projects - Larger Projects made for Events or Submissons
 
 Here are some of the key projects I’ve worked on:
@@ -19,13 +21,19 @@ Here are some of the key projects I’ve worked on:
                         and youtuber, PirateSoftware, the theme of the Game Jam was Shadow and Alchemy.
 
 
-- **[Game Project 2](#)**: A brief description of another project with key features.
-- **[Other Projects](#)**: More projects coming soon!
+- **[Clown Game](https://youtu.be/i1nelzJMpVs?list=PLVebW6tkQvDHuhct9Yj4C8IGVGqb6Mbvb)**: My teams's submisson for beginner Game Jam, it was the first game jam submisson we had done and it was a learning experience for Godot.
 
+<br>
 
 ## Learning Projects - Projects made for college assignements or for learning to create mechanics.
 
+- **[Shader Test](https://youtu.be/Hg7tELQcOnk?list=PLVebW6tkQvDHuhct9Yj4C8IGVGqb6Mbvb)**: A shader assignment I did in my sophmore year of college that involved making shaders for multiple different criteria.
 
+- **[Inventory Test](https://youtu.be/075ogjXMLJI?list=PLVebW6tkQvDHuhct9Yj4C8IGVGqb6Mbvb)** : An assignment where the goal was too create an inventory system that allowed the player to equip objects into their hands.
+
+- **[Absolute Advent](https://youtu.be/hhVBQc7Wi4s?list=PLVebW6tkQvDHuhct9Yj4C8IGVGqb6Mbvb)**: One of my final projects, it was an attempt too mimic the movement and combat style of SMT: Persona 1.
+
+<br>
 
 ## Skills & Tools
 
@@ -35,15 +43,19 @@ Here are some of the key projects I’ve worked on:
 - **Game Engines**: Unity
 - **Tools**: Visual Studio, Clip Studio Paint
 
+<br>
+
 ## Resume
 
 You can view or download my resume by clicking the link below:
 
 - [Download Resume](https://zeroscapez.github.io/files/Resume_AgyeiLomini.pdf)
 
+<br>
+
 ## Let's Connect
 
 Feel free to reach out if you have any questions or are interested in collaborating!
 
-- Email: [agyeilomini@gmail.com](mailto:agyeilomini@gmail.com)
+- [agyeilomini@gmail.com](mailto:agyeilomini@gmail.com)
 - [My LinkedIn](https://www.linkedin.com/in/agyei-lomini-067340266/)

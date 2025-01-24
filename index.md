@@ -49,7 +49,8 @@ Here are some of the key projects I’ve worked on:
 
 You can view or download my resume by clicking the link below:
 
-- [Download Resume](https://zeroscapez.github.io/files/Resume_AgyeiLomini.pdf)
+- [Download Resume](https://zeroscapez.github.io/files/AgyeiLomini_Resume.pdf)
+- [Download Resume2](https://zeroscapez.github.io/files/Game Dev_AgyeiLomini.pdf)
 
 <br>
 

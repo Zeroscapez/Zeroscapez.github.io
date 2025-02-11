@@ -40,7 +40,7 @@ Starforce Sim is an in development attempt at recreating the combat systems and 
 [Repo Link](https://github.com/Zeroscapez/Starforce_Test)
 
 <div class="project-gallery">
-  <img src="/assets/images/sforce/sf1.gif" alt="Starforce Sim - Scene 1" style="width: 1%; margin-right: 1%;">
+  <img src="/assets/images/sforce/sf1.gif" alt="Starforce Sim - Scene 1" style="width: 25%; margin-right: 1%;">
   <img src="/assets/images/blank.jpg" alt="Blank Image" style="width: 25%; margin-right: 1%;">
   <img src="/assets/images/blank.jpg" alt="Blank Image" style="width: 25%;">
 </div>

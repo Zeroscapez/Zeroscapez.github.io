@@ -126,3 +126,16 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+.project-gallery {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.project-gallery img {
+    flex: 1 0 25%;
+    margin: 0.5%;
+    max-width: 100%;
+    height: auto;
+}

@@ -5,58 +5,70 @@ title: Home
 
 # Welcome to My Portfolio
 
-Hello! I’m **Agyei Lomini**, a game developer with a degree in Computer Science and a minor in Game Design and Development from Georgia State University. My academic background has provided me with a strong foundation in coding, problem-solving, and creating interactive experiences. I’m passionate about using this knowledge to build immersive games that captivate and engage players.
+Hello, and welcome to my portfolio. I’m Agyei Lomini, a dedicated game developer with a degree in Computer Science and a minor in Game Design and Development from Georgia State University. My academic background has provided me with a solid foundation in coding, problem-solving, and crafting interactive experiences. I am passionate about creating immersive games that captivate and engage players.
 
-On this site, you’ll find my game development projects, the skills I’ve gained, and some of my experiences in the field. Whether it’s designing engaging gameplay mechanics, creating immersive environments, or optimizing code for performance, I thrive on the challenge of bringing ideas to life through gaming.
+On this site, you will find a curated selection of my game development projects, a showcase of my technical skills, and insights into my professional journey. Whether designing innovative gameplay mechanics, building immersive environments, or optimizing performance, I thrive on transforming creative ideas into engaging interactive experiences.
 
-I also love creating experiences and telling stories through games, and I have many more stories to share.
+## Featured Projects
 
-<br>
+These projects represent key work completed for various events and competitions.
 
-## Featured Projects - Larger Projects made for Events or Submissons
+### Greatest Shinobi
 
-Here are some of the key projects I’ve worked on:
+[Greatest Shinobi](https://ultima2b.itch.io) is our submission for Pirate Jam 15—a game jam hosted by industry professionals, including a former Blizzard Entertainment employee and YouTuber PirateSoftware. The event’s theme was "Shadow and Alchemy." Below are some images from the project:
 
-- **[Greatest Shinobi](https://ultima2b.itch.io/greatest-shinobi)**: My team's submisson for Pirate Jam 15,a game jam held by previous Blizzard Entertainment employee,
-                        and youtuber, PirateSoftware, the theme of the Game Jam was Shadow and Alchemy.
+<div class="project-gallery">
+  <img src="/assets/images/gshinobi/gs1.jpg" alt="Greatest Shinobi - Scene 1" style="width: 25%; margin-right: 1%;">
+  <img src="/assets/images/gshinobi/gs2.jpg" alt="Greatest Shinobi - Scene 2" style="width: 25%; margin-right: 1%;">
+  <img src="/assets/images/gshinobi/gs3.jpg" alt="Greatest Shinobi - Scene 3" style="width: 25%;">
+</div>
 
+### Clown Game
 
-- **[Clown Game](https://youtu.be/i1nelzJMpVs?list=PLVebW6tkQvDHuhct9Yj4C8IGVGqb6Mbvb)**: My teams's submisson for beginner Game Jam, it was the first game jam submisson we had done and it was a learning experience for Godot.
+[Clown Game](https://youtu.be) is our team’s submission for a beginner-level game jam. This project provided a valuable opportunity to experiment with Godot and further develop our game development skills.
 
-<br>
+<div class="project-gallery">
+  <img src="/assets/images/gshinobi/gs1.jpg" alt="Greatest Shinobi - Scene 1" style="width: 25%; margin-right: 1%;">
+  <img src="/assets/images/gshinobi/gs2.jpg" alt="Greatest Shinobi - Scene 2" style="width: 25%; margin-right: 1%;">
+  <img src="/assets/images/gshinobi/gs3.jpg" alt="Greatest Shinobi - Scene 3" style="width: 25%;">
+</div>
 
-## Learning Projects - Projects made for college assignements or for learning to create mechanics.
+## Learning Projects
 
-- **[Shader Test](https://youtu.be/Hg7tELQcOnk?list=PLVebW6tkQvDHuhct9Yj4C8IGVGqb6Mbvb)**: A shader assignment I did in my sophmore year of college that involved making shaders for multiple different criteria.
+These projects were developed as part of academic assignments or personal learning initiatives.
 
-- **[Inventory Test](https://youtu.be/075ogjXMLJI?list=PLVebW6tkQvDHuhct9Yj4C8IGVGqb6Mbvb)** : An assignment where the goal was too create an inventory system that allowed the player to equip objects into their hands.
+### Shader Test
 
-- **[Absolute Advent](https://youtu.be/hhVBQc7Wi4s?list=PLVebW6tkQvDHuhct9Yj4C8IGVGqb6Mbvb)**: One of my final projects, it was an attempt too mimic the movement and combat style of SMT: Persona 1.
+[Shader Test](https://youtu.be) is a shader assignment completed during my sophomore year. The project involved creating various shaders to meet diverse technical criteria.
 
-<br>
+### Inventory Test
+
+[Inventory Test](https://youtu.be) focuses on developing an inventory system that enables seamless equipment of objects—a crucial feature for many interactive experiences.
+
+### Absolute Advent
+
+[Absolute Advent](https://youtu.be) is one of my final projects, designed to emulate the movement and combat styles reminiscent of classic role-playing games.
 
 ## Skills & Tools
 
-- **Game Development**: Unity, C#
-- **Programming**: C#, Java, Javascript, SQL, HTML
-- **Version Control**: Git, GitHub
-- **Game Engines**: Unity
-- **Tools**: Visual Studio, Clip Studio Paint
-
-<br>
+- **Game Development:** Unity, C#
+- **Programming:** C#, Java, JavaScript, SQL, HTML
+- **Version Control:** Git, GitHub
+- **Game Engines:** Unity
+- **Tools:** Visual Studio, Clip Studio Paint
 
 ## Resume
 
-You can view or download my resume by clicking the link below:
+You can view or download my resumes using the links below:
+- [Download Software Development Resume](http://zeroscapez.github.io)
+- [Download Game Development Resume](https://zeroscapez.github.io/files/Game%20Dev_AgyeiLomini.pdf)
 
-- [Download Software Development Resume](https://zeroscapez.github.io/files/AgyeiLomini_Resume.pdf)
-- [Download Game Development Resume](https://zeroscapez.github.io/files/Game Dev_AgyeiLomini.pdf)
+## Let’s Connect
 
-<br>
+If you have any questions or are interested in collaborating, please feel free to reach out:
+- **Email:** [agyeilomini@gmail.com](mailto:agyeilomini@gmail.com)
+- **LinkedIn:** [My LinkedIn](https://www.linkedin.com)
 
-## Let's Connect
+---
 
-Feel free to reach out if you have any questions or are interested in collaborating!
-
-- [agyeilomini@gmail.com](mailto:agyeilomini@gmail.com)
-- [My LinkedIn](https://www.linkedin.com/in/agyei-lomini-067340266/)
+© 2025 Agyei Lomini

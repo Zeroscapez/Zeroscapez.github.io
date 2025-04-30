@@ -87,7 +87,7 @@ A final project designed to replicate **classic RPG movement and combat mechanic
 
 ## Resume
 
-- 📄 [Download Software Development Resume](https://zeroscapez.github.io/files/AgyeiLomini_Resume.pdf)
+- 📄 [Download Software Development Resume](https://zeroscapez.github.io/files/Agyei_Lomini_Resume.pdf)  
 - 🎮 [Download Game Development Resume](https://zeroscapez.github.io/files/Game%20Dev_AgyeiLomini.pdf)
 
 ---

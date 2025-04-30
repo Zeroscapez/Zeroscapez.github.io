@@ -27,7 +27,7 @@ On this site, you will find a curated selection of my **game development project
 - **Institution:** Georgia State University  
 
 ## Resume
-📄 [Download Software Development Resume](https://zeroscapez.github.io/files/AgyeiLomini_Resume.pdf)  
+📄 [Download Software Development Resume](https://zeroscapez.github.io/files/Agyei_Lomini - Resume.pdf)  
 🎮 [Download Game Development Resume](https://zeroscapez.github.io/files/Game%20Dev_AgyeiLomini.pdf)  
 
 ## Let's Connect

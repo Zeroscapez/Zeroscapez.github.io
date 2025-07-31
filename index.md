@@ -7,7 +7,7 @@ title: Projects
 
 These projects represent key work completed for various events and competitions.
 
-## Greatest Shinobi ([Link](https://ultima2b.itch.io/greatest-shinobi){:target="_blank"})
+## Greatest Shinobi ([Link](https://crestoriashiro.itch.io/greatest-shinobi){:target="_blank"})
 
 Led a team too Develop Greatest Shinobi as a competitive entry for Pirate Jam 15—a game jam hosted by industry professionals, including a former Blizzard Entertainment employee and YouTuber PirateSoftware. The event’s theme was "Shadow and Alchemy." 
 <br><br>
@@ -17,7 +17,7 @@ Led a team too Develop Greatest Shinobi as a competitive entry for Pirate Jam 15
   <img src="/assets/images/gshinobi/gs3.jpg" alt="Greatest Shinobi - Scene 3" style="width: 25%;">
 </div>
 
-## Inverse ([Link](https://ultima2b.itch.io/inverse){:target="_blank"})
+## Inverse ([Link](https://crestoriashiro.itch.io/inverse){:target="_blank"})
 
 Inverse was our team’s entry for Beginner Game Jam 2025, it came in #67th place out of 129 entries. The challenge centered on the theme of reflection, inspiring us to create a unique gameplay experience where a character and their mirrored counterpart must work together to unravel puzzles based on light refraction. By manipulating beams of light and their reflective properties, players are encouraged to think collaboratively and creatively to navigate through increasingly challenging levels, uncovering hidden paths and secrets along the way.
 <br><br>

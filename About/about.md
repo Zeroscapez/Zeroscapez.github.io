@@ -15,7 +15,7 @@ My academic background has provided me with a solid foundation in coding, proble
 On this site, you will find a curated selection of my **game development projects**, a showcase of my  technical skills, and insights into my professional journey. Whether designing **innovative gameplay mechanics**, building **immersive environments**, or **optimizing performance**, I thrive on transforming creative ideas into engaging interactive experiences. <br><br> 
 
 ## Skills
-- **Game Engines:** Unity, Unreal, Godot
+- **Game Engines:** Unity, Unreal Engine, Godot
 - **Programming:** C#, Java, JavaScript, SQL, HTML
 - **Version Control:** Git, GitHub
 - **Tools:** Visual Studio, Clip Studio Paint

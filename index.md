@@ -74,13 +74,13 @@ A final project designed to replicate **classic RPG movement and combat mechanic
 ## Skills & Technologies
 
 ### Game Development
-- **Engines:** Unity, Godot
+- **Game Engines:** Unity, Unreal Engine, Godot
 - **Programming Languages:** C#, Java, JavaScript, SQL, HTML
 - **Game Systems:** State Machines, AI, Physics, Shader Programming, Gameplay Programming
 
 ### Tools
 - **Version Control:** Git, GitHub
-- **Development Environments:** Visual Studio, Rider
+- **Development Environments:** Visual Studio Code, Visual Studio
 - **Art & Animation:** Clip Studio Paint
 
 ---

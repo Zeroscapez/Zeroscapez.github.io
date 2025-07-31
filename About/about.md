@@ -15,14 +15,13 @@ My academic background has provided me with a solid foundation in coding, proble
 On this site, you will find a curated selection of my **game development projects**, a showcase of my  technical skills, and insights into my professional journey. Whether designing **innovative gameplay mechanics**, building **immersive environments**, or **optimizing performance**, I thrive on transforming creative ideas into engaging interactive experiences. <br><br> 
 
 ## Skills
-- **Game Development:** Unity, C#
+- **Game Engines:** Unity, Unreal, Godot
 - **Programming:** C#, Java, JavaScript, SQL, HTML
 - **Version Control:** Git, GitHub
-- **Game Engines:** Unity
 - **Tools:** Visual Studio, Clip Studio Paint
 
 ## Education
-- **Degree:** Bachelor's in Computer Science  
+- **Degree:** Bachelor of Science in Computer Science  
 - **Minor:** Game Design and Development  
 - **Institution:** Georgia State University  
 

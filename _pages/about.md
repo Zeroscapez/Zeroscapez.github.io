@@ -1,7 +1,7 @@
 ---
 layout: default
 title: About Me
-permalink: /about
+permalink: /about/
 ---
 
 <img src="/assets/images/AgyeiProf.jpg" alt="Agyei Lomini" width="250" height="350" 

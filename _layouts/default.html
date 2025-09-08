@@ -29,53 +29,27 @@
             </div>
         </header>
 
-        <!-- Main Content Section with Sidebar -->
+        <!-- Main Content Section -->
         <main>
             <div class="content-wrapper">
-                <!-- Sidebar -->
-                <aside class="sidebar">
-                    <div class="sidebar-section">
-                        <h2>Skills</h2>
-                        <ul>
-                            <li><strong>Game Engines:</strong> Unity, Unreal Engine, Godot</li>
-                            <li><strong>Programming:</strong> C#, Java, JavaScript, SQL, HTML</li>
-                            <li><strong>Game Systems:</strong> State Machines, AI, Physics, Shader Programming, Gameplay
-                                Programming</li>
-                            <li><strong>Version Control:</strong> Git, GitHub</li>
-                            <li><strong>Tools:</strong> Visual Studio, Rider, Clip Studio Paint</li>
-                            <li><strong>Other Skills:</strong> Desktop PC Repair, Writing</li>
-
-                        </ul>
-                    </div>
-                    <div class="sidebar-section">
-                        <h2>Education</h2>
-                        <ul>
-                            <li><strong>Degree:</strong> Bachelor of Science in Computer Science</li>
-                            <li><strong>Minor:</strong> Game Design and Development</li>
-                            <li><strong>Institution:</strong> Georgia State University</li>
-                        </ul>
-                    </div>
-                </aside>
-
-                <!-- Main Content Area -->
-                <section class="main-content">
+                <section class="main-content full-width">
                     <h1 class="page-title">{{ page.title }}</h1>
                     {{ content }}
                 </section>
             </div>
         </main>
-
-        <!-- Footer Section -->
-        <footer role="contentinfo">
-            <div class="footer-container">
-                <p>© {{ site.time | date: '%Y' }} Agyei Lomini. All rights reserved.</p>
-                <ul class="social-links">
-                    <li><a href="https://github.com/Zeroscapez">GitHub</a></li>
-                    <li><a href="https://www.linkedin.com/in/agyei-lomini-067340266/">LinkedIn</a></li>
-                </ul>
-            </div>
-        </footer>
     </div>
+
+    <!-- Footer Section -->
+    <footer role="contentinfo">
+        <div class="footer-container">
+            <p>© {{ site.time | date: '%Y' }} Agyei Lomini. All rights reserved.</p>
+            <ul class="social-links">
+                <li><a href="https://github.com/Zeroscapez">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/agyei-lomini-067340266/">LinkedIn</a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 
 </html>

@@ -3,100 +3,79 @@ layout: default
 title: Projects
 ---
 
-# Featured Projects
-
-These projects represent key work completed for various events and competitions.
-
-## Greatest Shinobi ([Link](https://crestoriashiro.itch.io/greatest-shinobi){:target="_blank"})
-
-Led a team too Develop Greatest Shinobi as a competitive entry for Pirate Jam 15—a game jam hosted by industry professionals, including a former Blizzard Entertainment employee and YouTuber PirateSoftware. The event’s theme was "Shadow and Alchemy." 
-<br><br>
-<div class="project-gallery">
-  <img src="/assets/images/gshinobi/gs1.jpg" alt="Greatest Shinobi - Scene 1" style="width: 25%; margin-right: 1%;">
-  <img src="/assets/images/gshinobi/gs2.jpg" alt="Greatest Shinobi - Scene 2" style="width: 25%; margin-right: 1%;">
-  <img src="/assets/images/gshinobi/gs3.jpg" alt="Greatest Shinobi - Scene 3" style="width: 25%;">
-</div>
-
-## Inverse ([Link](https://crestoriashiro.itch.io/inverse){:target="_blank"})
-
-Inverse was our team’s entry for Beginner Game Jam 2025, it came in #67th place out of 129 entries. The challenge centered on the theme of reflection, inspiring us to create a unique gameplay experience where a character and their mirrored counterpart must work together to unravel puzzles based on light refraction. By manipulating beams of light and their reflective properties, players are encouraged to think collaboratively and creatively to navigate through increasingly challenging levels, uncovering hidden paths and secrets along the way.
-<br><br>
-My contribution to this project was implenting major mechanics and features, like the light refraction system and swapping system. This involved tracking and maintating multiple instances of data and stopping/starting this stream when neccesary. I also served as director and lead developer on this project.
-<br><br>
-<div class="project-gallery">
-  <img src="/assets/images/inverse/level01dream.png" alt="Inverse - Level 01 Dream" style="width: 25%; margin-right: 1%;">
-  <img src="/assets/images/inverse/level01dark.png" alt="Inverse - Level 01 Dark">
-  <img src="/assets/images/inverse/level02.png" alt="Inverse - Level 02">
-</div>
-
-
-## Clown Game ([Link](https://youtu.be/i1nelzJMpVs){:target="_blank"})
-
-Clown Game was our team’s submission for Global Game Jam 2024. This project provided a valuable opportunity to experiment with Godot and further develop our game development skills. 
-<br><br>
-<div class="project-gallery">
-  <img src="/assets/images/clowng/cg1.jpg" alt="Clown Game - Scene 1" style="width: 25%; margin-right: 1%;">
-  <img src="/assets/images/clowng/cg2.jpg" alt="Clown Game  - Scene 2" style="width: 25%; margin-right: 1%;">
-  <img src="/assets/images/clowng/cg3.gif" alt="Clown Game  - Scene 3" style="width: 25%;">
-</div>
-
-
-## Starforce Sim ([Link to Repo](https://github.com/Zeroscapez/Starforce_Test){:target="_blank"})
-Starforce Sim is an in development attempt at recreating the combat systems and battle styles found within the Megaman Starforce game series. 
-<br><br>
-The goal of this project is too breakdown and recreate iconic systems found within the megaman starforce games, I am in charge with implementing the combat system, this includes the battle card system ( a system that involves containg and accessing the data on complex entites that involve things like area of effect, and damage values.), the movement system and the scoring system.
-
-<br><br>
-<div class="project-gallery">
-  <img src="/assets/images/sforce/sf1.gif" alt="Starforce Sim - Scene 1" style="width: 25%; margin-right: 1%;">
-  <img src="/assets/images/blank.jpg" alt="Blank Image" style="width: 25%; margin-right: 1%;">
-  <img src="/assets/images/blank.jpg" alt="Blank Image" style="width: 25%;">
-</div>
-
-
-## Learning Projects
-
-### Shader Test
-A technical assignment focused on **creating dynamic shaders** to enhance graphical effects in games. 
-<br>
-[Watch the project](https://youtu.be/Hg7tELQcOnk)
-
-### Inventory Test
-An implementation of a **fully interactive inventory system**, allowing seamless equipment management in games.
-<br>
-[Watch the project](https://youtu.be/075ogjXMLJI)
-
-### Absolute Advent
-A final project designed to replicate **classic RPG movement and combat mechanics**.
-<br>
-[Watch the project](https://youtu.be/hhVBQc7Wi4s)
-
-## Skills & Technologies
-
-### Game Development
-- **Game Engines:** Unity, Unreal Engine, Godot
-- **Programming Languages:** C#, Java, JavaScript, SQL, HTML
-- **Game Systems:** State Machines, AI, Physics, Shader Programming, Gameplay Programming
-
-### Tools
-- **Version Control:** Git, GitHub
-- **Development Environments:** Visual Studio Code, Visual Studio
-- **Art & Animation:** Clip Studio Paint
+# Agyei Lomini – Game Developer Portfolio
 
 ---
 
-## Resume
+## About Me
 
-- 📄 [Download Software Development Resume](https://zeroscapez.github.io/files/Agyei_Lomini_Resume.pdf)  
-- 🎮 [Download Game Development Resume](https://zeroscapez.github.io/files/Game%20Dev_AgyeiLomini.pdf)
+**Hello! I'm Agyei Lomini, a game developer with a background in Computer Science and Game Design.**  
+I specialize in **gameplay programming, systems architecture, and AI development**, with hands-on experience using Unity and C#. My strengths lie in **problem-solving, rapid prototyping, and building scalable systems** that support engaging player experiences.  
 
----
+Currently, I’m leading development on a **large-scale indie project**, applying skills in state machines, combat design, and technical systems integration. Alongside this, I build smaller prototypes to experiment with new mechanics, refine workflows, and expand my technical toolkit.  
 
-## Let's Connect
-📧 **Email:** [agyeilomini@gmail.com](mailto:agyeilomini@gmail.com)  
-💼 **LinkedIn:** [My LinkedIn](https://www.linkedin.com)  
+I’m passionate about **collaborating with teams** to transform design ideas into polished, interactive experiences, and I’m always eager to take on challenges that push both my creativity and engineering skills.
 
 ---
 
+## Skills & Tools
 
-© 2025 Agyei Lomini
+- **Programming Languages:** C#, Java, Python, JavaScript  
+- **Game Engines & Frameworks:** Unity, Unreal (basic)  
+- **Systems & Expertise:** AI Programming, State Machines, Physics, Combat Design, UI/UX Programming  
+- **Version Control & Collaboration:** Git, GitHub, Agile/Scrum practices  
+- **Other Tools:** Visual Studio, VS Code, Blender (basic), Photoshop (basic)
+
+---
+
+## Contact
+
+**Interested in collaborating or learning more?**  
+📧 <strong>Email:</strong> <a href="mailto:agyeilomini@gmail.com">agyeilomini@gmail.com</a>  
+💼 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/agyei-lomini-067340266/">Agyei Lomini</a>
+
+---
+
+## Projects
+
+<div style="margin-bottom: 1.5em;">
+Welcome to my portfolio!  
+Below is a selection of my **featured projects**, ranging from gameplay prototypes to larger-scale development work. Each project showcases my expertise in **C#, Unity, AI programming, and system design**, with a focus on creating technically solid and player-focused experiences.<br>
+<strong>Click any project card to explore details, screenshots, and technical breakdowns.</strong>
+</div>
+
+<div class="projects-grid">
+
+  <a href="/greatest-shinobi/" class="project-card-link">
+    <div class="project-card">
+      <img src="/assets/images/gshinobi/gs1.jpg" alt="Greatest Shinobi Screenshot">
+      <h2 style="margin-bottom: 0.5em;">Greatest Shinobi</h2>
+      <p>
+        <span style="font-weight: bold; color: var(--accent-cyan);">Action / Stealth</span><br>
+        A fast-paced ninja action game featuring stealth, combat, and unique abilities.<br>
+        <span style="color: #aaa;">Focus: Advanced AI, state machines, and enemy behavior.</span>
+      </p>
+      <ul>
+        <li><strong>Languages:</strong> C#</li>
+        <li><strong>Systems:</strong> Unity, Custom AI, State Machines</li>
+      </ul>
+    </div>
+  </a>
+
+  <a href="/inverse/" class="project-card-link">
+    <div class="project-card">
+      <img src="/assets/images/inverse/level01dark.png" alt="Inverse Screenshot">
+      <h2 style="margin-bottom: 0.5em;">Inverse</h2>
+      <p>
+        <span style="font-weight: bold; color: var(--accent-cyan);">Puzzle Platformer</span><br>
+        Manipulate gravity and solve mind-bending challenges in a creative platforming environment.<br>
+        <span style="color: #aaa;">Focus: Physics programming and level design.</span>
+      </p>
+      <ul>
+        <li><strong>Languages:</strong> C#</li>
+        <li><strong>Systems:</strong> Unity, Physics, Custom Gravity System</li>
+      </ul>
+    </div>
+  </a>
+
+</div>

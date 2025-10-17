@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vampiric Ascension | Agyei Lomini - Portfolio</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+
+<body>
+    <div class="page-container">
+        <!-- Header Section -->
+        <header>
+            <div class="header-container">
+                <h1 class="site-title"><a href="/">Agyei Lomini - Portfolio</a></h1>
+                <nav aria-label="Main Navigation">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about/">About Me</a></li>
+                        <li><a href="https://crestoriashiro.itch.io/" target="_blank"
+                                rel="noopener noreferrer">itch.io</a>
+                        </li>
+                        <li><a href="https://github.com/Zeroscapez" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </li>
+                        <li><a href="https://www.linkedin.com/in/agyei-lomini-067340266/" target="_blank"
+                                rel="noopener noreferrer">LinkedIn</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content Section -->
+        <main>
+            <div class="content-wrapper">
+                <section class="main-content full-width">
+                    <h1 class="page-title">Vampiric Ascension</h1>
+                    <!-- Hero banner (static) -->
+<p><img src="/assets/images/vamphell/NHhPov.png" alt="Vampiric Ascension Banner" style="width:10%; max-width:720px; border-radius:12px; display:block; margin:1.25em auto; box-shadow:0 6px 18px rgba(0,0,0,0.6)" /></p>
+
+<!-- Short autoplaying demonstration (video preferred; GIF fallback) -->
+<div style="text-align:center; margin:1em 0;">
+  <!-- Replace src with /assets/videos/vamphell/hero.mp4 (recommended) -->
+  <video autoplay="" loop="" muted="" playsinline="" poster="/assets/images/vamphell/NHhPov.png" style="width:60%; max-width:720px; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.5);">
+    <source src="/assets/images/vamphell/VampGameplay.mp4" type="video/mp4" />
+    <!-- GIF fallback for browsers that don't play the video -->
+    <img src="/assets/images/vamphell/hero.gif" alt="Vampiric Ascension demo GIF" style="width:60%; max-width:720px; border-radius:8px;" />
+  </video>
+</div>
+
+<h1 id="vampiric-ascension">Vampiric Ascension</h1>
+<p><em>Bullet Hell Jam submission — a tense, fast-paced bullet hell where a sleepy vampire faces down gods.</em></p>
+
+<hr />
+
+<h2 id="one-line-pitch">One-line pitch</h2>
+<p>Play as Luna Siri, a newly-awakened vampire, and survive escalating divine barrages using precise movement, resource-backed abilities, and pattern recognition.</p>
+
+<hr />
+
+<h2 id="overview">Overview</h2>
+<p>Vampiric Ascension is a Unity-built bullet hell focused on tight player control, readable-but-challenging projectile patterns, and scalable difficulty. Design goals were: responsive input, performant projectile systems, and modular pattern composition so new enemy/boss patterns could be authored quickly.</p>
+
+<hr />
+
+<h2 id="my-role">My role</h2>
+<p>Primary designer &amp; developer:</p>
+<ul>
+  <li>Gameplay programming (player movement, input buffering, combat feel)</li>
+  <li>Bullet pattern system and object pooling</li>
+  <li>Wave &amp; boss encounter scripting and progression</li>
+  <li>UI / HUD and polish (VFX, particle FX, camera shake)</li>
+  <li>Playtest-driven tuning and balancing</li>
+</ul>
+
+<hr />
+
+<h2 id="key-features">Key features</h2>
+<ul>
+  <li>Dynamic, modular bullet patterns (bursts, spirals, shells) with difficulty scaling</li>
+  <li>Player resource system (vampiric energy) that gates special abilities and adds decision-making</li>
+  <li>Procedural wave spawner with configurable pacing and difficulty curves</li>
+  <li>Optimized projectiles via object pooling for stable performance under heavy spawn load</li>
+  <li>Clean, readable visual language so patterns are learnable but challenging</li>
+</ul>
+
+<hr />
+
+<h2 id="build--play-demo--downloads">Build / Play (demo &amp; downloads)</h2>
+<!-- itch.io embed (replace URL / width/height as needed) -->
+<div style="margin:1em 0;">
+  <h3 style="margin-bottom:0.25em;">Play the Web Demo</h3>
+  <!-- Replace https://your-itch-page.itch.io/vampiric-ascension with your actual itch.io page -->
+  <iframe frameborder="0" src="https://crestoriashiro.itch.io/vampiric-pantheon" width="600" height="167" style="max-width:100%;"></iframe>
+  <p style="font-size:0.9em; color:#aaa; margin-top:0.5em;">If embed doesn't load, open the demo: <a href="https://crestoriashiro.itch.io/vampiric-pantheon" target="_blank" rel="noopener">Vampiric Ascension on itch.io</a></p>
+</div>
+
+<hr />
+
+<h2 id="technical-summary">Technical summary</h2>
+<ul>
+  <li>Engine: Unity (2020+ / LTS recommended)</li>
+  <li>Language: C#</li>
+  <li>Core systems: State Machines, Object Pooling, Procedural Wave Spawner, Scriptable pattern data</li>
+  <li>Tools: Unity Editor Tools, Git (GitHub), Rider / Visual Studio</li>
+</ul>
+
+<p>Example systems:</p>
+<ul>
+  <li>BulletSpawner: supports radial, spiral, burst, and aimed modes; pattern data stored in ScriptableObjects</li>
+  <li>WaveManager: schedules enemies and boss phases using configurable time/events</li>
+  <li>PoolManager: global object pool for bullets and small enemies</li>
+</ul>
+
+<h3 id="example-simplified-bulletspawner-pattern-illustrative">Example: simplified BulletSpawner pattern (illustrative)</h3>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1">// Method to spawn a bullet with various different parametrs like, speed, bullet life, pool owner, can it home, and who to target:</span>
+ <span class="k">private</span> <span class="k">void</span> <span class="nf">SpawnBullet</span><span class="p">(</span><span class="n">Quaternion</span> <span class="n">rotation</span><span class="p">)</span>
+ <span class="p">{</span>
+     <span class="n">GameObject</span> <span class="n">bullet</span> <span class="p">=</span> <span class="nf">GetBullet</span><span class="p">();</span>
+     <span class="n">bullet</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span> <span class="p">=</span> <span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">;</span>
+     <span class="n">bullet</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">rotation</span> <span class="p">=</span> <span class="n">rotation</span><span class="p">;</span>
+
+     <span class="n">BulletBase</span> <span class="n">bulletScript</span> <span class="p">=</span> <span class="n">bullet</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">BulletBase</span><span class="p">&gt;();</span>
+     <span class="k">if</span> <span class="p">(</span><span class="n">bulletScript</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+     <span class="p">{</span>
+         <span class="n">bulletScript</span><span class="p">.</span><span class="n">speed</span> <span class="p">=</span> <span class="n">speed</span><span class="p">;</span>
+         <span class="n">bulletScript</span><span class="p">.</span><span class="n">bulletLife</span> <span class="p">=</span> <span class="n">bulletLife</span><span class="p">;</span>
+         <span class="n">bulletScript</span><span class="p">.</span><span class="n">poolOwner</span> <span class="p">=</span> <span class="k">this</span><span class="p">;</span>
+         <span class="n">bulletScript</span><span class="p">.</span><span class="n">isHoming</span> <span class="p">=</span> <span class="n">enableHoming</span><span class="p">;</span>
+         <span class="n">bulletScript</span><span class="p">.</span><span class="n">target</span> <span class="p">=</span> <span class="n">target</span><span class="p">;</span>
+         
+     <span class="p">}</span>
+ <span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="controls-default">Controls (default)</h2>
+<ul>
+  <li>Move: WASD / Arrow keys</li>
+  <li>Fire: Left Mouse Button / Ctrl</li>
+  <li>Special (vampiric abilities): Space (consumes resource)</li>
+  <li>Pause / Menu: Esc</li>
+</ul>
+
+<hr />
+
+<h2 id="visuals--assets">Visuals &amp; Assets</h2>
+<ul>
+  <li>Stylized 2D/2.5D art direction with clear contrast between bullets and environment to aid readability</li>
+  <li>VFX: particle hit sparks, screen shake on heavy impacts, subtle bloom on special abilities</li>
+</ul>
+
+<hr />
+
+<h2 id="screenshots--gifs">Screenshots / GIFs</h2>
+<!-- replace with actual assets in /assets/images/vamphell/ -->
+<p><img src="/assets/images/vamphell/screen1.png" alt="Vampiric Ascension - gameplay 1" style="width:48%; max-width:480px; margin:10px 1%; border-radius:8px; display:inline-block;" />
+<img src="/assets/images/vamphell/screen2.png" alt="Vampiric Ascension - boss" style="width:48%; max-width:480px; margin:10px 1%; border-radius:8px; display:inline-block;" /></p>
+
+<hr />
+
+<h2 id="challenges--solutions">Challenges &amp; solutions</h2>
+<ul>
+  <li>Performance under heavy projectile load → implemented object pooling and minimized per-frame allocations.</li>
+  <li>Pattern readability vs. difficulty → iterated on color, size, and timing so players can react while still being challenged.</li>
+  <li>Rapid iteration → used ScriptableObject-based pattern data so designers could author new patterns without code edits.</li>
+</ul>
+
+<hr />
+
+<h2 id="postmortem--next-steps">Postmortem &amp; next steps</h2>
+<ul>
+  <li>What went well: modular pattern system, quick iteration via data-driven patterns, tight player feel.</li>
+  <li>Improvements to pursue: add replay / telemetry to analyze death patterns, expand boss variety with multi-phase scripting, polish audio mixing and SFX layering.</li>
+</ul>
+
+<hr />
+
+<h2 id="links--contact">Links &amp; contact</h2>
+<ul>
+  <li>Source / repo: (link to GitHub project or private repo)</li>
+  <li>Build / demo: (link to itch.io or WebGL build)</li>
+  <li>Contact: <a href="mailto:agyeilomini@gmail.com">agyeilomini@gmail.com</a></li>
+</ul>
+
+<hr />
+
+<p>If you want, I can:</p>
+<ul>
+  <li>add a downloadable build/itch.io embed block,</li>
+  <li>include a short GIF with autoplay for the hero section,</li>
+  <li>or extract the BulletSpawner and WaveManager code into a mini-technical write-up for the page.</li>
+</ul>
+
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer Section -->
+        <footer role="contentinfo">
+            <div class="footer-container">
+                <p>© 2025 Agyei Lomini. All rights reserved.</p>
+                <ul class="social-links">
+                    <li><a href="https://github.com/Zeroscapez">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/agyei-lomini-067340266/">LinkedIn</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

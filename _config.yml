@@ -1,5 +1,6 @@
-title: Agyei Lomini - Portfolio
-description: Game Developer Portfolio
-#theme: jekyll-theme-minimal
-markdown: kramdown
+title: "Agyei Lomini - Portfolio"
+description: "Game Developer Portfolio"
 baseurl: ""
+url: "https://zeroscapez.github.io/"
+theme: 
+

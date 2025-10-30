@@ -2,55 +2,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
     <title>{{ page.title }} | {{ site.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 
 <body>
-    <div class="page-container">
-        <!-- Header Section -->
-        <header>
-            <div class="header-container">
-                <h1 class="site-title"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
-                <nav aria-label="Main Navigation">
-                    <ul>
-                        <li><a href="{{ '/' | relative_url }}">Home</a></li>
-                        <li><a href="{{ '/about/' | relative_url }}">About Me</a></li>
-                        <li><a href="https://crestoriashiro.itch.io/" target="_blank"
-                                rel="noopener noreferrer">itch.io</a>
-                        </li>
-                        <li><a href="https://github.com/Zeroscapez" target="_blank" rel="noopener noreferrer">GitHub</a>
-                        </li>
-                        <li><a href="https://www.linkedin.com/in/agyei-lomini-067340266/" target="_blank"
-                                rel="noopener noreferrer">LinkedIn</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-
-        <!-- Main Content Section -->
-        <main>
-            <div class="content-wrapper">
-                <section class="main-content full-width">
-                    <h1 class="page-title">{{ page.title }}</h1>
-                    {{ content }}
-                </section>
-            </div>
-        </main>
-
-        <!-- Footer Section -->
-        <footer role="contentinfo">
-            <div class="footer-container">
-                <p>© {{ site.time | date: '%Y' }} Agyei Lomini. All rights reserved.</p>
-                <ul class="social-links">
-                    <li><a href="https://github.com/Zeroscapez">GitHub</a></li>
-                    <li><a href="https://www.linkedin.com/in/agyei-lomini-067340266/">LinkedIn</a></li>
-                </ul>
-            </div>
-        </footer>
-    </div>
+    {% include header.html %}
+    <main>{{ content }}</main>
+    {% include footer.html %}
 </body>
 
 </html>

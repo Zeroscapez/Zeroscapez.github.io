@@ -48,10 +48,55 @@
     <img src="/assets%5Cimages%5Cvamphell%5Ctitle.png" alt="Screenshot 3" />
   </div>
 </section>
+
+<section class="project-section fade-in">
+  <h2>Introduction</h2>
+  <p>
+    Vampiric Ascension was developed as an exploration of bullet hell design principles, with a focus on replicating and understanding the mechanics that define the <em>Touhou Project</em> series. The project emphasizes precision movement, readable bullet density, and player reward through a grazing system that balances tension and flow.
+  </p>
+  <p>
+    Built in Unity for Bullet Hell Jam 6, the game integrates a multi-phase boss AI, infinite scrolling backgrounds, and a tightly tuned player controller to maintain responsiveness during high-intensity sequences.
+  </p>
+  <p>
+    The goal was to capture the essence of danmaku gameplay — clarity within chaos — while building a solid foundation for scalable enemy and bullet system design.
+  </p>
+</section>
+
+<section class="project-section fade-in">
+  <h2>Graze Mechanic Breakdown</h2>
+  <p>
+    One of my goals with <em>Vampiric Ascension</em> was to capture the thrill of the Graze mechanic from the <em>Touhou Project</em> series — rewarding players for narrowly dodging bullets without taking damage. In researching how Touhou handled this, I found that players could actually touch bullets visually and still count it as a graze. That meant I needed a more nuanced detection system than a single collider could offer.
+  </p>
+  <p>
+    To achieve this, I built a two-collider system around the player: an outer collider for grazing detection and an inner one for actual hits. When a bullet enters the outer collider, it's tracked in a <code>HashSet</code> until it either hits the player or exits safely. If it exits without colliding with the inner hitbox, it's marked as a graze and rewards the player with score and energy. This setup efficiently handles bullet tracking and perfectly recreates that tense, rewarding feeling of brushing past danger — a small risk that pays off in style and satisfaction.
+  </p>
+
+  <div class="gif-container fade-in">
+    <img src="/assets/images/vamphell/Graze.gif" alt="Graze mechanic demo" />
+  </div>
+</section>
+
 </main>
     <footer>
     <p>© 2025 by Agyei Lomini. Powered by Jekyll.</p>
 </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".fade-in");
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
+
 </body>
 
 </html>

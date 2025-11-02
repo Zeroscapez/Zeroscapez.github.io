@@ -225,3 +225,54 @@ body {
 .media-gallery video:hover {
     transform: scale(1.03);
 }
+
+/* Center and style the sections */
+.project-section {
+    max-width: 900px;
+    margin: 4rem auto;
+    text-align: left;
+    color: #ddd;
+    line-height: 1.8;
+    font-size: 1rem;
+    padding: 0 1rem;
+}
+
+/* Headers */
+.project-section h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    border-bottom: 2px solid #a00;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gif-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.gif-container img {
+    width: 80%;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gif-container img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.35);
+}

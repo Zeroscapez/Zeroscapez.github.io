@@ -76,6 +76,101 @@
   </div>
 </section>
 
+<section class="project-section fade-in">
+  <h2>Bomb Mechanic Breakdown</h2>
+  <p>
+    One of my additional goals with <em>Vampiric Ascension</em> was to recreate the dramatic 
+    <strong>bomb mechanic</strong> seen throughout the <em>Touhou Project</em> series. 
+    In classic danmaku fashion, activating a bomb clears the screen of all enemy projectiles, 
+    offering players a brief moment of safety while rewarding them with points based on the number of bullets destroyed.
+  </p>
+
+  <p>
+    To achieve this, I implemented a system called <code>GigaCrash()</code>. 
+    When triggered, it scans the scene for all active <code>EnemyBullet</code> instances, removes them, 
+    and calculates a score bonus proportional to the number of bullets cleared. 
+    The system also consumes a <em>Sigil</em> — a limited resource that prevents overuse and adds a strategic layer to bomb activation.
+  </p>
+
+  <p>
+    This mechanic not only mirrors the explosive spectacle and tactical relief of Touhou’s bombs 
+    but also reinforces a high-risk, high-reward loop. 
+    Players must decide whether to spend their limited Sigils for survival or conserve them to maximize score potential.
+  </p>
+
+  <div class="code-block fade-in">
+    <pre><code class="language-csharp">
+private void GigaCrash()
+{
+    EnemyBullet[] enemyBullets = FindObjectsOfType&lt;EnemyBullet&gt;();
+
+    int bulletsCleared = 0;
+    int pointsGained = 500;
+
+    if (PlayerScoreManager.Instance.sigils &gt;= 1)
+    {
+        PlayerScoreManager.Instance.RemoveSigil();
+
+        foreach (EnemyBullet bullet in enemyBullets)
+        {
+            if (bullet != null)
+            {
+                bullet.ReturnToPool();
+                bulletsCleared++;
+            }
+        }
+
+        PlayerScoreManager.Instance.AddScore(bulletsCleared * pointsGained);
+
+        Debug.Log($"Cleared {bulletsCleared} bullets and awarded {bulletsCleared * pointsGained} points.");
+    }
+}
+    </code></pre>
+  </div>
+</section>
+
+<section class="project-section fade-in">
+  <h2>Boss AI Breakdown</h2>
+  <p>
+    Every bullet hell needs a memorable boss, and <em>The Sun</em> was designed to push players to their limits. 
+    I wanted to build a boss that could dynamically change its attack patterns and movement behavior 
+    based on health thresholds — creating escalating tension and rewarding adaptability.
+  </p>
+
+  <p>
+    The <strong>Sun AI</strong> uses a state-driven approach powered by an enumeration, 
+    <code>TheSunBossState</code>, which defines each phase of the battle. 
+    As the boss’s health drops, it transitions through multiple attack phases — 
+    each introducing new spawner configurations, bullet patterns, and movement logic.
+  </p>
+
+  <p>
+    Each phase initializes its own set of <code>BulletSpawner</code> instances with distinct parameters: 
+    firing rates, spread angles, rotation speeds, and even homing behavior. 
+    These spawners are created and destroyed on the fly to ensure smooth transitions and 
+    keep the encounter visually engaging without overloading the scene.
+  </p>
+
+  <p>
+    During <em>Phase 2 Part 2</em>, the boss gains mobility, moving between random points in the upper half of the play area. 
+    This forces players to reposition while dodging fan-like bullet barrages. 
+    By <em>Phase 3</em>, the entire screen becomes a chaotic dance of rotating explosion patterns, 
+    giving players one final test of reflex and endurance.
+  </p>
+
+  <p>
+    Once defeated, the boss triggers score calculation and clears all active spawners — 
+    wrapping up the battle with a satisfying conclusion both visually and mechanically.
+  </p>
+
+  <div class="gif-grid fade-in">
+    <img src="/assets/images/vamphell/sunphase1.gif" alt="Sun Phase 1 Boss AI" />
+    <img src="/assets/images/vamphell/sunphase2.gif" alt="Sun Phase 2 Boss AI" />
+    <img src="/assets/images/vamphell/sunphase22.gif" alt="Sun Phase 22 Boss AI" />
+    <img src="/assets/images/vamphell/sunphase3.gif" alt="Sun Phase 3 Boss AI" />
+  </div>
+</section>
+
 </main>
     <footer>
     <p>© 2025 by Agyei Lomini. Powered by Jekyll.</p>

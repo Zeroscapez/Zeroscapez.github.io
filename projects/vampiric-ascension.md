@@ -14,6 +14,7 @@ title: Vampiric Ascension- Luna Siri vs The Sun
     <div><strong>Project Type</strong><br>Bullet Hell Jam</div>
     <div><strong>Date</strong><br>June 2025</div>
     <div><strong>itch.io Page</strong><br><a href="https://your-itch-link.com" target="_blank">Play Vampiric Ascension</a></div>
+    <div><strong>Github</strong><br><a href="https://github.com/Zeroscapez/UnstableBullet" target="_blank">View Project</a></div>
     <div><strong>Engine</strong><br>Unity Engine 6</div>
     <div><strong>Role</strong><br>Gameplay Programmer</div>
     <div><strong>Team Size</strong><br>2</div>
@@ -38,7 +39,7 @@ title: Vampiric Ascension- Luna Siri vs The Sun
 <section class="project-section fade-in">
   <h2>Introduction</h2>
   <p>
-    Vampiric Ascension was developed as an exploration of bullet hell design principles, with a focus on replicating and understanding the mechanics that define the <em>Touhou Project</em> series. The project emphasizes precision movement, readable bullet density, and player reward through a grazing system that balances tension and flow.
+    <em>Vampiric Ascension</em> was developed as an exploration of bullet hell design principles, with a focus on replicating and understanding the mechanics that define the <em>Touhou Project</em> series. The project emphasizes precision movement, readable bullet density, and player reward through a grazing system that balances tension and flow.
   </p>
   <p>
     Built in Unity for Bullet Hell Jam 6, the game integrates a multi-phase boss AI, infinite scrolling backgrounds, and a tightly tuned player controller to maintain responsiveness during high-intensity sequences.

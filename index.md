@@ -25,7 +25,7 @@ title: Home
       </div>
     </a>
 
-    <a href="https://yourprojectlink2.com" class="project" target="_blank">
+    <a href="/projects/project-cultivation" class="project" target="_blank">
       <img src="{{ '/assets/images/project2.png' | relative_url }}" alt="Another Project">
       <div class="overlay">
         <div class="overlay-text">

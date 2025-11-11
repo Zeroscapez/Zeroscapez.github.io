@@ -329,3 +329,15 @@ body {
         width: 90%;
     }
 }
+
+
+
+/* Keep inline code clean and minimal */
+code {
+    background: none;
+    color: #4AB3F4;
+    /* Optional: light blue accent for inline code */
+    padding: 0;
+    border-radius: 0;
+    font-family: 'JetBrains Mono', monospace;
+}

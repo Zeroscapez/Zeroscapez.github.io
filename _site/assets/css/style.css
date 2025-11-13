@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background-color: #000;
+    background-color: #0f0f0f;
     color: white;
 }
 
@@ -26,8 +26,9 @@ body {
 }
 
 .hero img {
+
     width: 100%;
-    height: auto;
+    height: 50vh;
     opacity: 0.8;
 }
 
@@ -65,7 +66,7 @@ body {
 .projects-section {
     text-align: center;
     padding: 60px 0;
-    background-color: #000;
+    background-color: #0f0f0f;
 }
 
 .projects-section h2 {
@@ -176,7 +177,7 @@ body {
 
 /* --- Project Info Grid --- */
 .project-details {
-    background-color: #000;
+    background-color: #0f0f0f;
     color: white;
     padding: 60px 10%;
     text-align: center;
@@ -279,7 +280,7 @@ body {
 
 .code-block {
     background: #1a1a1a;
-    border: 1px solid #333;
+    border: 1px solid #1a1a1a;
     border-radius: 8px;
     padding: 1rem;
     margin-top: 1.5rem;
@@ -308,12 +309,12 @@ body {
     /* Larger size */
     border-radius: 12px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.35);
 }
 
 .gif-grid img:hover {
     transform: scale(1.08);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.35);
 }
 
 /* Medium screens (tablets) */

@@ -16,7 +16,7 @@ title: Vampiric Ascension- Luna Siri vs The Sun
     <div><strong>itch.io Page</strong><br><a href="https://your-itch-link.com" target="_blank">Play Vampiric Ascension</a></div>
     <div><strong>Github</strong><br><a href="https://github.com/Zeroscapez/UnstableBullet" target="_blank">View Project</a></div>
     <div><strong>Engine</strong><br>Unity Engine 6</div>
-    <div><strong>Role</strong><br>Gameplay Programmer</div>
+    <div><strong>Role</strong><br>Lead Programmer/Designer</div>
     <div><strong>Team Size</strong><br>2</div>
   </div>
 

@@ -12,7 +12,7 @@
     <h1><a href="/">Agyei Lomini - Portfolio</a></h1>
     <nav>
         <a href="/">Home</a>
-        <a href="https://agyeilomini.itch.io" target="_blank">itch.io</a>
+        <a href="https://crestoriashiro.itch.io/" target="_blank">itch.io</a>
         <a href="https://github.com/AgyeiLomini" target="_blank">Github</a>
         <a href="https://linkedin.com/in/agyeilomini" target="_blank">Linkedin</a>
     </nav>
@@ -54,7 +54,7 @@
 </section>
 
 <section class="project-section fade-in">
-  <h2>Time Control System</h2>
+  <h2>Time Stop System</h2>
   <p>
     In <em>Project Cultivation</em>, I implemented a time stop mechanic that allows players to freeze the world — halting physics, movement, and other dynamic systems — while keeping the player character free to act. To make this possible, I created a flexible interface-driven system using the ITimeStoppable interface and this TimeStopObject component.
   </p>
@@ -113,43 +113,171 @@
 
 
   <div class="gif-container fade-in">
-    <img src="/assets/images/projectcultivation/combat.gif" alt="Combat Demo" />
+    <img src="/assets/images/cultivate/timestopgameplay.gif" alt="Combat Demo" />
   </div>
 </section>
 
 <section class="project-section fade-in">
-  <h2>World Growth Mechanic</h2>
+  <h2>Rewind Mechanic &amp; Rewind Ghost</h2>
   <p>
-    The game’s defining feature, the <strong>Growth System</strong>, allows the environment 
-    to evolve dynamically in response to player performance. Destroying enemies releases 
-    “Seed Data” — fragments of code that reconstruct the digital flora of the world. 
-    As the player gathers more, they unlock new growth zones, platforms, and secret areas.
+    The <strong>Rewind Mechanic</strong> in <em>Project Cultivation</em> was designed to complement the Time Stop system by giving players the ability to reverse their recent actions — restoring their position to a point in the past while maintaining gameplay flow. 
+    This mechanic records the player’s position over time and lets them “snap back” to a previous moment using the <code>Rewind()</code> function.
   </p>
 
   <p>
-    This system is both visual and mechanical. It uses procedural mesh generation and shader-based 
-    morphing to let players watch the world heal in real-time — roots growing through pixels, 
-    vines forming new paths, and light piercing through the corruption.
+    When activated, the system finds the closest recorded position to the target rewind time, updates the player’s position, and clears old history to begin tracking anew. 
+    This ensures precise, frame-accurate rewinds without creating desynchronization or unpredictable movement.
   </p>
+
+  <div class="code-block fade-in">
+    <pre><code class="language-csharp">
+void Rewind()
+{
+    float targetTime = Time.time - rewindTime;
+    PositionRecord rewindRecord = positionHistory[0];
+
+    foreach (var record in positionHistory)
+    {
+        if (Mathf.Abs(record.time - targetTime) &lt; Mathf.Abs(rewindRecord.time - targetTime))
+        {
+            rewindRecord = record;
+        }
+    }
+
+    transform.position = rewindRecord.position;
+    rb.linearVelocity = Vector3.zero;
+
+    // Clear old trail &amp; start fresh
+    positionHistory.Clear();
+    positionHistory.Add(new PositionRecord { position = transform.position, time = Time.time });
+}
+    </code></pre>
+  </div>
+<div class="gif-container fade-in">
+    <img src="/assets/images/cultivate/rewindgameplay.gif" alt="Combat Demo" />
+  </div>
+  <p>
+    To help players visualize their past path, I implemented the <strong>Rewind Ghost</strong> — a transparent echo of the player’s previous self. 
+    The ghost updates its position to match the historical record of where the player was at the rewind target time. 
+    This adds both visual clarity and an immersive time-travel aesthetic to the mechanic.
+  </p>
+
+  <div class="code-block fade-in">
+    <pre><code class="language-csharp">
+void UpdateRewindGhost()
+{
+    if (positionHistory.Count == 0 || rewindGhost == null) return;
+
+    float targetTime = Time.time - rewindTime;
+    PositionRecord closest = positionHistory[0];
+
+    foreach (var record in positionHistory)
+    {
+        if (Mathf.Abs(record.time - targetTime) &lt; Mathf.Abs(closest.time - targetTime))
+        {
+            closest = record;
+        }
+    }
+
+    rewindGhost.position = closest.position;
+}
+    </code></pre>
+  </div>
 
   <div class="gif-container fade-in">
-    <img src="/assets/images/projectcultivation/growth.gif" alt="World Growth System" />
+    <div class="gif-container fade-in">
+    <img src="/assets/images/cultivate/timedoublegameplay.gif" alt="Combat Demo" />
+  </div>
   </div>
 </section>
 
 <section class="project-section fade-in">
-  <h2>Development Notes</h2>
+  <h2>Slow Time Mechanic</h2>
   <p>
-    <em>Project Cultivation</em> is developed in Unity using a modular state-driven architecture 
-    similar to the system I created for <em>Vampiric Ascension</em>. 
-    Each subsystem — movement, shooting, enemy AI, and growth — is built to be independent yet reactive, 
-    allowing new mechanics to be layered in without breaking core systems.
+    In <em>Project Cultivation</em>, the Fast Forward mechanic works as a global time manipulator that temporarily slows the entire game world while maintaining smooth control responsiveness. This creates the illusion that the player is moving faster than everything else — enemies, projectiles, and physics all slow down, while the player experiences precise, high-speed mobility.
+
   </p>
   <p>
-    The visual direction draws on glitch art and neon minimalism, 
-    supported by a blue-heavy color palette and chromatic aberration effects. 
-    Every aspect of the game is designed to evoke a sense of digital decay and rebirth.
+    The <code>WorldSlowdownManager</code> handles all timing adjustments using Unity’s Time.timeScale system. When activated, it multiplies time by a slowFactor, effectively reducing how quickly everything else updates. This slowdown persists for a few seconds (slowdownLength) before time returns to normal. To prevent abuse, a cooldown timer enforces a delay before the ability can be used again.
   </p>
+
+
+  <div class="code-block fade-in">
+    <pre><code class="language-csharp">
+  using UnityEngine;
+
+public class WorldSlowdownManager : MonoBehaviour
+{
+    public static WorldSlowdownManager Instance;
+
+    public float slowFactor = 0.2f;
+    public float slowdownLength = 3f;
+    public float cooldown = 5f;
+
+    private float slowEndTime;
+    public float lastSlowTime = Mathf.NegativeInfinity;
+    private bool isSlowing = false;
+
+    public float CooldownRemaining
+    {
+        get
+        {
+            // Only start tracking cooldown *after* slow ends
+            if (isSlowing) return cooldown;
+
+            float cooldownEnd = lastSlowTime + cooldown;
+            float remaining = cooldownEnd - Time.unscaledTime;
+            return Mathf.Max(0f, remaining);
+        }
+    }
+    void Awake()
+    {
+        if (Instance != null) Destroy(gameObject);
+        Instance = this;
+    }
+
+    void Update()
+    {
+        if (isSlowing &amp;&amp; Time.unscaledTime &gt;= slowEndTime)
+        {
+            ResetTime();
+        }
+
+        UIController.Instance.restrictFastForward.SetActive(isSlowing || CooldownRemaining &gt; 0);
+
+
+    }
+
+
+    public void TriggerSlowdown()
+    {
+        if (isSlowing || Time.unscaledTime &lt; lastSlowTime + cooldown) return;
+
+        Time.timeScale = slowFactor;
+        Time.fixedDeltaTime = 0.02f * Time.timeScale;
+
+        slowEndTime = Time.unscaledTime + slowdownLength;
+        isSlowing = true;
+    }
+
+
+    private void ResetTime()
+    {
+        Time.timeScale = 1f;
+        Time.fixedDeltaTime = 0.02f;
+        isSlowing = false;
+        lastSlowTime = Time.unscaledTime; 
+    }
+
+    public bool IsSlowing =&gt; isSlowing;
+}
+</code></pre>
+  </div>
+
+<div class="gif-container fade-in">
+    <img src="/assets/images/cultivate/slowdown.gif" alt="Combat Demo" />
+  </div>
+
 </section>
 
 <style>
@@ -173,7 +301,7 @@
 
 /* Code block styling */
 pre {
-    background-color: #202020ff;
+     background: #1a1a1a;
     /* Dark grey background */
     color: #f8f8f2;
     /* Light text */
@@ -186,7 +314,7 @@ pre {
     white-space: pre;
     /* Preserve spacing */
     display: block;
-    box-shadow: 0 2px 10px #202020ff;
+  
     margin: 1.5rem 0;
 }
 
@@ -196,6 +324,17 @@ pre code {
     color: inherit;
     font-family: inherit;
     font-size: inherit;
+}
+
+.gif-container img {
+   
+    box-shadow: 0 0 20px rgba(74, 178, 230, 0.81);
+   
+}
+
+.gif-container img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(81, 197, 255, 1);
 }
 </style>
 

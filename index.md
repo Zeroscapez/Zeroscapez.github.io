@@ -26,10 +26,41 @@ title: Home
     </a>
 
     <a href="/projects/project-cultivation" class="project" target="_blank">
-      <img src="{{ '/assets/images/project2.png' | relative_url }}" alt="Another Project">
+      <img src="{{ 'assets/images/onceunreal/title.png' | relative_url }}" alt="Another Project">
       <div class="overlay">
         <div class="overlay-text">
-          <p>Another Project Title</p>
+          <p>Once</p>
+          <span>View Project →</span>
+        </div>
+      </div>
+    </a>
+
+     <a href="/projects/project-cultivation" class="project" target="_blank">
+      <img src="{{ 'assets/images/cultivate/title.png' | relative_url }}" alt="Another Project">
+      <div class="overlay">
+        <div class="overlay-text">
+          <p>Project: Cultivation</p>
+          <span>View Project →</span>
+        </div>
+      </div>
+    </a>
+
+     <a href="/projects/project-cultivation" class="project" target="_blank">
+      <img src="{{ 'assets/images/gshinobi/title.png' | relative_url }}" alt="Another Project">
+      <div class="overlay">
+        <div class="overlay-text">
+          <p>Greatest Shinobi</p>
+          <span>View Project →</span>
+        </div>
+      </div>
+    </a>
+
+
+     <a href="/projects/project-cultivation" class="project" target="_blank">
+      <img src="{{ 'assets/images/inverse/title.png' | relative_url }}" alt="Another Project">
+      <div class="overlay">
+        <div class="overlay-text">
+          <p>Inverse</p>
           <span>View Project →</span>
         </div>
       </div>

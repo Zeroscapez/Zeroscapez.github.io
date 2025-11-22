@@ -46,29 +46,7 @@ title: Home
       </div>
     </a>
 
-     <a href="/projects/project-cultivation" class="project" >
-      <img src="{{ 'assets/images/gshinobi/title.png' | relative_url }}" alt="Another Project">
-      <div class="overlay">
-        <div class="overlay-text">
-          <p>Greatest Shinobi</p>
-          <span>View Project →</span>
-        </div>
-      </div>
-    </a>
-
-
     
-
-    
-    <a href="/projects/project-cultivation" class="project" >
-      <img src="{{ 'assets/images/onceunreal/title.png' | relative_url }}" alt="Another Project">
-      <div class="overlay">
-        <div class="overlay-text">
-          <p>Once</p>
-          <span>View Project →</span>
-        </div>
-      </div>
-    </a>
 
   </div>
 </div>

@@ -27,10 +27,7 @@ title: Vampiric Ascension- Luna Siri vs The Sun
   </p>
 
   <div class="media-gallery">
-  <img src="{{ 'assets/images/vamphell/Vampgame.gif' | relative_url }}" alt="Screenshot 1">
-
-
-    <!-- Images -->
+    <img src="{{ 'assets/images/vamphell/Vampgame.gif' | relative_url }}" alt="Screenshot 1">
     <img src="{{ 'assets/images/vamphell/gameshot.jpg' | relative_url }}" alt="Screenshot 1">
     <img src="{{ 'assets/images/vamphell/NHhPov.png' | relative_url }}" alt="Screenshot 2">
     <img src="{{ 'assets/images/vamphell/title.png' | relative_url }}" alt="Screenshot 3">

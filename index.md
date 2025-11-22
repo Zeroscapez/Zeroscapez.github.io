@@ -15,7 +15,7 @@ title: Home
   <h2>Projects</h2>
   <div class="projects-grid">
 
-    <a href="/projects/vampiric-ascension" class="project" target="_blank">
+    <a href="/projects/vampiric-ascension" class="project" >
       <img src="{{ 'assets/images/vamphell/title.png' | relative_url }}" alt="Vampiric Ascension">
       <div class="overlay">
         <div class="overlay-text">
@@ -26,7 +26,7 @@ title: Home
     </a>
 
 
-     <a href="/projects/project-cultivation" class="project" target="_blank">
+     <a href="/projects/project-cultivation" class="project" >
       <img src="{{ 'assets/images/cultivate/title.png' | relative_url }}" alt="Another Project">
       <div class="overlay">
         <div class="overlay-text">
@@ -36,7 +36,7 @@ title: Home
       </div>
     </a>
 
-     <a href="/projects/inverse" class="project" target="_blank">
+     <a href="/projects/inverse" class="project" >
       <img src="{{ 'assets/images/inverse/title.png' | relative_url }}" alt="Another Project">
       <div class="overlay">
         <div class="overlay-text">
@@ -46,7 +46,7 @@ title: Home
       </div>
     </a>
 
-     <a href="/projects/project-cultivation" class="project" target="_blank">
+     <a href="/projects/project-cultivation" class="project" >
       <img src="{{ 'assets/images/gshinobi/title.png' | relative_url }}" alt="Another Project">
       <div class="overlay">
         <div class="overlay-text">
@@ -60,7 +60,7 @@ title: Home
     
 
     
-    <a href="/projects/project-cultivation" class="project" target="_blank">
+    <a href="/projects/project-cultivation" class="project" >
       <img src="{{ 'assets/images/onceunreal/title.png' | relative_url }}" alt="Another Project">
       <div class="overlay">
         <div class="overlay-text">

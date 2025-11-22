@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Inverse | Agyei Lomini - Portfolio</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+    <header class="navbar">
+    <h1><a href="/">Agyei Lomini - Portfolio</a></h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="https://crestoriashiro.itch.io/" target="_blank">itch.io</a>
+        <a href="https://github.com/AgyeiLomini" target="_blank">Github</a>
+        <a href="https://linkedin.com/in/agyeilomini" target="_blank">Linkedin</a>
+    </nav>
+</header>
+    <main><section class="project-hero" style="background-image: url('/assets/images/inverse/title.png');">
+  <div class="overlay">
+    <h1>Inverse</h1>
+  </div>
+</section>
+
+<section class="project-details">
+  <div class="project-info-grid">
+    <div><strong>Project Type</strong><br />3D Puzzle Platformer</div>
+    <div><strong>Date</strong><br />April 2025</div>
+    <div><strong>Status</strong><br />Prototype</div>
+    <div><strong>itch.io Page</strong><br /><a href="https://crestoriashiro.itch.io/inverse" target="_blank">Play Inverse</a></div>
+    <div><strong>Github</strong><br /><a href="https://github.com/Zeroscapez/ReflectionJam" target="_blank">View Project</a></div>
+    <div><strong>Engine</strong><br />Unity Engine 6</div>
+    <div><strong>Role</strong><br />Lead Programmer / Designer</div>
+    <div><strong>Team Size</strong><br />5</div>
+  </div>
+
+  <p class="project-description">
+    A 3D platformer focused on solving puzzles split between two worlds, your goal is to solve the puzzles and reach the end in both worlds. 
+  </p>
+
+  <div class="media-gallery">
+    <img src="/assets/images/inverse/title.png" alt="Screenshot 1" />
+    <img src="/assets/images/inverse/inversegame1.gif" alt="Screenshot 2" />
+  </div>
+</section>
+
+<section class="project-section fade-in">
+  <h2>Introduction</h2>
+  <p>
+    <em>Inverse</em> was developed as a prototype for a game jam involving reflections. My team's idea was to use literal reflections as a mechanism but also the idea of a relfection of ones self as part of the thematic.
+  </p>
+  <p>
+    Built in Unity, the main features this game has are a character swapping system, and a light bending mechanism.
+  </p>
+</section>
+
+<section class="project-section fade-in">
+  <h2>Character Swap System</h2>
+  <p>
+    In <em>Inverse</em> project, the player controls two fully independent characters and can switch between them at any time. Each character has their own movement controller, animations, stats, and physics body. The swap mechanic is designed not just for cosmetic variety, but to encourage puzzle-solving and traversal using each character's unique abilities.
+  </p>
+  <p>
+    When the player swaps:
+<ul>
+<li>The newly selected character becomes the only one with active movement input</li>
+
+<li>Animations update automatically based on which character is currently active</li>
+
+<li>Physics are toggled so the inactive character freezes in place (using isKinematic)</li>
+
+<li>The camera dynamically refocuses using Cinemachine, smoothly shifting its Follow and LookAt targets</li>
+
+<li>The inactive character remains present in the world, allowing scenarios such as cooperative platforming puzzles, positional switching, and multi-step level traversal where character placement matters.</li>
+</ul>
+  </p>
+
+  
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">PlayerManager</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="n">GameObject</span><span class="p">[]</span> <span class="n">allCharacters</span><span class="p">;</span>
+    <span class="k">public</span> <span class="n">GameObject</span> <span class="n">characterA</span><span class="p">;</span>
+    <span class="k">public</span> <span class="n">GameObject</span> <span class="n">characterB</span><span class="p">;</span>
+    <span class="k">public</span> <span class="n">GameObject</span> <span class="n">activeCharacter</span><span class="p">;</span>
+    <span class="k">private</span> <span class="n">CharacterController3D</span> <span class="n">characterController</span><span class="p">;</span>
+    <span class="k">public</span> <span class="n">PlayerControls</span> <span class="n">controls</span><span class="p">;</span>
+    <span class="k">public</span> <span class="n">IGUIManager</span> <span class="n">guiManager</span><span class="p">;</span>
+    <span class="k">public</span> <span class="kt">bool</span> <span class="n">isCharacterA</span><span class="p">;</span>
+   
+    <span class="k">public</span> <span class="n">Camera</span> <span class="n">pCam</span><span class="p">;</span>
+
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">Awake</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">controls</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">PlayerControls</span><span class="p">();</span>
+        
+       <span class="n">pCam</span> <span class="p">=</span> <span class="n">GetComponentInChildren</span><span class="p">&lt;</span><span class="n">Camera</span><span class="p">&gt;();</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">guiManager</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">guiManager</span> <span class="p">=</span> <span class="n">GetComponentInParent</span><span class="p">&lt;</span><span class="n">GameManager</span><span class="p">&gt;().</span><span class="n">GetComponentInChildren</span><span class="p">&lt;</span><span class="n">IGUIManager</span><span class="p">&gt;();</span>
+
+        <span class="p">}</span>
+       
+
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Start</span><span class="p">()</span>
+    <span class="p">{</span>
+        
+    <span class="p">}</span>
+
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">Update</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">guiManager</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">guiManager</span> <span class="p">=</span> <span class="n">GetComponentInParent</span><span class="p">&lt;</span><span class="n">GameManager</span><span class="p">&gt;().</span><span class="n">GetComponentInChildren</span><span class="p">&lt;</span><span class="n">IGUIManager</span><span class="p">&gt;();</span>
+
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+
+
+    <span class="k">void</span> <span class="nf">OnEnable</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="n">controls</span><span class="p">.</span><span class="nf">Enable</span><span class="p">();</span>
+    <span class="k">void</span> <span class="nf">OnDisable</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="n">controls</span><span class="p">.</span><span class="nf">Disable</span><span class="p">();</span>
+
+    <span class="k">void</span> <span class="nf">SwapCharacter</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Debug</span><span class="p">.</span><span class="nf">Log</span><span class="p">(</span><span class="n">characterController</span><span class="p">.</span><span class="n">Name</span> <span class="p">+</span> <span class="s">" "</span> <span class="p">+</span> <span class="n">characterController</span><span class="p">.</span><span class="n">ID</span><span class="p">.</span><span class="nf">ToString</span><span class="p">()</span> <span class="p">+</span> <span class="s">" Character Swap Pressed"</span><span class="p">);</span>
+        <span class="c1">// Swap active character</span>
+        <span class="n">activeCharacter</span> <span class="p">=</span> <span class="p">(</span><span class="n">activeCharacter</span> <span class="p">==</span> <span class="n">characterA</span><span class="p">)</span> <span class="p">?</span> <span class="n">characterB</span> <span class="p">:</span> <span class="n">characterA</span><span class="p">;</span>
+        <span class="nf">SetActiveCharacter</span><span class="p">(</span><span class="n">activeCharacter</span><span class="p">);</span>
+        <span class="n">guiManager</span><span class="p">.</span><span class="nf">SwitchCharacterImage</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">void</span> <span class="nf">SetActiveCharacter</span><span class="p">(</span><span class="n">GameObject</span> <span class="n">character</span><span class="p">)</span>
+    <span class="p">{</span>
+       
+        <span class="c1">// Enable PlayerInput on the active character and disable on the other.</span>
+        <span class="n">characterA</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">CharacterController3D</span><span class="p">&gt;().</span><span class="n">enabled</span> <span class="p">=</span> <span class="p">(</span><span class="n">character</span> <span class="p">==</span> <span class="n">characterA</span><span class="p">);</span>
+        <span class="n">characterB</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">CharacterController3D</span><span class="p">&gt;().</span><span class="n">enabled</span> <span class="p">=</span> <span class="p">(</span><span class="n">character</span> <span class="p">==</span> <span class="n">characterB</span><span class="p">);</span>
+        <span class="n">characterA</span><span class="p">.</span><span class="n">GetComponentInChildren</span><span class="p">&lt;</span><span class="n">Animator</span><span class="p">&gt;().</span><span class="n">enabled</span> <span class="p">=</span> <span class="p">(</span><span class="n">character</span> <span class="p">==</span> <span class="n">characterA</span><span class="p">);</span>
+        <span class="n">characterB</span><span class="p">.</span><span class="n">GetComponentInChildren</span><span class="p">&lt;</span><span class="n">Animator</span><span class="p">&gt;().</span><span class="n">enabled</span> <span class="p">=</span> <span class="p">(</span><span class="n">character</span> <span class="p">==</span> <span class="n">characterB</span><span class="p">);</span>
+        <span class="n">characterA</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Rigidbody</span><span class="p">&gt;().</span><span class="n">isKinematic</span> <span class="p">=</span> <span class="p">(</span><span class="n">character</span> <span class="p">!=</span> <span class="n">characterA</span><span class="p">);</span>
+        <span class="n">characterB</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Rigidbody</span><span class="p">&gt;().</span><span class="n">isKinematic</span> <span class="p">=</span> <span class="p">(</span><span class="n">character</span> <span class="p">!=</span> <span class="n">characterB</span><span class="p">);</span>
+        <span class="n">pCam</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">CinemachineFreeLook</span><span class="p">&gt;().</span><span class="n">Follow</span> <span class="p">=</span> <span class="n">activeCharacter</span><span class="p">.</span><span class="n">transform</span><span class="p">;</span>
+        <span class="n">pCam</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">CinemachineFreeLook</span><span class="p">&gt;().</span><span class="n">LookAt</span> <span class="p">=</span> <span class="n">activeCharacter</span><span class="p">.</span><span class="n">transform</span><span class="p">;</span>
+
+
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">SetupCharacters</span><span class="p">(</span><span class="n">CharacterController3D</span><span class="p">[]</span> <span class="n">characterList</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">allCharacters</span> <span class="p">=</span> <span class="n">characterList</span><span class="p">.</span><span class="nf">Select</span><span class="p">(</span><span class="n">cc</span> <span class="p">=&gt;</span> <span class="n">cc</span><span class="p">.</span><span class="n">gameObject</span><span class="p">).</span><span class="nf">ToArray</span><span class="p">();</span>
+        <span class="n">characterA</span> <span class="p">=</span> <span class="n">allCharacters</span><span class="p">.</span><span class="nf">FirstOrDefault</span><span class="p">(</span><span class="n">go</span> <span class="p">=&gt;</span> <span class="n">go</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">CharacterController3D</span><span class="p">&gt;().</span><span class="n">ID</span> <span class="p">==</span> <span class="m">1</span><span class="p">);</span>
+        <span class="n">characterB</span> <span class="p">=</span> <span class="n">allCharacters</span><span class="p">.</span><span class="nf">FirstOrDefault</span><span class="p">(</span><span class="n">go</span> <span class="p">=&gt;</span> <span class="n">go</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">CharacterController3D</span><span class="p">&gt;().</span><span class="n">ID</span> <span class="p">==</span> <span class="m">2</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">characterA</span> <span class="p">!=</span> <span class="k">null</span> <span class="p">&amp;&amp;</span> <span class="n">characterB</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">activeCharacter</span> <span class="p">=</span> <span class="n">characterA</span><span class="p">;</span>
+            <span class="nf">SetActiveCharacter</span><span class="p">(</span><span class="n">activeCharacter</span><span class="p">);</span>
+            <span class="n">characterController</span> <span class="p">=</span> <span class="n">activeCharacter</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">CharacterController3D</span><span class="p">&gt;();</span>
+
+            <span class="n">controls</span><span class="p">.</span><span class="n">Player</span><span class="p">.</span><span class="n">SwapCharacter</span><span class="p">.</span><span class="n">performed</span> <span class="p">+=</span> <span class="n">ctx</span> <span class="p">=&gt;</span> <span class="nf">SwapCharacter</span><span class="p">();</span>
+            <span class="n">pCam</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">CinemachineFreeLook</span><span class="p">&gt;().</span><span class="n">Follow</span> <span class="p">=</span> <span class="n">activeCharacter</span><span class="p">.</span><span class="n">transform</span><span class="p">;</span>
+            <span class="n">pCam</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">CinemachineFreeLook</span><span class="p">&gt;().</span><span class="n">LookAt</span> <span class="p">=</span> <span class="n">activeCharacter</span><span class="p">.</span><span class="n">transform</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="n">Debug</span><span class="p">.</span><span class="nf">LogError</span><span class="p">(</span><span class="s">"Characters with specified IDs not found."</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+
+<span class="p">}</span>
+  </code></pre></figure>
+
+
+  <div class="gif-container fade-in">
+    <img src="/assets/images/inverse/swap.gif" alt="Combat Demo" />
+  </div>
+</section>
+
+<section class="project-section fade-in">
+  <h2>Light Refraction System</h2>
+  <p>
+    In <em>Inverse</em>, light is used as a core puzzle mechanic. The player interacts with beams that bounce off reflective surfaces and activate switches throughout the environment. The light is dynamically rendered using a LineRenderer, allowing it to visually update in real time as it moves through the world.
+  </p>
+
+  <p>
+  The beam begins at a defined origin point and travels forward until it hits an object. If the object is reflective, the beam bounces and continues in a new direction, enabling mirror-based puzzles and multi-step routing challenges. If the beam strikes a switch, it powers it on, allowing light to be used as a way to unlock doors or trigger mechanisms. Once the beam stops touching that switch, it automatically deactivates, preventing players from activating multiple switches simultaneously just by moving the beam once.
+  </p>
+ 
+
+<div class="code-block fade-in">
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">LightEmitter</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="n">LineRenderer</span> <span class="n">lineRenderer</span><span class="p">;</span>
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">maxBounces</span> <span class="p">=</span> <span class="m">10</span><span class="p">;</span> <span class="c1">// Maximum number of light bounces</span>
+    <span class="k">public</span> <span class="n">Transform</span> <span class="n">lightOrigin</span><span class="p">;</span>
+    <span class="k">public</span> <span class="n">Material</span> <span class="n">lightMaterial</span><span class="p">;</span> 
+    <span class="k">public</span> <span class="kt">bool</span> <span class="n">useCustomMaterial</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+    <span class="c1">// Store the switch that was hit in the previous frame</span>
+    <span class="k">private</span> <span class="n">SwitchControl</span> <span class="n">currentSwitch</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
+
+    <span class="k">void</span> <span class="nf">Start</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">lineRenderer</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">lineRenderer</span> <span class="p">=</span> <span class="n">gameObject</span><span class="p">.</span><span class="n">AddComponent</span><span class="p">&lt;</span><span class="n">LineRenderer</span><span class="p">&gt;();</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Material setup</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">useCustomMaterial</span> <span class="p">&amp;&amp;</span> <span class="n">lightMaterial</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">lineRenderer</span><span class="p">.</span><span class="n">material</span> <span class="p">=</span> <span class="n">lightMaterial</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="c1">// Default material setup</span>
+            <span class="n">lineRenderer</span><span class="p">.</span><span class="n">material</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Material</span><span class="p">(</span><span class="n">Shader</span><span class="p">.</span><span class="nf">Find</span><span class="p">(</span><span class="s">"Sprites/Default"</span><span class="p">));</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Rest of your existing Start() code...</span>
+        <span class="n">lineRenderer</span><span class="p">.</span><span class="n">positionCount</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+        <span class="n">lineRenderer</span><span class="p">.</span><span class="n">startWidth</span> <span class="p">=</span> <span class="m">0.1f</span><span class="p">;</span>
+        <span class="n">lineRenderer</span><span class="p">.</span><span class="n">endWidth</span> <span class="p">=</span> <span class="m">0.1f</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">void</span> <span class="nf">Update</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nf">CastLight</span><span class="p">(</span><span class="n">lightOrigin</span><span class="p">.</span><span class="n">position</span><span class="p">,</span> <span class="p">-</span><span class="n">transform</span><span class="p">.</span><span class="n">up</span><span class="p">,</span> <span class="n">maxBounces</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">void</span> <span class="nf">CastLight</span><span class="p">(</span><span class="n">Vector3</span> <span class="n">position</span><span class="p">,</span> <span class="n">Vector3</span> <span class="n">direction</span><span class="p">,</span> <span class="kt">int</span> <span class="n">remainingBounces</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">List</span><span class="p">&lt;</span><span class="n">Vector3</span><span class="p">&gt;</span> <span class="n">lightPoints</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Vector3</span><span class="p">&gt;();</span>
+        <span class="n">lightPoints</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">position</span><span class="p">);</span>
+
+        <span class="c1">// Local variable to hold the switch hit in this cast</span>
+        <span class="n">SwitchControl</span> <span class="n">hitSwitch</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
+
+        <span class="k">while</span> <span class="p">(</span><span class="n">remainingBounces</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">RaycastHit</span> <span class="n">hit</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">Physics</span><span class="p">.</span><span class="nf">Raycast</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">direction</span><span class="p">,</span> <span class="k">out</span> <span class="n">hit</span><span class="p">,</span> <span class="n">Mathf</span><span class="p">.</span><span class="n">Infinity</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="n">lightPoints</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">hit</span><span class="p">.</span><span class="n">point</span><span class="p">);</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">hit</span><span class="p">.</span><span class="n">collider</span><span class="p">.</span><span class="nf">CompareTag</span><span class="p">(</span><span class="s">"Reflective"</span><span class="p">))</span>
+                <span class="p">{</span>
+                    <span class="n">ReflectiveSurface</span> <span class="n">surface</span> <span class="p">=</span> <span class="n">hit</span><span class="p">.</span><span class="n">collider</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">ReflectiveSurface</span><span class="p">&gt;();</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">surface</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="c1">// Update direction and position, then decrement bounce counter</span>
+                        <span class="n">direction</span> <span class="p">=</span> <span class="n">surface</span><span class="p">.</span><span class="nf">GetReflectionDirection</span><span class="p">();</span>
+                        <span class="n">position</span> <span class="p">=</span> <span class="n">hit</span><span class="p">.</span><span class="n">point</span><span class="p">;</span>
+                        <span class="n">remainingBounces</span><span class="p">--;</span>
+                        <span class="k">continue</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">hit</span><span class="p">.</span><span class="n">collider</span><span class="p">.</span><span class="nf">CompareTag</span><span class="p">(</span><span class="s">"Switch"</span><span class="p">))</span>
+                <span class="p">{</span>
+                    <span class="n">SwitchControl</span> <span class="n">switchControl</span> <span class="p">=</span> <span class="n">hit</span><span class="p">.</span><span class="n">collider</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">SwitchControl</span><span class="p">&gt;();</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">switchControl</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="n">hitSwitch</span> <span class="p">=</span> <span class="n">switchControl</span><span class="p">;</span>
+                        <span class="c1">// Activate the switch if it's hit</span>
+                        <span class="n">switchControl</span><span class="p">.</span><span class="nf">Activate</span><span class="p">();</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+                <span class="k">break</span><span class="p">;</span> <span class="c1">// End the loop if we hit a non-reflective surface</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="n">lightPoints</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">position</span> <span class="p">+</span> <span class="n">direction</span> <span class="p">*</span> <span class="m">1000f</span><span class="p">);</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Only call Deactivate if the switch hit this frame is different from the previously hit switch.</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">currentSwitch</span> <span class="p">!=</span> <span class="n">hitSwitch</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">currentSwitch</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">currentSwitch</span><span class="p">.</span><span class="nf">Deactivate</span><span class="p">();</span>
+            <span class="p">}</span>
+            <span class="n">currentSwitch</span> <span class="p">=</span> <span class="n">hitSwitch</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="n">lineRenderer</span><span class="p">.</span><span class="n">positionCount</span> <span class="p">=</span> <span class="n">lightPoints</span><span class="p">.</span><span class="n">Count</span><span class="p">;</span>
+        <span class="n">lineRenderer</span><span class="p">.</span><span class="nf">SetPositions</span><span class="p">(</span><span class="n">lightPoints</span><span class="p">.</span><span class="nf">ToArray</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+</div>
+
+<!-- Ensure the image is visually separated from the code block -->
+<div style="clear: both; height: 1rem;"></div>
+
+<div class="gif-container fade-in" style="clear: both; margin-top: 1rem;">
+  <img src="/assets/images/inverse/Refraction.gif" alt="Combat Demo" />
+</div>
+<style>
+/* Prevent horizontal scrollbar for highlighted C# code by wrapping lines */
+div.highlight pre,
+pre[class*="language-"],
+code[class*="language-"] {
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+    overflow-x: hidden !important;
+}
+</style>
+
+<style>
+  .project-section h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    border-bottom: 2px solid #4AB3F4;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .gif-container img {
+    width: 80%;
+    max-width: 800px;
+    border-radius: 8px;
+    display: block;
+    margin: 1.5rem auto;
+  }
+
+
+/* Code block styling */
+pre {
+     background: #1a1a1a;
+    /* Dark grey background */
+    color: #f8f8f2;
+    /* Light text */
+    border-radius: 8px;
+    padding: 1rem;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.9rem;
+    overflow-x: auto;
+    /* Allow horizontal scrolling */
+    white-space: pre;
+    /* Preserve spacing */
+    display: block;
+  
+    margin: 1.5rem 0;
+}
+
+/* Code inside pre inherits color and layout */
+pre code {
+    background: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.gif-container img {
+   
+    box-shadow: 0 0 20px rgba(160, 31, 153, 0.81);
+   
+}
+
+.gif-container img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(160, 31, 153, 1);
+}
+</style>
+
+</section>
+</main>
+    <footer>
+    <p>© 2025 by Agyei Lomini. Powered by Jekyll.</p>
+</footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".fade-in");
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
+
+</body>
+
+</html>

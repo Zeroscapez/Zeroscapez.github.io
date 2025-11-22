@@ -13,7 +13,8 @@ title: Vampiric Ascension- Luna Siri vs The Sun
   <div class="project-info-grid">
     <div><strong>Project Type</strong><br>Bullet Hell Jam</div>
     <div><strong>Date</strong><br>June 2025</div>
-    <div><strong>itch.io Page</strong><br><a href="https://your-itch-link.com" target="_blank">Play Vampiric Ascension</a></div>
+    <div><strong>Status</strong><br>Demo</div>
+    <div><strong>itch.io Page</strong><br><a href="https://crestoriashiro.itch.io/vampiric-pantheon" target="_blank">Play Vampiric Ascension</a></div>
     <div><strong>Github</strong><br><a href="https://github.com/Zeroscapez/UnstableBullet" target="_blank">View Project</a></div>
     <div><strong>Engine</strong><br>Unity Engine 6</div>
     <div><strong>Role</strong><br>Lead Programmer/Designer</div>

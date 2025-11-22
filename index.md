@@ -25,21 +25,22 @@ title: Home
       </div>
     </a>
 
-    <a href="/projects/project-cultivation" class="project" target="_blank">
-      <img src="{{ 'assets/images/onceunreal/title.png' | relative_url }}" alt="Another Project">
-      <div class="overlay">
-        <div class="overlay-text">
-          <p>Once</p>
-          <span>View Project →</span>
-        </div>
-      </div>
-    </a>
 
      <a href="/projects/project-cultivation" class="project" target="_blank">
       <img src="{{ 'assets/images/cultivate/title.png' | relative_url }}" alt="Another Project">
       <div class="overlay">
         <div class="overlay-text">
           <p>Project: Cultivation</p>
+          <span>View Project →</span>
+        </div>
+      </div>
+    </a>
+
+     <a href="/projects/inverse" class="project" target="_blank">
+      <img src="{{ 'assets/images/inverse/title.png' | relative_url }}" alt="Another Project">
+      <div class="overlay">
+        <div class="overlay-text">
+          <p>Inverse</p>
           <span>View Project →</span>
         </div>
       </div>
@@ -56,11 +57,14 @@ title: Home
     </a>
 
 
-     <a href="/projects/project-cultivation" class="project" target="_blank">
-      <img src="{{ 'assets/images/inverse/title.png' | relative_url }}" alt="Another Project">
+    
+
+    
+    <a href="/projects/project-cultivation" class="project" target="_blank">
+      <img src="{{ 'assets/images/onceunreal/title.png' | relative_url }}" alt="Another Project">
       <div class="overlay">
         <div class="overlay-text">
-          <p>Inverse</p>
+          <p>Once</p>
           <span>View Project →</span>
         </div>
       </div>

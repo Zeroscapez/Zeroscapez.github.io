@@ -16,7 +16,7 @@ title: Home
   <div class="projects-grid">
 
     <a href="/projects/vampiric-ascension" class="project" target="_blank">
-      <img src="{{ 'assets\images\vamphell\title.png' | relative_url }}" alt="Vampiric Ascension">
+      <img src="{{ 'assets/images/vamphell/title.png' | relative_url }}" alt="Vampiric Ascension">
       <div class="overlay">
         <div class="overlay-text">
           <p>Vampiric Ascension: Luna Siri vs The Sun</p>

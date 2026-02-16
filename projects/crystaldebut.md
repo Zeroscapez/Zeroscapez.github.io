@@ -1,0 +1,160 @@
+---
+layout: default
+title: Vampiric Ascension- Luna Siri vs The Sun
+---
+
+<section class="project-hero" style="background-image: url('{{ 'assets/images/crystaldebut/MainMenu.png' | relative_url }}');">
+  <div class="overlay">
+    <h1>Crystal's Debut</h1>
+  </div>
+</section>
+
+<section class="project-details">
+  <div class="project-info-grid">
+    <div><strong>Project Type</strong><br>Pirate Jam 18</div>
+    <div><strong>Date</strong><br>Jan 2025</div>
+    <div><strong>Status</strong><br>Prototype</div>
+    <div><strong>itch.io Page</strong><br><a href="https://crestoriashiro.itch.io/eldritch-vtuber" target="_blank">Play Crystal's Debut</a></div>
+    <div><strong>Github</strong><br><a href="https://github.com/Zeroscapez/EldritchVtuber" target="_blank">View Project</a></div>
+    <div><strong>Engine</strong><br>Unity Engine 6</div>
+    <div><strong>Roles</strong><br>Lead Programmer, Game Designer, Director</div>
+  </div>
+
+  <p class="project-description">
+ The player plays as Crystal, a newly hired streamer and follows requests from chat. Requests include interacting with the computer on the screen to complete actions to raise her approval meter. The actions range from minigames, interacting with applications on the computer, to messing with Crystal’s pet Gerbil Kevin.
+  </p>
+
+  <div class="media-gallery">
+    <img src="{{ 'assets/images/vamphell/Vampgame.gif' | relative_url }}" alt="Screenshot 1">
+    <img src="{{ 'assets/images/vamphell/gameshot.jpg' | relative_url }}" alt="Screenshot 1">
+    <img src="{{ 'assets/images/vamphell/NHhPov.png' | relative_url }}" alt="Screenshot 2">
+    <img src="{{ 'assets/images/crystaldebut/MainMenu.png' | relative_url }}" alt="Screenshot 3">
+  </div>
+</section>
+
+<section class="project-section fade-in">
+  <h2>Introduction</h2>
+  <p>
+    <em>Vampiric Ascension</em> was developed as an exploration of bullet hell design principles, with a focus on replicating and understanding the mechanics that define the <em>Touhou Project</em> series. The project emphasizes precision movement, readable bullet density, and player reward through a grazing system that balances tension and flow.
+  </p>
+  <p>
+    Built in Unity for Bullet Hell Jam 6, the game integrates a multi-phase boss AI, infinite scrolling backgrounds, and a tightly tuned player controller to maintain responsiveness during high-intensity sequences.
+  </p>
+  <p>
+    The goal was to capture the essence of danmaku gameplay — clarity within chaos — while building a solid foundation for scalable enemy and bullet system design.
+  </p>
+</section>
+
+<section class="project-section fade-in">
+  <h2>Graze Mechanic Breakdown</h2>
+  <p>
+    One of my goals with <em>Vampiric Ascension</em> was to capture the thrill of the Graze mechanic from the <em>Touhou Project</em> series — rewarding players for narrowly dodging bullets without taking damage. In researching how Touhou handled this, I found that players could actually touch bullets visually and still count it as a graze. That meant I needed a more nuanced detection system than a single collider could offer.
+  </p>
+  <p>
+    To achieve this, I built a two-collider system around the player: an outer collider for grazing detection and an inner one for actual hits. When a bullet enters the outer collider, it's tracked in a <code>HashSet</code> until it either hits the player or exits safely. If it exits without colliding with the inner hitbox, it's marked as a graze and rewards the player with score and energy. This setup efficiently handles bullet tracking and perfectly recreates that tense, rewarding feeling of brushing past danger — a small risk that pays off in style and satisfaction.
+  </p>
+
+  <div class="gif-container fade-in">
+    <img src="/assets/images/vamphell/Graze.gif" alt="Graze mechanic demo" />
+  </div>
+</section>
+
+<section class="project-section fade-in">
+  <h2>Bomb Mechanic Breakdown</h2>
+  <p>
+    One of my additional goals with <em>Vampiric Ascension</em> was to recreate the dramatic 
+    <strong>bomb mechanic</strong> seen throughout the <em>Touhou Project</em> series. 
+    In classic danmaku fashion, activating a bomb clears the screen of all enemy projectiles, 
+    offering players a brief moment of safety while rewarding them with points based on the number of bullets destroyed.
+  </p>
+
+  <p>
+    To achieve this, I implemented a system called <code>GigaCrash()</code>. 
+    When triggered, it scans the scene for all active <code>EnemyBullet</code> instances, removes them, 
+    and calculates a score bonus proportional to the number of bullets cleared. 
+    The system also consumes a <em>Sigil</em> — a limited resource that prevents overuse and adds a strategic layer to bomb activation.
+  </p>
+
+  <p>
+    This mechanic not only mirrors the explosive spectacle and tactical relief of Touhou’s bombs 
+    but also reinforces a high-risk, high-reward loop. 
+    Players must decide whether to spend their limited Sigils for survival or conserve them to maximize score potential.
+  </p>
+
+  <div class="code-block fade-in">
+    <pre><code class="language-csharp">
+private void GigaCrash()
+{
+    EnemyBullet[] enemyBullets = FindObjectsOfType&lt;EnemyBullet&gt;();
+
+    int bulletsCleared = 0;
+    int pointsGained = 500;
+
+    if (PlayerScoreManager.Instance.sigils &gt;= 1)
+    {
+        PlayerScoreManager.Instance.RemoveSigil();
+
+        foreach (EnemyBullet bullet in enemyBullets)
+        {
+            if (bullet != null)
+            {
+                bullet.ReturnToPool();
+                bulletsCleared++;
+            }
+        }
+
+        PlayerScoreManager.Instance.AddScore(bulletsCleared * pointsGained);
+
+        Debug.Log($"Cleared {bulletsCleared} bullets and awarded {bulletsCleared * pointsGained} points.");
+    }
+}
+    </code></pre>
+  </div>
+</section>
+
+
+<section class="project-section fade-in">
+  <h2>Boss AI Breakdown</h2>
+  <p>
+    Every bullet hell needs a memorable boss, and <em>The Sun</em> was designed to push players to their limits. 
+    I wanted to build a boss that could dynamically change its attack patterns and movement behavior 
+    based on health thresholds — creating escalating tension and rewarding adaptability.
+  </p>
+
+  <p>
+    The <strong>Sun AI</strong> uses a state-driven approach powered by an enumeration, 
+    <code>TheSunBossState</code>, which defines each phase of the battle. 
+    As the boss’s health drops, it transitions through multiple attack phases — 
+    each introducing new spawner configurations, bullet patterns, and movement logic.
+  </p>
+
+  <p>
+    Each phase initializes its own set of <code>BulletSpawner</code> instances with distinct parameters: 
+    firing rates, spread angles, rotation speeds, and even homing behavior. 
+    These spawners are created and destroyed on the fly to ensure smooth transitions and 
+    keep the encounter visually engaging without overloading the scene.
+  </p>
+
+  <p>
+    During <em>Phase 2 Part 2</em>, the boss gains mobility, moving between random points in the upper half of the play area. 
+    This forces players to reposition while dodging fan-like bullet barrages. 
+    By <em>Phase 3</em>, the entire screen becomes a chaotic dance of rotating explosion patterns, 
+    giving players one final test of reflex and endurance.
+  </p>
+
+  <p>
+    Once defeated, the boss triggers score calculation and clears all active spawners — 
+    wrapping up the battle with a satisfying conclusion both visually and mechanically.
+  </p>
+
+  <div class="gif-grid fade-in">
+    <img src="/assets/images/vamphell/sunphase1.gif" alt="Sun Phase 1 Boss AI" />
+    <img src="/assets/images/vamphell/sunphase2.gif" alt="Sun Phase 2 Boss AI" />
+    <img src="/assets/images/vamphell/sunphase22.gif" alt="Sun Phase 22 Boss AI" />
+    <img src="/assets/images/vamphell/sunphase3.gif" alt="Sun Phase 3 Boss AI" />
+  </div>
+</section>
+
+
+
+

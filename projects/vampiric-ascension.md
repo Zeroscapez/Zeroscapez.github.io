@@ -17,7 +17,7 @@ title: Vampiric Ascension- Luna Siri vs The Sun
     <div><strong>itch.io Page</strong><br><a href="https://crestoriashiro.itch.io/vampiric-pantheon" target="_blank">Play Vampiric Ascension</a></div>
     <div><strong>Github</strong><br><a href="https://github.com/Zeroscapez/UnstableBullet" target="_blank">View Project</a></div>
     <div><strong>Engine</strong><br>Unity Engine 6</div>
-    <div><strong>Role</strong><br>Lead Programmer/Designer</div>
+    <div><strong>Role</strong><br>Project Manager Lead Programmer, Lead Game Designer</div>
     <div><strong>Team Size</strong><br>2</div>
   </div>
 
@@ -156,6 +156,52 @@ private void GigaCrash()
     <img src="/assets/images/vamphell/sunphase3.gif" alt="Sun Phase 3 Boss AI" />
   </div>
 </section>
+
+<style>
+  .project-section h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    border-bottom: 2px solid #4AB3F4;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .gif-container img {
+    width: 80%;
+    max-width: 800px;
+    border-radius: 8px;
+    display: block;
+    margin: 1.5rem auto;
+    box-shadow: 0 0 20px rgba(160, 31, 153, 0.81);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .gif-container img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(160, 31, 153, 1);
+  }
+
+  pre {
+    background: #1a1a1a;
+    color: #f8f8f2;
+    border-radius: 8px;
+    padding: 1rem;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.9rem;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin: 1.5rem 0;
+  }
+
+  pre code {
+    background: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+  }
+</style>
 
 
 

@@ -13,11 +13,10 @@ title: Vampiric Ascension- Luna Siri vs The Sun
   <div class="project-info-grid">
     <div><strong>Project Type</strong><br>Pirate Jam 18</div>
     <div><strong>Date</strong><br>Jan 2025</div>
-    <div><strong>Status</strong><br>Prototype</div>
+    <div><strong>Status</strong><br>In Development</div>
     <div><strong>itch.io Page</strong><br><a href="https://crestoriashiro.itch.io/eldritch-vtuber" target="_blank">Play Crystal's Debut</a></div>
-    <div><strong>Github</strong><br><a href="https://github.com/Zeroscapez/EldritchVtuber" target="_blank">View Project</a></div>
-    <div><strong>Engine</strong><br>Unity Engine 6</div>
-    <div><strong>Roles</strong><br>Lead Programmer, Game Designer, Director</div>
+    <div><strong>Engine</strong><br>Unity Engine</div>
+    <div><strong>Roles</strong><br>Project Manager, Lead Programmer, Lead Game Designer</div>
   </div>
 
   <p class="project-description">
@@ -25,9 +24,10 @@ title: Vampiric Ascension- Luna Siri vs The Sun
   </p>
 
   <div class="media-gallery">
-    <img src="{{ 'assets/images/vamphell/Vampgame.gif' | relative_url }}" alt="Screenshot 1">
-    <img src="{{ 'assets/images/vamphell/gameshot.jpg' | relative_url }}" alt="Screenshot 1">
-    <img src="{{ 'assets/images/vamphell/NHhPov.png' | relative_url }}" alt="Screenshot 2">
+    <img src="{{ 'assets\images\crystaldebut\CrystalDebut1.jpg' | relative_url }}" alt="Screenshot 1">
+    <img src="{{ 'assets\images\crystaldebut\CrystalDebut2.jpg' | relative_url }}" alt="Screenshot 1">
+    <img src="{{ 'assets\images\crystaldebut\CrystalDebut3.jpg' | relative_url }}" alt="Screenshot 2">
+    <img src="{{ 'assets\images\crystaldebut\CrystalDebut4.jpg' | relative_url }}" alt="Screenshot 2">
     <img src="{{ 'assets/images/crystaldebut/MainMenu.png' | relative_url }}" alt="Screenshot 3">
   </div>
 </section>
@@ -155,6 +155,50 @@ private void GigaCrash()
   </div>
 </section>
 
+<style>
+  .project-section h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    border-bottom: 2px solid #4AB3F4;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
 
+  .gif-container img {
+    width: 80%;
+    max-width: 800px;
+    border-radius: 8px;
+    display: block;
+    margin: 1.5rem auto;
+    box-shadow: 0 0 20px rgba(160, 31, 153, 0.81);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .gif-container img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(160, 31, 153, 1);
+  }
+
+  pre {
+    background: #1a1a1a;
+    color: #f8f8f2;
+    border-radius: 8px;
+    padding: 1rem;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.9rem;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin: 1.5rem 0;
+  }
+
+  pre code {
+    background: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+  }
+</style>
 
 

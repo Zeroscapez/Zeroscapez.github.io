@@ -17,7 +17,7 @@ title: Project Cultivation
     <div><strong>itch.io Page</strong><br><a href="https://crestoriashiro.itch.io/project-cultivation" target="_blank">Play Project Cultivation</a></div>
     <div><strong>Github</strong><br><a href="https://github.com/Zeroscapez/Project_Cultivation" target="_blank">View Project</a></div>
     <div><strong>Engine</strong><br>Unity Engine 6</div>
-    <div><strong>Role</strong><br>Lead Programmer / Designer</div>
+    <div><strong>Role</strong><br>Project Manager, Lead Programmer, Game Designer</div>
     <div><strong>Team Size</strong><br>4</div>
   </div>
 
@@ -46,6 +46,7 @@ title: Project Cultivation
   <p>
     In <em>Project Cultivation</em>, I implemented a time stop mechanic that allows players to freeze the world — halting physics, movement, and other dynamic systems — while keeping the player character free to act. To make this possible, I created a flexible interface-driven system using the ITimeStoppable interface and this TimeStopObject component.
   </p>
+
   <p>
     Each object that should react to a time freeze simply implements ITimeStoppable and registers itself with the TimeStopManager. This makes the system scalable — any new enemy, projectile, or physics object can easily join the time system without modifying core logic.
   </p>
@@ -53,56 +54,56 @@ title: Project Cultivation
   <p>
     The TimeStopObject script handles physics objects by saving their velocity and stopping their motion during a time stop, then restoring it when time resumes:
   </p>
-
-  {% highlight csharp %}
-using UnityEngine;
-
-public class TimeStopObject : MonoBehaviour, ITimeStoppable
-{
-    public Rigidbody rb;
-    private Vector3 savedVelocity;
-    [SerializeField] private bool isStopped = false;
-
-    private void OnEnable()
+  <div class="code-block fade-in">
+  <pre>
+  <code class="language-csharp">
+    using UnityEngine;
+    public class TimeStopObject : MonoBehaviour, ITimeStoppable
     {
-        TimeStopManager.Instance?.Register(this);
+      public Rigidbody rb;
+      private Vector3 savedVelocity;
+      [SerializeField] private bool isStopped = false;
+      
+
+      void Start()
+      {
+          rb = GetComponent&lt;Rigidbody&gt;();
+      }
+
+      private void OnEnable()
+      {
+          TimeStopManager.Instance?.Register(this);
+      }
+      private void OnDisable()
+      {
+          TimeStopManager.Instance?.Unregister(this);
+      }
+
+       public void OnTimeResume()
+      {
+          if (!isStopped) return;
+
+          rb.isKinematic = false;
+          rb.linearVelocity = savedVelocity;
+          isStopped = false;
+      }
+
+       public void OnTimeStop()
+      {
+          if (isStopped) return;
+
+          savedVelocity = rb.linearVelocity;
+          rb.linearVelocity = Vector3.zero;
+          rb.isKinematic = true;
+          isStopped = true;
+      }
+      
     }
-
-    private void OnDisable()
-    {
-        TimeStopManager.Instance?.Unregister(this);
-    }
-
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
-
-    public void OnTimeResume()
-    {
-        if (!isStopped) return;
-
-        rb.isKinematic = false;
-        rb.linearVelocity = savedVelocity;
-        isStopped = false;
-    }
-
-    public void OnTimeStop()
-    {
-        if (isStopped) return;
-
-        savedVelocity = rb.linearVelocity;
-        rb.linearVelocity = Vector3.zero;
-        rb.isKinematic = true;
-        isStopped = true;
-    }
-}
-  {% endhighlight %}
-
-  <div class="gif-container fade-in">
-    <img src="{{ 'assets/images/cultivate/timestopgameplay.gif' | relative_url }}" alt="Combat Demo">
+  </code>
+  </pre>
   </div>
 </section>
+
 
 <section class="project-section fade-in">
   <h2>Rewind Mechanic & Rewind Ghost</h2>
@@ -287,33 +288,27 @@ public class WorldSlowdownManager : MonoBehaviour
   }
 
 
-/* Code block styling */
-pre {
-     background: #1a1a1a;
-    /* Dark grey background */
+ pre {
+    background: #1a1a1a;
     color: #f8f8f2;
-    /* Light text */
     border-radius: 8px;
     padding: 1rem;
     font-family: 'JetBrains Mono', 'Fira Code', monospace;
     font-size: 0.9rem;
     overflow-x: auto;
-    /* Allow horizontal scrolling */
-    white-space: pre;
-    /* Preserve spacing */
-    display: block;
-  
+    white-space: pre-wrap;
+    word-break: break-word;
     margin: 1.5rem 0;
-}
+  }
 
-/* Code inside pre inherits color and layout */
-pre code {
+  pre code {
     background: none;
     color: inherit;
     font-family: inherit;
     font-size: inherit;
-}
+  }
 
+  
 .gif-container img {
    
     box-shadow: 0 0 20px rgba(74, 178, 230, 0.81);

@@ -1,0 +1,96 @@
+---
+layout: default
+---
+
+<!-- =========================
+     PROJECT HERO
+========================= -->
+<section class="project-hero" style="background-image: url('{{ page.hero | relative_url }}');">
+    <div class="overlay">
+        <div class="page-container">
+            <h1>{{ page.title }}</h1>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+     PROJECT META INFO
+========================= -->
+<section class="project-details">
+
+    <div class="project-info-grid">
+
+        {% if page.type %}
+        <div>
+            <strong>Project Type</strong>
+            {{ page.type }}
+        </div>
+        {% endif %}
+
+        {% if page.date %}
+        <div>
+            <strong>Date</strong>
+            {{ page.date }}
+        </div>
+        {% endif %}
+
+        {% if page.status %}
+        <div>
+            <strong>Status</strong>
+            {{ page.status }}
+        </div>
+        {% endif %}
+
+        {% if page.engine %}
+        <div>
+            <strong>Engine</strong>
+            {{ page.engine }}
+        </div>
+        {% endif %}
+
+        {% if page.role %}
+        <div>
+            <strong>Role</strong>
+            {{ page.role }}
+        </div>
+        {% endif %}
+
+        {% if page.team %}
+        <div>
+            <strong>Team Size</strong>
+            {{ page.team }}
+        </div>
+        {% endif %}
+
+        {% if page.itch %}
+        <div>
+            <strong>itch.io</strong><br>
+            <a href="{{ page.itch }}" target="_blank">Play</a>
+        </div>
+        {% endif %}
+
+        {% if page.github %}
+        <div>
+            <strong>GitHub</strong><br>
+            <a href="{{ page.github }}" target="_blank">View</a>
+        </div>
+        {% endif %}
+
+    </div>
+
+    {% if page.description %}
+    <p class="project-description">
+        {{ page.description }}
+    </p>
+    {% endif %}
+
+</section>
+
+<!-- =========================
+     PROJECT CONTENT
+========================= -->
+<main class="project-content">
+
+    {{ content }}
+
+</main>

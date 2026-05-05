@@ -220,7 +220,7 @@ for (int i = 0; i &lt; row.tiles.Length; i++)
   }
   .gif-container img:hover {
     transform: scale(1.03);
-    box-shadow: 0 0 25px rgba(160, 31, 153, 1);
+    box-shadow: 0 0 25px rgb(255, 104, 217);
   }
   pre {
     background: #1a1a1a;

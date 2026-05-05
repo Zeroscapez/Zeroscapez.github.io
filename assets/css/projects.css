@@ -4,7 +4,7 @@
 
 .project-hero {
     position: relative;
-    height: 420px;
+    height: 740px;
 
     background-size: cover;
     background-position: center;
@@ -118,7 +118,7 @@
 }
 
 .project-section p {
-
+    font-size: 24px;
     margin-bottom: 16px;
 }
 

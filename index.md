@@ -91,6 +91,7 @@ title: Home
       </a>
       <div class="project-info">
         <h3>Crystal's Debut</h3>
+        <h4 style="color:yellow;">Pirate Jam 18 Winner</h4>
         <p class="project-role">PM · Lead Programmer · Lead Designer</p>
         <p class="project-desc">Play as Crystal, a livestreamer managing viewer requests in real time to maintain approval ratings.</p>
         <div class="project-tags">

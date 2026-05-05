@@ -158,6 +158,9 @@ private void GigaCrash()
 </section>
 
 <style>
+  .project-hero{
+    
+  }
   .project-section h2 {
     font-size: 1.6rem;
     font-weight: 700;

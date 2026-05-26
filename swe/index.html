@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agyei Lomini — Software Engineer</title>
+    <meta name="description"
+        content="Software Engineer based in Atlanta, GA. Building back-end systems, REST APIs, and full-stack applications in C#, .NET, and Node.js.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg: #fafaf8;
+            --bg-card: #ffffff;
+            --bg-subtle: #f4f3ee;
+            --text: #1a1a18;
+            --text-muted: #6b6b67;
+            --text-light: #9b9b96;
+            --border: rgba(0, 0, 0, 0.07);
+            --border-mid: rgba(0, 0, 0, 0.12);
+            --border-strong: rgba(0, 0, 0, 0.2);
+            --tag-bg: #f0efe9;
+            --tag-text: #4a4a46;
+            --green: #4caf7d;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1.1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(250, 250, 248, 0.9);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-name {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1rem;
+            color: var(--text);
+            text-decoration: none;
+            letter-spacing: -0.01em;
+        }
+
+        .nav-badge {
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            padding: 0.2rem 0.6rem;
+            border: 1px solid var(--border-mid);
+            border-radius: 4px;
+            background: var(--bg-subtle);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+        .nav-links .nav-switch {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            border: 1px solid var(--border-mid);
+            padding: 0.3rem 0.75rem;
+            border-radius: 5px;
+            transition: all 0.2s;
+        }
+
+        .nav-links .nav-switch:hover {
+            color: var(--text);
+            border-color: var(--border-strong);
+        }
+
+        /* LAYOUT */
+        main {
+            padding-top: 4.5rem;
+        }
+
+        section {
+            padding: 5rem 2rem;
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 82vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 7rem;
+            padding-bottom: 4rem;
+        }
+
+        .hero-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.75rem;
+            opacity: 0;
+            animation: fadeUp 0.5s ease forwards 0.1s;
+        }
+
+        .eyebrow-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--green);
+        }
+
+        .eyebrow-text {
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-light);
+        }
+
+        .hero h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            color: var(--text);
+            margin-bottom: 1.75rem;
+            opacity: 0;
+            animation: fadeUp 0.5s ease forwards 0.22s;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--text-muted);
+        }
+
+        .hero-bio {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            max-width: 500px;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            animation: fadeUp 0.5s ease forwards 0.35s;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 0.875rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeUp 0.5s ease forwards 0.48s;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.18s;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--text);
+            color: var(--bg);
+        }
+
+        .btn-primary:hover {
+            background: #2e2e2b;
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border-mid);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--border-strong);
+            transform: translateY(-1px);
+        }
+
+        /* SECTION HEADERS */
+        .section-label {
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(1.75rem, 4vw, 2.4rem);
+            letter-spacing: -0.025em;
+            margin-bottom: 0.875rem;
+            line-height: 1.15;
+        }
+
+        .section-intro {
+            color: var(--text-muted);
+            font-weight: 300;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            max-width: 500px;
+            font-size: 0.95rem;
+        }
+
+        /* PROJECTS */
+        .projects-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .project-card {
+            display: block;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.22s;
+            position: relative;
+        }
+
+        .project-card:hover {
+            border-color: var(--border-mid);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 28px rgba(0, 0, 0, 0.06);
+        }
+
+        .project-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-name {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.25rem;
+            letter-spacing: -0.015em;
+            line-height: 1.2;
+        }
+
+        .project-arrow {
+            color: var(--text-light);
+            font-size: 1rem;
+            transition: transform 0.2s, color 0.2s;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .project-card:hover .project-arrow {
+            transform: translate(3px, -3px);
+            color: var(--text);
+        }
+
+        .project-desc {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .tag {
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            letter-spacing: 0.02em;
+        }
+
+        .project-footer {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding-top: 1.1rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.775rem;
+            color: var(--text-light);
+            font-weight: 300;
+        }
+
+        .live-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--green);
+            flex-shrink: 0;
+        }
+
+        /* SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-group {
+            padding: 1.25rem;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--bg-card);
+        }
+
+        .skill-group-title {
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 0.875rem;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+        }
+
+        .skill-item {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        /* ABOUT */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-text p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            line-height: 1.85;
+            margin-bottom: 1rem;
+        }
+
+        .detail-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 0.875rem;
+        }
+
+        .detail-card {
+            padding: 0.9rem 1.1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--bg-card);
+        }
+
+        .detail-label {
+            font-size: 0.68rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 0.3rem;
+        }
+
+        .detail-value {
+            font-size: 0.85rem;
+            color: var(--text);
+        }
+
+        .magna-badge {
+            display: inline-block;
+            font-size: 0.68rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 0.2rem 0.55rem;
+            border-radius: 4px;
+            background: #fdf6e3;
+            color: #8a6800;
+            border: 1px solid #f0d870;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+
+        /* CONTACT */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 0.875rem;
+            padding: 1.1rem 1.25rem;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--bg-card);
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s;
+        }
+
+        .contact-card:hover {
+            border-color: var(--border-mid);
+            transform: translateY(-1px);
+        }
+
+        .contact-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 7px;
+            background: var(--bg-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-icon svg {
+            width: 17px;
+            height: 17px;
+            stroke: var(--text-muted);
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .contact-label {
+            font-size: 0.68rem;
+            color: var(--text-light);
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            font-weight: 500;
+            margin-bottom: 0.2rem;
+        }
+
+        .contact-value {
+            font-size: 0.85rem;
+            color: var(--text);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.78rem;
+            color: var(--text-light);
+            border-top: 1px solid var(--border);
+            font-weight: 300;
+        }
+
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: var(--text);
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(14px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.55s ease, transform 0.55s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 640px) {
+            nav {
+                padding: 1rem 1.25rem;
+            }
+
+            .nav-badge {
+                display: none;
+            }
+
+            .nav-links {
+                gap: 1.25rem;
+            }
+
+            section {
+                padding: 3.5rem 1.25rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero {
+                min-height: 72vh;
+                padding-top: 6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-left">
+            <a href="#hero" class="nav-name">Agyei Lomini</a>
+            <span class="nav-badge">Software Engineer</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://zeroscapez.github.io" class="nav-switch">Game Dev →</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero" id="hero">
+            <div class="hero-eyebrow">
+                <span class="eyebrow-dot"></span>
+                <span class="eyebrow-text">Open to opportunities · Atlanta, GA</span>
+            </div>
+            <h1>Building<br><em>back-end</em><br>systems.</h1>
+            <p class="hero-bio">CS graduate building REST APIs, back-end infrastructure, and full-stack applications.
+                Security-conscious, CI/CD-driven, and focused on code that ships cleanly.</p>
+            <div class="hero-ctas">
+                <a href="#projects" class="btn btn-primary">View my work</a>
+                <a href="https://github.com/Zeroscapez" target="_blank" class="btn btn-outline">GitHub</a>
+                <a href="#contact" class="btn btn-outline">Get in touch</a>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="reveal">
+            <p class="section-label">Selected Work</p>
+            <h2 class="section-title">Projects</h2>
+            <p class="section-intro">Back-end APIs, desktop applications, and mobile apps — each built and shipped end
+                to end.</p>
+
+            <div class="projects-stack">
+
+                <a href="https://github.com/Zeroscapez/marketzone-api" target="_blank" class="project-card">
+                    <div class="project-top">
+                        <h3 class="project-name">MarketZone API</h3>
+                        <span class="project-arrow">↗</span>
+                    </div>
+                    <p class="project-desc">Production REST API for a full e-commerce marketplace. Handles user
+                        registration and JWT authentication, product listings, shopping cart, Stripe payment processing,
+                        order management with billing and shipping addresses, reward points, and automated order
+                        confirmation emails. Deployed live on Vercel.</p>
+                    <div class="project-tags">
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Express</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">JWT</span>
+                        <span class="tag">bcrypt</span>
+                        <span class="tag">Stripe</span>
+                        <span class="tag">Nodemailer</span>
+                        <span class="tag">Helmet.js</span>
+                        <span class="tag">Vercel</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="live-dot"></span>
+                        <span>Live at marketzone-api.vercel.app · REST API · 3 contributors</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/Zeroscapez/MusicPlayerProject" target="_blank" class="project-card">
+                    <div class="project-top">
+                        <h3 class="project-name">Music Player</h3>
+                        <span class="project-arrow">↗</span>
+                    </div>
+                    <p class="project-desc">Full-featured desktop music player in C# and WinForms. Event-driven playback
+                        engine, audio processing via NAudio, metadata extraction via TagLib#, and proper resource
+                        disposal. Ships with a complete GitHub Actions CI/CD pipeline — separate build, test, and
+                        release workflows — automated Dependabot dependency management, and semantic versioned releases.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">C#</span>
+                        <span class="tag">.NET</span>
+                        <span class="tag">WinForms</span>
+                        <span class="tag">NAudio</span>
+                        <span class="tag">GitHub Actions</span>
+                        <span class="tag">CI/CD</span>
+                        <span class="tag">Dependabot</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="live-dot"></span>
+                        <span>64 workflow runs · Semantic versioning · v0.1.6</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/dmevans27/MADDeliveryApp" target="_blank" class="project-card">
+                    <div class="project-top">
+                        <h3 class="project-name">MAD Delivery App</h3>
+                        <span class="project-arrow">↗</span>
+                    </div>
+                    <p class="project-desc">Cross-platform mobile delivery app built with Flutter and Firebase. Dual
+                        user and driver role architecture, real-time order tracking, nested Firestore review system, and
+                        Firebase Authentication. Built as a collaborative team project with a live demo.</p>
+                    <div class="project-tags">
+                        <span class="tag">Flutter</span>
+                        <span class="tag">Dart</span>
+                        <span class="tag">Firebase</span>
+                        <span class="tag">Firestore</span>
+                        <span class="tag">Mobile</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="live-dot"></span>
+                        <span>Team project · Dual-role architecture · Demo available</span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="reveal">
+            <p class="section-label">Technical Skills</p>
+            <h2 class="section-title">What I work with</h2>
+
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <p class="skill-group-title">Languages</p>
+                    <div class="skill-list">
+                        <span class="skill-item">C# / .NET</span>
+                        <span class="skill-item">JavaScript / Node.js</span>
+                        <span class="skill-item">Dart / Flutter</span>
+                        <span class="skill-item">SQL</span>
+                        <span class="skill-item">HTML / CSS</span>
+                        <span class="skill-item">Java</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <p class="skill-group-title">Back-End</p>
+                    <div class="skill-list">
+                        <span class="skill-item">Express.js</span>
+                        <span class="skill-item">ASP.NET Core</span>
+                        <span class="skill-item">REST API design</span>
+                        <span class="skill-item">JWT authentication</span>
+                        <span class="skill-item">MySQL / Firestore</span>
+                        <span class="skill-item">Stripe API</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <p class="skill-group-title">DevOps & Tools</p>
+                    <div class="skill-list">
+                        <span class="skill-item">GitHub Actions</span>
+                        <span class="skill-item">CI/CD pipelines</span>
+                        <span class="skill-item">Dependabot</span>
+                        <span class="skill-item">Git / GitHub</span>
+                        <span class="skill-item">Vercel</span>
+                        <span class="skill-item">Firebase</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <p class="skill-group-title">Practices</p>
+                    <div class="skill-list">
+                        <span class="skill-item">Security-conscious dev</span>
+                        <span class="skill-item">OOP & system design</span>
+                        <span class="skill-item">Semantic versioning</span>
+                        <span class="skill-item">Team collaboration</span>
+                        <span class="skill-item">Code review</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="reveal">
+            <p class="section-label">Background</p>
+            <h2 class="section-title">About me</h2>
+
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>I'm a software engineer based in Atlanta, Georgia. I build back-end systems and full-stack
+                        applications with a focus on clean architecture, security-conscious design, and shipping things
+                        that actually work.</p>
+                    <p>My work spans production REST APIs in Node.js, desktop applications in C# and .NET, and
+                        cross-platform mobile apps in Flutter. I set up CI/CD pipelines, write clear documentation, and
+                        care about the details that matter in production.</p>
+                    <p>I'm currently deepening my expertise in back-end engineering, ASP.NET Core, Azure, and
+                        cybersecurity — and actively looking for software engineering roles in Atlanta.</p>
+                </div>
+                <div class="detail-stack">
+                    <div class="detail-card">
+                        <p class="detail-label">Education</p>
+                        <p class="detail-value">B.S. Computer Science <span class="magna-badge">Magna Cum Laude</span>
+                        </p>
+                    </div>
+                    <div class="detail-card">
+                        <p class="detail-label">University</p>
+                        <p class="detail-value">Georgia State University · 2021–2024</p>
+                    </div>
+                    <div class="detail-card">
+                        <p class="detail-label">Location</p>
+                        <p class="detail-value">Atlanta, Georgia · Open to hybrid</p>
+                    </div>
+                    <div class="detail-card">
+                        <p class="detail-label">Interests</p>
+                        <p class="detail-value">Back-end engineering · Cybersecurity · .NET ecosystem</p>
+                    </div>
+                    <div class="detail-card">
+                        <p class="detail-label">Also</p>
+                        <p class="detail-value">
+                            <a href="https://zeroscapez.github.io"
+                                style="color: var(--text-muted); text-decoration: none; border-bottom: 1px solid var(--border-mid);">Game
+                                developer →</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="reveal">
+            <p class="section-label">Get in touch</p>
+            <h2 class="section-title">Contact</h2>
+            <p class="section-intro">Open to software engineering and back-end roles in Atlanta. Feel free to reach out
+                directly.</p>
+
+            <div class="contact-grid">
+                <a href="mailto:agyeilomini@gmail.com" class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="contact-label">Email</p>
+                        <p class="contact-value">agyeilomini@gmail.com</p>
+                    </div>
+                </a>
+
+                <a href="https://github.com/Zeroscapez" target="_blank" class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="contact-label">GitHub</p>
+                        <p class="contact-value">Zeroscapez</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/agyei-lomini-067340266/" target="_blank" class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect x="2" y="9" width="4" height="12" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="contact-label">LinkedIn</p>
+                        <p class="contact-value">Agyei Lomini</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Agyei Lomini · Software Engineer · Atlanta, GA · <a href="https://zeroscapez.github.io">Game Dev Portfolio
+                →</a></p>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+
+</html>

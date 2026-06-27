@@ -5,7 +5,7 @@ title: Home
 
 <section class="hero">
   <div class="hero-text">
-    <p class="hero-label">Game Developer</p>
+    <p class="hero-label">Unity Game Developer</p>
     <h1 class="hero-name">Agyei<br>Lomini</h1>
     <p class="hero-tagline">Gameplay Programming · Systems Architecture · AI</p>
     <p>Enthusiastic game developer with a flair for Computer Science and Design. Hands-on experience in Unity and C#.</p>
@@ -26,14 +26,14 @@ title: Home
 <section class="projects-section">
   <div class="section-header">
     <h2>Projects</h2>
-    <span class="project-count">Projects</span>
+    <span class="project-count">5 Projects</span>
   </div>
 
   <div class="projects-grid">
 
     <article class="project-card">
       <a href="/projects/vampiric-ascension" class="project">
-        <img src="{{ 'assets/images/vamphell/title.png' | relative_url }}" alt="Vampiric Ascension">
+        <img src="{{ 'assets/images/vamphell/title.png' | relative_url }}" alt="Vampiric Ascension" loading="lazy">
         <div class="overlay">
           <span>View Project →</span>
         </div>
@@ -50,7 +50,7 @@ title: Home
 
     <article class="project-card">
       <a href="/projects/project-cultivation" class="project">
-        <img src="{{ 'assets/images/cultivate/title.png' | relative_url }}" alt="Project Cultivation">
+        <img src="{{ 'assets/images/cultivate/title.png' | relative_url }}" alt="Project Cultivation" loading="lazy">
         <div class="overlay">
           <span>View Project →</span>
         </div>
@@ -67,7 +67,7 @@ title: Home
 
     <article class="project-card">
       <a href="/projects/inverse" class="project">
-        <img src="{{ 'assets/images/inverse/title.png' | relative_url }}" alt="Inverse">
+        <img src="{{ 'assets/images/inverse/title.png' | relative_url }}" alt="Inverse" loading="lazy">
         <div class="overlay">
           <span>View Project →</span>
         </div>
@@ -84,14 +84,14 @@ title: Home
 
     <article class="project-card">
       <a href="/projects/crystaldebut" class="project">
-        <img src="{{ 'assets/images/crystaldebut/MainMenu.png' | relative_url }}" alt="Crystal's Debut">
+        <img src="{{ 'assets/images/crystaldebut/MainMenu.png' | relative_url }}" alt="Crystal's Debut" loading="lazy">
         <div class="overlay">
           <span>View Project →</span>
         </div>
       </a>
       <div class="project-info">
         <h3>Crystal's Debut</h3>
-        <h4 style="color:yellow;">Pirate Jam 18 Winner</h4>
+        <h4 class="badge-winner">Pirate Jam 18 Winner</h4>
         <p class="project-role">PM · Lead Programmer · Lead Designer</p>
         <p class="project-desc">Play as Crystal, a livestreamer managing viewer requests in real time to maintain approval ratings.</p>
         <div class="project-tags">
@@ -102,7 +102,7 @@ title: Home
 
     <article class="project-card">
       <div class="project no-link">
-        <img src="{{ 'assets/images/gshinobi/title.png' | relative_url }}" alt="Greatest Shinobi">
+        <img src="{{ 'assets/images/gshinobi/title.png' | relative_url }}" alt="Greatest Shinobi" loading="lazy">
         <div class="overlay">
           <span>Coming Soon</span>
         </div>
@@ -139,7 +139,6 @@ title: Home
       <span class="tag">Java</span>
       <span class="tag">JavaScript</span>
       <span class="tag">Dart</span>
-      <span class="tag">SQL</span>
       <span class="tag">HTML</span>
     </div>
 
@@ -172,4 +171,13 @@ title: Home
     </div>
   </div>
 
+</section>
+
+<section class="contact-section">
+  <h2>Get In Touch</h2>
+  <p>Open to game dev collaborations, internships, and full-time roles.</p>
+  <div class="contact-links">
+    <a href="mailto:agyeilomini@gmail.com" class="contact-btn">Email Me</a>
+    <a href="https://www.linkedin.com/in/agyei-lomini-067340266/" target="_blank" class="contact-btn contact-btn-outline">LinkedIn</a>
+  </div>
 </section>

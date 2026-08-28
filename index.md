@@ -26,10 +26,27 @@ title: Home
 <section class="projects-section">
   <div class="section-header">
     <h2>Projects</h2>
-    <span class="project-count">5 Projects</span>
+    <span class="project-count">6 Projects</span>
   </div>
 
   <div class="projects-grid">
+
+    <article class="project-card">
+      <a href="/projects/project-gold" class="project">
+        <img src="{{ 'assets/images/project-gold/title.png' | relative_url }}" alt="Project Gold" loading="lazy">
+        <div class="overlay">
+          <span>View Project →</span>
+        </div>
+      </a>
+      <div class="project-info">
+        <h3>Project Gold</h3>
+        <p class="project-role">Systems Programmer · Designer</p>
+        <p class="project-desc">Turn-based RPG combat systems: a data-driven character/skill/gear model plus a custom UI Toolkit editor tool for live-tuning it.</p>
+        <div class="project-tags">
+          <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">UI Toolkit</span><span class="tag">Systems Design</span>
+        </div>
+      </div>
+    </article>
 
     <article class="project-card">
       <a href="/projects/vampiric-ascension" class="project">

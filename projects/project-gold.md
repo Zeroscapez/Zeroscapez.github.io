@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Project Gold - Combat Systems & Party Stat Viewer
+accent: "#e6b64d"
 ---
 
 <section class="project-hero" style="background-image: url('{{ 'assets/images/project-gold/title.png' | relative_url }}');">
@@ -152,39 +153,3 @@ detailContainer.TrackSerializedObjectValue(currentSerializedObject, _ =>
     Party tabs are generated dynamically — one per roster member — and tinted per the character's Sin affiliation (Pride, Greed, Wrath, Envy, Gluttony, Lust, Sloth), using an inline style override that deliberately wins over the stylesheet's selection-state styling, so a tab's sin color stays visible whether or not it's the active tab.
   </p>
 </section>
-
-<style>
-  .project-section h2 {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #fff;
-    border-bottom: 2px solid #4AB3F4;
-    display: inline-block;
-    margin-bottom: 1rem;
-  }
-
-  .code-block img,
-  .media-gallery img {
-    border-radius: 8px;
-  }
-
-  pre {
-    background: #1a1a1a;
-    color: #f8f8f2;
-    border-radius: 8px;
-    padding: 1rem;
-    font-family: 'JetBrains Mono', 'Fira Code', monospace;
-    font-size: 0.9rem;
-    overflow-x: auto;
-    white-space: pre-wrap;
-    word-break: break-word;
-    margin: 1.5rem 0;
-  }
-
-  pre code {
-    background: none;
-    color: inherit;
-    font-family: inherit;
-    font-size: inherit;
-  }
-</style>

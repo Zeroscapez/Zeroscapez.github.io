@@ -19,7 +19,7 @@ title: Home
     </div>
   </div>
   <div class="hero-image">
-    <img src="{{ '/assets/images/banner.png' | relative_url }}" alt="Game Banner">
+    <img src="{{ 'assets/images/banner.png' | relative_url }}" alt="Game Banner">
   </div>
 </section>
 
@@ -31,7 +31,7 @@ title: Home
 
   <div class="projects-grid">
 
-    <article class="project-card">
+    <article class="project-card" style="--accent: #e6b64d;">
       <a href="/projects/project-gold" class="project">
         <img src="{{ 'assets/images/project-gold/title.png' | relative_url }}" alt="Project Gold" loading="lazy">
         <div class="overlay">
@@ -48,7 +48,7 @@ title: Home
       </div>
     </article>
 
-    <article class="project-card">
+    <article class="project-card" style="--accent: #ff4d6d;">
       <a href="/projects/vampiric-ascension" class="project">
         <img src="{{ 'assets/images/vamphell/title.png' | relative_url }}" alt="Vampiric Ascension" loading="lazy">
         <div class="overlay">
@@ -65,7 +65,7 @@ title: Home
       </div>
     </article>
 
-    <article class="project-card">
+    <article class="project-card" style="--accent: #51c5ff;">
       <a href="/projects/project-cultivation" class="project">
         <img src="{{ 'assets/images/cultivate/title.png' | relative_url }}" alt="Project Cultivation" loading="lazy">
         <div class="overlay">
@@ -82,7 +82,7 @@ title: Home
       </div>
     </article>
 
-    <article class="project-card">
+    <article class="project-card" style="--accent: #a685ff;">
       <a href="/projects/inverse" class="project">
         <img src="{{ 'assets/images/inverse/title.png' | relative_url }}" alt="Inverse" loading="lazy">
         <div class="overlay">
@@ -99,7 +99,7 @@ title: Home
       </div>
     </article>
 
-    <article class="project-card">
+    <article class="project-card" style="--accent: #ff6ec7;">
       <a href="/projects/crystaldebut" class="project">
         <img src="{{ 'assets/images/crystaldebut/MainMenu.png' | relative_url }}" alt="Crystal's Debut" loading="lazy">
         <div class="overlay">
@@ -117,13 +117,13 @@ title: Home
       </div>
     </article>
 
-    <article class="project-card">
-      <div class="project no-link">
+    <article class="project-card" style="--accent: #5ecb8f;">
+      <a href="/projects/gshinobi" class="project">
         <img src="{{ 'assets/images/gshinobi/title.png' | relative_url }}" alt="Greatest Shinobi" loading="lazy">
         <div class="overlay">
-          <span>Coming Soon</span>
+          <span>View Project →</span>
         </div>
-      </div>
+      </a>
       <div class="project-info">
         <h3>Greatest Shinobi</h3>
         <p class="project-role">PM · Lead Gameplay Programmer · Designer</p>

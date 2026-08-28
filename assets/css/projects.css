@@ -30,8 +30,9 @@
 .project-hero h1 {
     font-size: 44px;
     color: white;
-    padding: 0 20px;
+    padding: 0 20px 16px;
     max-width: 900px;
+    border-bottom: 3px solid var(--accent, #7aa2ff);
 }
 
 /* =========================
@@ -64,10 +65,11 @@
 
 .project-info-grid div:hover {
     transform: translateY(-4px);
+    border-color: var(--accent, #2a2f45);
 }
 
 .project-info-grid strong {
-    color: #7aa2ff;
+    color: var(--accent, #7aa2ff);
     font-size: 14px;
 }
 
@@ -112,9 +114,12 @@
 }
 
 .project-section h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
+    font-size: 1.6rem;
+    font-weight: 700;
     color: #ffffff;
+    border-bottom: 2px solid var(--accent, #7aa2ff);
+    display: inline-block;
+    margin-bottom: 1rem;
 }
 
 .project-section p {
@@ -127,10 +132,18 @@
 }
 
 .gif-container img {
-    width: 100%;
-    max-width: 700px;
+    width: 80%;
+    max-width: 800px;
+    display: block;
+    margin: 1.5rem auto;
+    border-radius: 8px;
+    box-shadow: 0 0 14px var(--accent, #7aa2ff);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-    border-radius: 10px;
+.gif-container img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 26px var(--accent, #7aa2ff);
 }
 
 .gif-grid {
@@ -158,21 +171,55 @@
 
 .code-block pre {
     background-color: #0d1117;
-
     padding: 20px;
-
     border-radius: 10px;
-
     overflow-x: auto;
-
-    border: 1px solid #2a2f45;
+    border: 1px solid var(--accent, #2a2f45);
 }
 
 .code-block code {
     font-family: Consolas, monospace;
     font-size: 14px;
-
     color: #e6edf3;
+}
+
+/* =========================
+   WINNER BANNER
+========================= */
+
+.winner-banner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #faeeda;
+    border: 1px solid #ef9f27;
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0 2rem;
+}
+
+.winner-trophy {
+    width: 44px;
+    height: 44px;
+    background: #ba7517;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.winner-trophy svg {
+    width: 22px;
+    height: 22px;
+    fill: #faeeda;
+}
+
+.winner-headline {
+    font-size: 30px;
+    font-weight: 600;
+    color: #633806;
+    margin: 0;
 }
 
 /* =========================

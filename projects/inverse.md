@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Inverse
+accent: "#a685ff"
 ---
 
 <section class="project-hero" style="background-image: url('{{ 'assets/images/inverse/title.png' | relative_url }}');">
@@ -15,7 +16,7 @@ title: Inverse
     <div><strong>Date</strong><br>April 2025</div>
     <div><strong>Status</strong><br>Prototype</div>
     <div><strong>itch.io Page</strong><br><a href="https://crestoriashiro.itch.io/inverse" target="_blank">Play Inverse</a></div>
-    <div><strong>Github</strong><br><a href="https://github.com/Zeroscapez/ReflectionJam" target="_blank">View Project</a></div>
+    <div><strong>GitHub</strong><br><a href="https://github.com/Zeroscapez/ReflectionJam" target="_blank">View Project</a></div>
     <div><strong>Engine</strong><br>Unity Engine 6</div>
     <div><strong>Role</strong><br>Project Manager, Lead Programmer, Game Designer</div>
     <div><strong>Team Size</strong><br>5</div>
@@ -56,8 +57,7 @@ title: Inverse
   </ul>
 
   <div class="code-block fade-in">
-  <pre>
-  <code class="language-csharp">
+    <pre><code class="language-csharp">
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -136,8 +136,7 @@ public class PlayerManager : MonoBehaviour
         }
     }
 }
-  </code>
-  </pre>
+    </code></pre>
   </div>
 
   <div class="gif-container fade-in">
@@ -154,9 +153,8 @@ public class PlayerManager : MonoBehaviour
     The beam begins at a defined origin point and travels forward until it hits an object. If the object is reflective, the beam bounces and continues in a new direction, enabling mirror-based puzzles and multi-step routing challenges. If the beam strikes a switch, it powers it on — allowing light to unlock doors or trigger mechanisms. Once the beam stops touching a switch, it automatically deactivates, preventing players from powering multiple switches simultaneously.
   </p>
 
-   <div class="code-block fade-in">
-  <pre>
-  <code class="language-csharp">
+  <div class="code-block fade-in">
+    <pre><code class="language-csharp">
 using UnityEngine;
 
 public class LightEmitter : MonoBehaviour
@@ -244,57 +242,10 @@ public class LightEmitter : MonoBehaviour
         lineRenderer.SetPositions(lightPoints.ToArray());
     }
 }
- </code>
-  </pre>
+    </code></pre>
   </div>
 
   <div class="gif-container fade-in">
     <img src="{{ 'assets/images/inverse/Refraction.gif' | relative_url }}" alt="Light refraction demo">
   </div>
 </section>
-
-<style>
-  .project-section h2 {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #fff;
-    border-bottom: 2px solid #4AB3F4;
-    display: inline-block;
-    margin-bottom: 1rem;
-  }
-
-  .gif-container img {
-    width: 80%;
-    max-width: 800px;
-    border-radius: 8px;
-    display: block;
-    margin: 1.5rem auto;
-    box-shadow: 0 0 20px rgba(160, 31, 153, 0.81);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .gif-container img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 25px rgba(160, 31, 153, 1);
-  }
-
-  pre {
-    background: #1a1a1a;
-    color: #f8f8f2;
-    border-radius: 8px;
-    padding: 1rem;
-    font-family: 'JetBrains Mono', 'Fira Code', monospace;
-    font-size: 0.9rem;
-    overflow-x: auto;
-    white-space: pre-wrap;
-    word-break: break-word;
-    margin: 1.5rem 0;
-  }
-
-  pre code {
-    background: none;
-    color: inherit;
-    font-family: inherit;
-    font-size: inherit;
-  }
-</style>

@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Vampiric Ascension- Luna Siri vs The Sun
+title: "Vampiric Ascension: Luna Siri vs The Sun"
+accent: "#ff4d6d"
 ---
 
 <section class="project-hero" style="background-image: url('{{ 'assets/images/vamphell/title.png' | relative_url }}');">
@@ -15,9 +16,9 @@ title: Vampiric Ascension- Luna Siri vs The Sun
     <div><strong>Date</strong><br>June 2025</div>
     <div><strong>Status</strong><br>Demo</div>
     <div><strong>itch.io Page</strong><br><a href="https://crestoriashiro.itch.io/vampiric-pantheon" target="_blank">Play Vampiric Ascension</a></div>
-    <div><strong>Github</strong><br><a href="https://github.com/Zeroscapez/UnstableBullet" target="_blank">View Project</a></div>
+    <div><strong>GitHub</strong><br><a href="https://github.com/Zeroscapez/UnstableBullet" target="_blank">View Project</a></div>
     <div><strong>Engine</strong><br>Unity Engine 6</div>
-    <div><strong>Role</strong><br>Project Manager Lead Programmer, Lead Game Designer</div>
+    <div><strong>Role</strong><br>Project Manager, Lead Programmer, Lead Game Designer</div>
     <div><strong>Team Size</strong><br>2</div>
   </div>
 
@@ -78,7 +79,7 @@ title: Vampiric Ascension- Luna Siri vs The Sun
   </p>
 
   <p>
-    This mechanic not only mirrors the explosive spectacle and tactical relief of Touhou’s bombs 
+    This mechanic not only mirrors the explosive spectacle and tactical relief of Touhou's bombs 
     but also reinforces a high-risk, high-reward loop. 
     Players must decide whether to spend their limited Sigils for survival or conserve them to maximize score potential.
   </p>
@@ -114,7 +115,6 @@ private void GigaCrash()
   </div>
 </section>
 
-
 <section class="project-section fade-in">
   <h2>Boss AI Breakdown</h2>
   <p>
@@ -126,7 +126,7 @@ private void GigaCrash()
   <p>
     The <strong>Sun AI</strong> uses a state-driven approach powered by an enumeration, 
     <code>TheSunBossState</code>, which defines each phase of the battle. 
-    As the boss’s health drops, it transitions through multiple attack phases — 
+    As the boss's health drops, it transitions through multiple attack phases — 
     each introducing new spawner configurations, bullet patterns, and movement logic.
   </p>
 
@@ -156,56 +156,4 @@ private void GigaCrash()
     <img src="/assets/images/vamphell/sunphase3.gif" alt="Sun Phase 3 Boss AI" />
   </div>
 </section>
-
-<style>
-  .project-hero{
-    
-  }
-  .project-section h2 {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #fff;
-    border-bottom: 2px solid #4AB3F4;
-    display: inline-block;
-    margin-bottom: 1rem;
-  }
-
-  .gif-container img {
-    width: 80%;
-    max-width: 800px;
-    border-radius: 8px;
-    display: block;
-    margin: 1.5rem auto;
-    box-shadow: 0 0 20px rgba(160, 31, 153, 0.81);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .gif-container img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 25px rgba(160, 31, 153, 1);
-  }
-
-  pre {
-    background: #1a1a1a;
-    color: #f8f8f2;
-    border-radius: 8px;
-    padding: 1rem;
-    font-family: 'JetBrains Mono', 'Fira Code', monospace;
-    font-size: 0.9rem;
-    overflow-x: auto;
-    white-space: pre-wrap;
-    word-break: break-word;
-    margin: 1.5rem 0;
-  }
-
-  pre code {
-    background: none;
-    color: inherit;
-    font-family: inherit;
-    font-size: inherit;
-  }
-</style>
-
-
-
 

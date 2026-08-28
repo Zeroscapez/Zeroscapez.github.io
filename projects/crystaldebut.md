@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Crystal's Debut
+accent: "#ff6ec7"
 ---
 
 <section class="project-hero" style="background-image: url('{{ 'assets/images/crystaldebut/MainMenu.png' | relative_url }}');">
@@ -17,7 +18,6 @@ title: Crystal's Debut
   </div>
   <div class="winner-text">
     <h1 class="winner-headline">Winner — Pirate Jam 18</h1>
-   
   </div>
 </div>
 
@@ -28,12 +28,12 @@ title: Crystal's Debut
     <div><strong>Status</strong><br>In Development</div>
     <div><strong>itch.io Page</strong><br><a href="https://crestoriashiro.itch.io/eldritch-vtuber" target="_blank">Play Crystal's Debut Demo</a></div>
     <div><strong>Engine</strong><br>Unity Engine</div>
-    <div><strong>Roles</strong><br>Project Manager, Lead Programmer, Lead Game Designer</div>
+    <div><strong>Role</strong><br>Project Manager, Lead Programmer, Lead Game Designer</div>
   </div>
 
-  <h4 class="project-description">
- The player plays as Crystal, a newly hired streamer and follows requests from chat. Requests include interacting with the computer on the screen to complete actions to raise her approval meter. The actions range from minigames, interacting with applications on the computer, to messing with Crystal’s pet Gerbil Kevin.
-  </h4>
+  <p class="project-description">
+    The player plays as Crystal, a newly hired streamer and follows requests from chat. Requests include interacting with the computer on the screen to complete actions to raise her approval meter. The actions range from minigames, interacting with applications on the computer, to messing with Crystal's pet Gerbil Kevin.
+  </p>
 
   <div class="media-gallery">
     <img src="{{ 'assets/images/crystaldebut/CrystalDebut1.jpg' | relative_url }}" alt="Screenshot 1">
@@ -82,23 +82,18 @@ title: Crystal's Debut
   </p>
 
   <p>
-  A key design challenge was distinguishing between Crystal's main dialogue and messages 
-  delivered through her in-game messaging app. Rather than building a separate system, 
-  I extended the existing Yarn Spinner integration by tagging specific lines with 
-  <code>#message</code> directly in the Yarn scripts. A custom dialogue presenter listens 
-  for this tag at runtime and routes those lines into the messaging app UI instead of the 
-  standard dialogue display — keeping all conversation logic in one place while allowing 
-  the presentation layer to vary depending on context.
-</p>
+    A key design challenge was distinguishing between Crystal's main dialogue and messages
+    delivered through her in-game messaging app. Rather than building a separate system,
+    I extended the existing Yarn Spinner integration by tagging specific lines with
+    <code>#message</code> directly in the Yarn scripts. A custom dialogue presenter listens
+    for this tag at runtime and routes those lines into the messaging app UI instead of the
+    standard dialogue display — keeping all conversation logic in one place while allowing
+    the presentation layer to vary depending on context.
+  </p>
 
   <div class="gif-container fade-in">
-    <img src="/assets/images/crystaldebut/chat.gif" alt="Graze mechanic demo" />
+    <img src="/assets/images/crystaldebut/chat.gif" alt="In-game messaging app demo" />
   </div>
-
-  
- 
-
- 
 </section>
 
 <section class="project-section fade-in">
@@ -159,87 +154,4 @@ for (int i = 0; i &lt; row.tiles.Length; i++)
 }
     </code></pre>
   </div>
-
-  
 </section>
-
-
-<style>
-  .winner-banner {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background: #FAEEDA;
-    border: 1px solid #EF9F27;
-    border-radius: 10px;
-    padding: 1rem 1.25rem;
-    margin: 1.5rem 0 2rem;
-  }
-  .winner-trophy {
-    width: 44px;
-    height: 44px;
-    background: #BA7517;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .winner-trophy svg {
-    width: 22px;
-    height: 22px;
-    fill: #FAEEDA;
-  }
-  .winner-headline {
-    font-size: 30px;
-    font-weight: 600;
-    color: #633806;
-    margin: 0 0 3px;
-  }
-  .winner-sub {
-    font-size: 13px;
-    color: #854F0B;
-    margin: 0;
-  }
-  .project-section h2 {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #fff;
-    border-bottom: 2px solid #4AB3F4;
-    display: inline-block;
-    margin-bottom: 1rem;
-  }
-  .gif-container img {
-    width: 80%;
-    max-width: 800px;
-    border-radius: 8px;
-    display: block;
-    margin: 1.5rem auto;
-    box-shadow: 0 0 20px rgba(160, 31, 153, 0.81);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .gif-container img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 25px rgb(255, 104, 217);
-  }
-  pre {
-    background: #1a1a1a;
-    color: #f8f8f2;
-    border-radius: 8px;
-    padding: 1rem;
-    font-family: 'JetBrains Mono', 'Fira Code', monospace;
-    font-size: 0.9rem;
-    overflow-x: auto;
-    white-space: pre-wrap;
-    word-break: break-word;
-    margin: 1.5rem 0;
-  }
-  pre code {
-    background: none;
-    color: inherit;
-    font-family: inherit;
-    font-size: inherit;
-  }
-</style>
-
-

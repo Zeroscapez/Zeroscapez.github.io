@@ -12,13 +12,15 @@
     <meta property="og:type" content="website">
 
     <title>{{ page.title }} | Agyei Lomini</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/projects.css">
 </head>
 
 <body>
     {% include header.html %}
-    <main>{{ content }}</main>
+    <main{% if page.accent %} style="--accent: {{ page.accent }};"{% endif %}>{{ content }}</main>
     {% include footer.html %}
 
     <script>

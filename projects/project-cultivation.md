@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Project Cultivation
+accent: "#51c5ff"
 ---
 
 <section class="project-hero" style="background-image: url('{{ 'assets/images/cultivate/title.png' | relative_url }}');">
@@ -15,7 +16,7 @@ title: Project Cultivation
     <div><strong>Date</strong><br>June 2025</div>
     <div><strong>Status</strong><br>Prototype</div>
     <div><strong>itch.io Page</strong><br><a href="https://crestoriashiro.itch.io/project-cultivation" target="_blank">Play Project Cultivation</a></div>
-    <div><strong>Github</strong><br><a href="https://github.com/Zeroscapez/Project_Cultivation" target="_blank">View Project</a></div>
+    <div><strong>GitHub</strong><br><a href="https://github.com/Zeroscapez/Project_Cultivation" target="_blank">View Project</a></div>
     <div><strong>Engine</strong><br>Unity Engine 6</div>
     <div><strong>Role</strong><br>Project Manager, Lead Programmer, Game Designer</div>
     <div><strong>Team Size</strong><br>4</div>
@@ -55,65 +56,62 @@ title: Project Cultivation
     The TimeStopObject script handles physics objects by saving their velocity and stopping their motion during a time stop, then restoring it when time resumes:
   </p>
   <div class="code-block fade-in">
-  <pre>
-  <code class="language-csharp">
-    using UnityEngine;
-    public class TimeStopObject : MonoBehaviour, ITimeStoppable
+    <pre><code class="language-csharp">
+using UnityEngine;
+
+public class TimeStopObject : MonoBehaviour, ITimeStoppable
+{
+    public Rigidbody rb;
+    private Vector3 savedVelocity;
+    [SerializeField] private bool isStopped = false;
+
+    void Start()
     {
-      public Rigidbody rb;
-      private Vector3 savedVelocity;
-      [SerializeField] private bool isStopped = false;
-      
-
-      void Start()
-      {
-          rb = GetComponent&lt;Rigidbody&gt;();
-      }
-
-      private void OnEnable()
-      {
-          TimeStopManager.Instance?.Register(this);
-      }
-      private void OnDisable()
-      {
-          TimeStopManager.Instance?.Unregister(this);
-      }
-
-       public void OnTimeResume()
-      {
-          if (!isStopped) return;
-
-          rb.isKinematic = false;
-          rb.linearVelocity = savedVelocity;
-          isStopped = false;
-      }
-
-       public void OnTimeStop()
-      {
-          if (isStopped) return;
-
-          savedVelocity = rb.linearVelocity;
-          rb.linearVelocity = Vector3.zero;
-          rb.isKinematic = true;
-          isStopped = true;
-      }
-      
+        rb = GetComponent&lt;Rigidbody&gt;();
     }
-  </code>
-  </pre>
+
+    private void OnEnable()
+    {
+        TimeStopManager.Instance?.Register(this);
+    }
+
+    private void OnDisable()
+    {
+        TimeStopManager.Instance?.Unregister(this);
+    }
+
+    public void OnTimeResume()
+    {
+        if (!isStopped) return;
+
+        rb.isKinematic = false;
+        rb.linearVelocity = savedVelocity;
+        isStopped = false;
+    }
+
+    public void OnTimeStop()
+    {
+        if (isStopped) return;
+
+        savedVelocity = rb.linearVelocity;
+        rb.linearVelocity = Vector3.zero;
+        rb.isKinematic = true;
+        isStopped = true;
+    }
+}
+    </code></pre>
   </div>
 </section>
-
 
 <section class="project-section fade-in">
   <h2>Rewind Mechanic & Rewind Ghost</h2>
   <p>
-    The <strong>Rewind Mechanic</strong> in <em>Project Cultivation</em> was designed to complement the Time Stop system by giving players the ability to reverse their recent actions — restoring their position to a point in the past while maintaining gameplay flow. 
-    This mechanic records the player’s position over time and lets them “snap back” to a previous moment using the <code>Rewind()</code> function.
+    The <strong>Rewind Mechanic</strong> in <em>Project Cultivation</em> was designed to complement the Time Stop system by giving players the ability to reverse their recent actions — restoring their position to a point in the past while maintaining gameplay flow.
+    This mechanic records the player's position over time and lets them "snap back" to a previous moment using the <code>Rewind()</code> function.
   </p>
 
   <p>
-    When activated, the system finds the closest recorded position to the target rewind time, updates the player’s position, and clears old history to begin tracking anew. 
+    When activated, the system finds the closest recorded position to the target rewind time, updates the player's position, and clears old history to begin tracking anew.
     This ensures precise, frame-accurate rewinds without creating desynchronization or unpredictable movement.
   </p>
 
@@ -141,12 +139,12 @@ void Rewind()
 }
     </code></pre>
   </div>
-<div class="gif-container fade-in">
+  <div class="gif-container fade-in">
     <img src="{{ 'assets/images/cultivate/rewindgameplay.gif' | relative_url }}" alt="Combat Demo">
   </div>
   <p>
-    To help players visualize their past path, I implemented the <strong>Rewind Ghost</strong> — a transparent echo of the player’s previous self. 
-    The ghost updates its position to match the historical record of where the player was at the rewind target time. 
+    To help players visualize their past path, I implemented the <strong>Rewind Ghost</strong> — a transparent echo of the player's previous self.
+    The ghost updates its position to match the historical record of where the player was at the rewind target time.
     This adds both visual clarity and an immersive time-travel aesthetic to the mechanic.
   </p>
 
@@ -173,27 +171,22 @@ void UpdateRewindGhost()
   </div>
 
   <div class="gif-container fade-in">
-    <div class="gif-container fade-in">
     <img src="{{ 'assets/images/cultivate/timedoublegameplay.gif' | relative_url }}" alt="Combat Demo">
   </div>
-  </div>
 </section>
-
 
 <section class="project-section fade-in">
   <h2>Slow Time Mechanic</h2>
   <p>
     In <em>Project Cultivation</em>, the Fast Forward mechanic works as a global time manipulator that temporarily slows the entire game world while maintaining smooth control responsiveness. This creates the illusion that the player is moving faster than everything else — enemies, projectiles, and physics all slow down, while the player experiences precise, high-speed mobility.
-
   </p>
   <p>
-    The <code>WorldSlowdownManager</code> handles all timing adjustments using Unity’s Time.timeScale system. When activated, it multiplies time by a slowFactor, effectively reducing how quickly everything else updates. This slowdown persists for a few seconds (slowdownLength) before time returns to normal. To prevent abuse, a cooldown timer enforces a delay before the ability can be used again.
+    The <code>WorldSlowdownManager</code> handles all timing adjustments using Unity's Time.timeScale system. When activated, it multiplies time by a slowFactor, effectively reducing how quickly everything else updates. This slowdown persists for a few seconds (slowdownLength) before time returns to normal. To prevent abuse, a cooldown timer enforces a delay before the ability can be used again.
   </p>
-
 
   <div class="code-block fade-in">
     <pre><code class="language-csharp">
-  using UnityEngine;
+using UnityEngine;
 
 public class WorldSlowdownManager : MonoBehaviour
 {
@@ -263,60 +256,7 @@ public class WorldSlowdownManager : MonoBehaviour
 </code></pre>
   </div>
 
-<div class="gif-container fade-in">
+  <div class="gif-container fade-in">
     <img src="{{ 'assets/images/cultivate/slowdown.gif' | relative_url }}" alt="Combat Demo">
   </div>
-
 </section>
-
-<style>
-  .project-section h2 {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #fff;
-    border-bottom: 2px solid #4AB3F4;
-    display: inline-block;
-    margin-bottom: 1rem;
-  }
-
-  .gif-container img {
-    width: 80%;
-    max-width: 800px;
-    border-radius: 8px;
-    display: block;
-    margin: 1.5rem auto;
-  }
-
-
- pre {
-    background: #1a1a1a;
-    color: #f8f8f2;
-    border-radius: 8px;
-    padding: 1rem;
-    font-family: 'JetBrains Mono', 'Fira Code', monospace;
-    font-size: 0.9rem;
-    overflow-x: auto;
-    white-space: pre-wrap;
-    word-break: break-word;
-    margin: 1.5rem 0;
-  }
-
-  pre code {
-    background: none;
-    color: inherit;
-    font-family: inherit;
-    font-size: inherit;
-  }
-
-  
-.gif-container img {
-   
-    box-shadow: 0 0 20px rgba(74, 178, 230, 0.81);
-   
-}
-
-.gif-container img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 25px rgba(81, 197, 255, 1);
-}
-</style>

@@ -16,11 +16,12 @@ This is the source for my personal portfolio site, built with [Jekyll](https://j
 
 | Project | Role | Description |
 |---|---|---|
+| **Project Gold** | Systems Programmer · Designer | Turn-based RPG combat systems: a data-driven character/skill/gear model plus a custom UI Toolkit editor tool for live-tuning it. |
 | **Vampiric Ascension** | PM · Lead Programmer · Lead Designer | Touhou-inspired bullet hell (Bullet Jam 2025). State-machine combat and modular enemy AI. |
 | **Project: Cultivation** | PM · Lead Programmer · Designer | Side-scrolling shooter with time-manipulation mechanics. |
 | **Inverse** | PM · Lead Programmer · Designer | 3D puzzle platformer across mirrored worlds using light refraction. |
 | **Crystal's Debut** | PM · Lead Programmer · Lead Designer | Pirate Jam 18 winner — manage viewer requests as a livestreamer. |
-| **Greatest Shinobi** *(Coming Soon)* | PM · Lead Gameplay Programmer · Designer | 2.5D platformer where you transform into a frog to become the greatest shinobi. |
+| **Greatest Shinobi** | PM · Lead Gameplay Programmer · Designer | Pirate Jam 15 — 2.5D platformer where you transform into a frog to become the greatest shinobi. |
 
 ---
 

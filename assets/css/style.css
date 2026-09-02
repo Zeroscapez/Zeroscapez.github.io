@@ -148,6 +148,7 @@ section {
 ========================= */
 
 .project-card {
+    display: block;
     background-color: #1a1d29;
     border-radius: 12px;
     border-top: 3px solid var(--accent, #7aa2ff);
@@ -187,7 +188,7 @@ section {
     transition: opacity 0.3s ease;
 }
 
-.project:hover .overlay {
+.project-card:hover .overlay {
     opacity: 1;
 }
 

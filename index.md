@@ -31,13 +31,13 @@ title: Home
 
   <div class="projects-grid">
 
-    <article class="project-card" style="--accent: #e6b64d;">
-      <a href="/projects/project-gold" class="project">
+    <a href="/projects/project-gold" class="project-card" style="--accent: #e6b64d;">
+      <div class="project">
         <img src="{{ 'assets/images/project-gold/title.png' | relative_url }}" alt="Project Gold" loading="lazy">
         <div class="overlay">
           <span>View Project →</span>
         </div>
-      </a>
+      </div>
       <div class="project-info">
         <h3>Project Gold</h3>
         <p class="project-role">Systems Programmer · Designer</p>
@@ -46,15 +46,15 @@ title: Home
           <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">UI Toolkit</span><span class="tag">Systems Design</span>
         </div>
       </div>
-    </article>
+    </a>
 
-    <article class="project-card" style="--accent: #ff4d6d;">
-      <a href="/projects/vampiric-ascension" class="project">
+    <a href="/projects/vampiric-ascension" class="project-card" style="--accent: #ff4d6d;">
+      <div class="project">
         <img src="{{ 'assets/images/vamphell/title.png' | relative_url }}" alt="Vampiric Ascension" loading="lazy">
         <div class="overlay">
           <span>View Project →</span>
         </div>
-      </a>
+      </div>
       <div class="project-info">
         <h3>Vampiric Ascension</h3>
         <p class="project-role">PM · Lead Programmer · Lead Designer</p>
@@ -63,15 +63,15 @@ title: Home
           <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Combat AI</span>
         </div>
       </div>
-    </article>
+    </a>
 
-    <article class="project-card" style="--accent: #51c5ff;">
-      <a href="/projects/project-cultivation" class="project">
+    <a href="/projects/project-cultivation" class="project-card" style="--accent: #51c5ff;">
+      <div class="project">
         <img src="{{ 'assets/images/cultivate/title.png' | relative_url }}" alt="Project Cultivation" loading="lazy">
         <div class="overlay">
           <span>View Project →</span>
         </div>
-      </a>
+      </div>
       <div class="project-info">
         <h3>Project: Cultivation</h3>
         <p class="project-role">PM · Lead Programmer · Designer</p>
@@ -80,15 +80,15 @@ title: Home
           <span class="tag">Unity</span><span class="tag">C#</span>
         </div>
       </div>
-    </article>
+    </a>
 
-    <article class="project-card" style="--accent: #a685ff;">
-      <a href="/projects/inverse" class="project">
+    <a href="/projects/inverse" class="project-card" style="--accent: #a685ff;">
+      <div class="project">
         <img src="{{ 'assets/images/inverse/title.png' | relative_url }}" alt="Inverse" loading="lazy">
         <div class="overlay">
           <span>View Project →</span>
         </div>
-      </a>
+      </div>
       <div class="project-info">
         <h3>Inverse</h3>
         <p class="project-role">PM · Lead Programmer · Designer</p>
@@ -97,15 +97,15 @@ title: Home
           <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">3D</span>
         </div>
       </div>
-    </article>
+    </a>
 
-    <article class="project-card" style="--accent: #ff6ec7;">
-      <a href="/projects/crystaldebut" class="project">
+    <a href="/projects/crystaldebut" class="project-card" style="--accent: #ff6ec7;">
+      <div class="project">
         <img src="{{ 'assets/images/crystaldebut/MainMenu.png' | relative_url }}" alt="Crystal's Debut" loading="lazy">
         <div class="overlay">
           <span>View Project →</span>
         </div>
-      </a>
+      </div>
       <div class="project-info">
         <h3>Crystal's Debut</h3>
         <h4 class="badge-winner">Pirate Jam 18 Winner</h4>
@@ -115,15 +115,15 @@ title: Home
           <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Yarn Spinner 3</span>
         </div>
       </div>
-    </article>
+    </a>
 
-    <article class="project-card" style="--accent: #5ecb8f;">
-      <a href="/projects/gshinobi" class="project">
+    <a href="/projects/gshinobi" class="project-card" style="--accent: #5ecb8f;">
+      <div class="project">
         <img src="{{ 'assets/images/gshinobi/title.png' | relative_url }}" alt="Greatest Shinobi" loading="lazy">
         <div class="overlay">
           <span>View Project →</span>
         </div>
-      </a>
+      </div>
       <div class="project-info">
         <h3>Greatest Shinobi</h3>
         <p class="project-role">PM · Lead Gameplay Programmer · Designer</p>
@@ -132,7 +132,7 @@ title: Home
           <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">2.5D</span>
         </div>
       </div>
-    </article>
+    </a>
 
   </div>
 </section>

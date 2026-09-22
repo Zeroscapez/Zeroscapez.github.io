@@ -35,7 +35,7 @@ accent: "#a685ff"
 <section class="project-section fade-in">
   <h2>Introduction</h2>
   <p>
-    <em>Inverse</em> was developed as a prototype for a game jam themed around reflections. My team's concept was to use literal reflections as a core mechanic while also exploring the idea of a reflection of oneself as part of the game's theme.
+    <em>Inverse</em> was developed as a prototype for Beginner Game Jam 2025, themed around reflections. My team's concept was to use literal reflections as a core mechanic while also exploring the idea of a reflection of oneself as part of the game's theme.
   </p>
   <p>
     Built in Unity, the game's main features are a character swapping system and a light bending mechanism.

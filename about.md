@@ -14,12 +14,28 @@ description: "Game developer and CS grad passionate about gameplay programming, 
     <h1 class="hero-name">Agyei<br>Lomini</h1>
     <p class="hero-tagline">Gameplay Programming · Systems Architecture · AI</p>
     <p>CS grad from Georgia State University with a minor in Game Design &amp; Development. I build systems that feel good to play — from state-machine combat to modular AI and real-time dialogue.</p>
-    <p>Currently leading an indie project focused on 2.5D platforming and technical systems integration.</p>
+    <p>Currently building combat systems and technical architecture for <em>Project Gold</em>, an indie turn-based RPG in development at Black Star Creatives.</p>
     <div class="hero-tags">
       <span class="tag">Unity</span>
       <span class="tag">C#</span>
       <span class="tag">Unreal</span>
       <span class="tag">Game Design</span>
+    </div>
+  </div>
+</section>
+
+<section class="about-now-section">
+  <h2 class="about-section-title">Right Now</h2>
+  <div class="about-focus-grid">
+    <div class="about-focus-card">
+      <p class="focus-icon">🎯</p>
+      <h3>Building Project Gold</h3>
+      <p>Systems programmer and designer on <a href="/projects/project-gold">Project Gold</a>, an indie turn-based RPG in development at Black Star Creatives — building out its combat systems and the data-driven character/skill/gear model underneath them.</p>
+    </div>
+    <div class="about-focus-card">
+      <p class="focus-icon">🤝</p>
+      <h3>Open to Opportunities</h3>
+      <p>Actively job hunting — looking for entry-level game dev roles where I can keep building gameplay systems and shipping things players enjoy.</p>
     </div>
   </div>
 </section>
@@ -82,6 +98,32 @@ description: "Game developer and CS grad passionate about gameplay programming, 
         <span class="tag">PHPMyAdmin</span>
         <span class="tag">MySQL Workbench</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-focus-section">
+  <h2 class="about-section-title">Beyond the Code</h2>
+  <div class="about-focus-grid">
+    <div class="about-focus-card">
+      <p class="focus-icon">🕹️</p>
+      <h3>Gaming</h3>
+      <p>Kingdom Hearts and Xenoblade Chronicles are the series I keep coming back to — a lot of what draws me to systems design started with picking apart how their worlds and combat hold together.</p>
+    </div>
+    <div class="about-focus-card">
+      <p class="focus-icon">🦸</p>
+      <h3>Kamen Rider</h3>
+      <p>I collect Kamen Rider merch — a long-running side interest in tokusatsu that overlaps more with game design than people expect.</p>
+    </div>
+    <div class="about-focus-card">
+      <p class="focus-icon">🛠️</p>
+      <h3>Gunpla</h3>
+      <p>Building Gundam model kits scratches the same itch as systems work: follow the spec precisely, then step back and watch the whole thing come together.</p>
+    </div>
+    <div class="about-focus-card">
+      <p class="focus-icon">🎨</p>
+      <h3>Learning to Draw</h3>
+      <p>Picking up traditional art on the side — partly for fun, partly because it's a useful skill for prototyping UI and character ideas.</p>
     </div>
   </div>
 </section>

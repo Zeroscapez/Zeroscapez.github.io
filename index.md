@@ -10,7 +10,7 @@ title: Home
     <p class="hero-tagline">Gameplay Programming · Systems Architecture · AI</p>
     <p>Enthusiastic game developer with a flair for Computer Science and Design. Hands-on experience in Unity and C#.</p>
     <p>Passionate about problem-solving, prototyping, and crafting scalable systems that create unforgettable player experiences.</p>
-    <p>Currently leading an indie project focused on state-machine combat design and technical systems integration.</p>
+    <p>Currently building combat systems and technical architecture for <em>Project Gold</em>, an indie turn-based RPG in development at Black Star Creatives.</p>
     <div class="hero-tags">
       <span class="tag">Unity</span>
       <span class="tag">C#</span>

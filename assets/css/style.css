@@ -413,6 +413,23 @@ section {
     color: #0f1117;
 }
 
+/* =========================
+   SITE SWITCHER (SWE PORTFOLIO)
+========================= */
+
+.navbar nav a.nav-switch {
+    padding: 5px 12px;
+    border-radius: 6px;
+    border: 1px solid #2a2f45;
+    color: #888;
+    font-size: 13px;
+}
+
+.navbar nav a.nav-switch:hover {
+    border-color: #7aa2ff;
+    color: #7aa2ff;
+}
+
 
 /* =========================
    HAMBURGER MENU

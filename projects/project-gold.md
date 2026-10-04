@@ -21,7 +21,7 @@ accent: "#e6b64d"
   </div>
 
   <p class="project-description">
-    <em>Project Gold</em> is a turn-based RPG in development at Black Star Creatives. Every playable character is aligned to one of the Seven Deadly Sins, and climbing the emotion ladder in battle means giving in to that sin — gaining power along with its flaw — until it resolves into its opposing virtue. I designed that Emotion System, and I'm building the combat systems, data model, and editor tooling behind it.
+    <em>Project Gold</em> is a turn-based RPG in development at Black Star Creatives, the indie studio I co-founded. Every playable character is aligned to one of the Seven Deadly Sins, and climbing the emotion ladder in battle means giving in to that sin — gaining power along with its flaw — until it resolves into its opposing virtue. I designed that Emotion System, and I'm building the combat systems, data model, and editor tooling behind it.
   </p>
 
   <p class="media-note">Gameplay footage is coming once the project moves out of prototyping.</p>
@@ -31,6 +31,9 @@ accent: "#e6b64d"
   <h2>Introduction</h2>
   <p>
     <em>Project Gold</em> is where my design and engineering work meet most directly. I designed its central mechanic, the Emotion System, and I'm building everything needed to make it playable and tunable: the combat systems that run it, the data model underneath them, and a custom editor tool for balancing it all.
+  </p>
+  <p>
+    A note on process: I use AI as a development assistant on this project — mostly to track down and fix coding errors and to bug-check, and some code is written with its help. It's assistance, not authorship: the design, the specs, and the direction of every system here are mine.
   </p>
   <p>
     This page walks through the design first, then the systems and tooling behind it.

@@ -35,8 +35,11 @@ accent: "#5ecb8f"
 
 <section class="project-section fade-in">
   <h2>Play in Browser</h2>
-  <div class="itch-embed" style="aspect-ratio: 1920 / 1130;">
-    <iframe src="https://itch.io/embed-upload/11061037?color=0f1117" title="Play Greatest Shinobi on itch.io" loading="lazy" allowfullscreen></iframe>
+  <div class="itch-embed" data-src="https://itch.io/embed-upload/11061037?color=0f1117" data-game-width="1920" data-game-height="1130" style="aspect-ratio: 1920 / 1130;">
+    <a class="itch-play" href="https://crestoriashiro.itch.io/greatest-shinobi" aria-label="Play Greatest Shinobi in your browser">
+      <img src="{{ 'assets/images/gshinobi/title.webp' | relative_url }}" alt="" loading="lazy">
+      <span>▶ Play in browser</span>
+    </a>
   </div>
   <p class="embed-note">Runs in your browser via itch.io — best played on desktop.</p>
 </section>

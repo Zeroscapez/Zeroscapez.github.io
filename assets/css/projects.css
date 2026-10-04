@@ -213,9 +213,13 @@
    ITCH.IO EMBEDS
 ========================= */
 
+/* Unity builds draw at a fixed canvas size, so the iframe renders at the
+   game's native size and is scaled down to fit (see _layouts/default.html).
+   aspect-ratio is only the pre-script fallback. */
 .itch-embed {
+    position: relative;
     width: 100%;
-    max-width: 960px;
+    max-width: 1100px;
     aspect-ratio: 16 / 9;
     border-radius: 10px;
     overflow: hidden;
@@ -224,10 +228,55 @@
 }
 
 .itch-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     display: block;
+    border: 0;
+    transform-origin: 0 0;
+}
+
+/* Click-to-play cover: the game only loads once a visitor chooses to play */
+.itch-play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.itch-play img {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
-    border: 0;
+    object-fit: cover;
+    filter: brightness(0.55);
+    transition: filter 0.25s ease;
+}
+
+.itch-play span {
+    position: relative;
+    padding: 12px 24px;
+    border: 1px solid var(--accent, #7aa2ff);
+    border-radius: 8px;
+    background-color: rgba(15, 17, 23, 0.8);
+    color: var(--accent, #7aa2ff);
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.itch-play:hover img,
+.itch-play:focus-visible img {
+    filter: brightness(0.75);
+}
+
+.itch-play:hover span,
+.itch-play:focus-visible span {
+    background-color: var(--accent, #7aa2ff);
+    color: #0f1117;
 }
 
 .itch-widget {

@@ -14,7 +14,7 @@ description: "Game developer and CS grad passionate about gameplay programming, 
     <h1 class="hero-name">Agyei<br>Lomini</h1>
     <p class="hero-tagline">Gameplay Programming · Systems Architecture · AI</p>
     <p>CS grad from Georgia State University with a minor in Game Design &amp; Development. I build systems that feel good to play — from state-machine combat to modular AI and real-time dialogue.</p>
-    <p>Currently building combat systems and technical architecture for <em>Project Gold</em>, an indie turn-based RPG in development at Black Star Creatives.</p>
+    <p>Currently building combat systems and technical architecture for <em>Project Gold</em>, an indie turn-based RPG in development at Black Star Creatives, the studio I co-founded.</p>
     <div class="hero-tags">
       <span class="tag">Unity</span>
       <span class="tag">C#</span>
@@ -30,7 +30,7 @@ description: "Game developer and CS grad passionate about gameplay programming, 
     <div class="about-focus-card">
       <p class="focus-icon">🎯</p>
       <h3>Building Project Gold</h3>
-      <p>Systems programmer and designer on <a href="/projects/project-gold">Project Gold</a>, an indie turn-based RPG in development at Black Star Creatives — I designed its sin → virtue Emotion System and am building the combat systems and editor tooling behind it.</p>
+      <p>Systems programmer and designer on <a href="/projects/project-gold">Project Gold</a>, an indie turn-based RPG in development at Black Star Creatives, the studio I co-founded — I designed its sin → virtue Emotion System and am building the combat systems and editor tooling behind it.</p>
     </div>
     <div class="about-focus-card">
       <p class="focus-icon">🤝</p>

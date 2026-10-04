@@ -110,9 +110,9 @@ title: Home
         <h3>Crystal's Debut</h3>
         <h4 class="badge-winner">Pirate Jam 18 Winner</h4>
         <p class="project-role">PM · Lead Programmer · Lead Designer</p>
-        <p class="project-desc">Play as Crystal, a livestreamer managing viewer requests in real time to maintain approval ratings.</p>
+        <p class="project-desc">Play as Crystal, a new streamer juggling chat's requests in real time to keep her audience devoted. Grew from a jam win into a full demo.</p>
         <div class="project-tags">
-          <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Yarn Spinner 3</span>
+          <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Yarn Spinner 3</span><span class="tag">FMOD</span>
         </div>
       </div>
     </a>

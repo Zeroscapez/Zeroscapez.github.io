@@ -34,8 +34,11 @@ accent: "#a685ff"
 
 <section class="project-section fade-in">
   <h2>Play in Browser</h2>
-  <div class="itch-embed">
-    <iframe src="https://itch.io/embed-upload/13304211?color=0f1117" title="Play Inverse on itch.io" loading="lazy" allowfullscreen></iframe>
+  <div class="itch-embed" data-src="https://itch.io/embed-upload/13304211?color=0f1117" data-game-width="1280" data-game-height="720">
+    <a class="itch-play" href="https://crestoriashiro.itch.io/inverse" aria-label="Play Inverse in your browser">
+      <img src="{{ 'assets/images/inverse/title.webp' | relative_url }}" alt="" loading="lazy">
+      <span>▶ Play in browser</span>
+    </a>
   </div>
   <p class="embed-note">Runs in your browser via itch.io — best played on desktop.</p>
 </section>

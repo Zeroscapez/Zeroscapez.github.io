@@ -57,6 +57,40 @@
                 videoObserver.observe(video);
             });
 
+            // itch.io embeds: the game only loads when the visitor clicks Play. The Unity
+            // builds draw at a fixed canvas size, so the iframe renders at native size and
+            // is scaled down to the available width.
+            const ITCH_CHROME_X = 2;  // embed page's 1px side borders
+            const ITCH_CHROME_Y = 21; // 1px top border + 20px itch.io footer bar
+            document.querySelectorAll(".itch-embed").forEach(embed => {
+                const w = Number(embed.dataset.gameWidth) + ITCH_CHROME_X;
+                const h = Number(embed.dataset.gameHeight) + ITCH_CHROME_Y;
+                let frame = null;
+
+                const fit = () => {
+                    const scale = Math.min(1, embed.clientWidth / w);
+                    const border = embed.offsetHeight - embed.clientHeight;
+                    embed.style.height = `${h * scale + border}px`;
+                    if (frame) frame.style.transform = `scale(${scale})`;
+                };
+                new ResizeObserver(fit).observe(embed);
+
+                const play = embed.querySelector(".itch-play");
+                play.addEventListener("click", event => {
+                    event.preventDefault();
+                    frame = document.createElement("iframe");
+                    frame.src = embed.dataset.src;
+                    frame.width = w;
+                    frame.height = h;
+                    frame.title = play.getAttribute("aria-label");
+                    frame.allow = "autoplay; fullscreen *; gamepad";
+                    frame.allowFullscreen = true;
+                    play.replaceWith(frame);
+                    fit();
+                    frame.focus();
+                });
+            });
+
             const hamburger = document.querySelector(".hamburger");
             const navMenu = document.querySelector(".navbar nav");
             if (hamburger && navMenu) {

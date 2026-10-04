@@ -33,9 +33,6 @@ accent: "#e6b64d"
     <em>Project Gold</em> is where my design and engineering work meet most directly. I designed its central mechanic, the Emotion System, and I'm building everything needed to make it playable and tunable: the combat systems that run it, the data model underneath them, and a custom editor tool for balancing it all.
   </p>
   <p>
-    A note on process: I use AI as a development assistant on this project — mostly to track down and fix coding errors and to bug-check, and some code is written with its help. It's assistance, not authorship: the design, the specs, and the direction of every system here are mine.
-  </p>
-  <p>
     This page walks through the design first, then the systems and tooling behind it.
   </p>
 </section>

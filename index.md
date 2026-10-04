@@ -41,9 +41,9 @@ title: Home
       <div class="project-info">
         <h3>Project Gold</h3>
         <p class="project-role">Systems Programmer · Designer</p>
-        <p class="project-desc">Turn-based RPG combat systems: a data-driven character/skill/gear model plus a custom UI Toolkit editor tool for live-tuning it.</p>
+        <p class="project-desc">Turn-based RPG built around a sin → virtue Emotion System I designed, plus the combat systems and editor tooling that run and tune it.</p>
         <div class="project-tags">
-          <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">UI Toolkit</span><span class="tag">Systems Design</span>
+          <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Systems Design</span><span class="tag">UI Toolkit</span>
         </div>
       </div>
     </a>

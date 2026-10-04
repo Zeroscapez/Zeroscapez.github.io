@@ -16,7 +16,7 @@ This is the source for my personal portfolio site, built with [Jekyll](https://j
 
 | Project | Role | Description |
 |---|---|---|
-| **Project Gold** | Systems Programmer · Designer | Turn-based RPG combat systems: a data-driven character/skill/gear model plus a custom UI Toolkit editor tool for live-tuning it. |
+| **Project Gold** | Systems Programmer · Designer | Turn-based RPG built around a sin → virtue Emotion System I designed, plus the combat systems and UI Toolkit editor tooling behind it. |
 | **Vampiric Ascension** | PM · Lead Programmer · Lead Designer | Touhou-inspired bullet hell (Bullet Jam 2025). State-machine combat and modular enemy AI. |
 | **Project: Cultivation** | PM · Lead Programmer · Designer | Side-scrolling shooter with time-manipulation mechanics. |
 | **Inverse** | PM · Lead Programmer · Designer | 3D puzzle platformer across mirrored worlds using light refraction. |

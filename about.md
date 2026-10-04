@@ -30,7 +30,7 @@ description: "Game developer and CS grad passionate about gameplay programming, 
     <div class="about-focus-card">
       <p class="focus-icon">🎯</p>
       <h3>Building Project Gold</h3>
-      <p>Systems programmer and designer on <a href="/projects/project-gold">Project Gold</a>, an indie turn-based RPG in development at Black Star Creatives — building out its combat systems and the data-driven character/skill/gear model underneath them.</p>
+      <p>Systems programmer and designer on <a href="/projects/project-gold">Project Gold</a>, an indie turn-based RPG in development at Black Star Creatives — I designed its sin → virtue Emotion System and am building the combat systems and editor tooling behind it.</p>
     </div>
     <div class="about-focus-card">
       <p class="focus-icon">🤝</p>

@@ -4,7 +4,7 @@ title: "Vampiric Ascension: Luna Siri vs The Sun"
 accent: "#ff4d6d"
 ---
 
-<section class="project-hero" style="background-image: url('{{ 'assets/images/vamphell/title.png' | relative_url }}');">
+<section class="project-hero" style="background-image: url('{{ 'assets/images/vamphell/title.webp' | relative_url }}');">
   <div class="overlay">
     <h1>Vampiric Ascension: Luna Siri vs The Sun</h1>
   </div>
@@ -28,11 +28,19 @@ accent: "#ff4d6d"
   </p>
 
   <div class="media-gallery">
-    <img src="{{ 'assets/images/vamphell/Vampgame.gif' | relative_url }}" alt="Screenshot 1">
-    <img src="{{ 'assets/images/vamphell/gameshot.jpg' | relative_url }}" alt="Screenshot 1">
-    <img src="{{ 'assets/images/vamphell/NHhPov.png' | relative_url }}" alt="Screenshot 2">
-    <img src="{{ 'assets/images/vamphell/title.png' | relative_url }}" alt="Screenshot 3">
+    <video class="lazy-video" data-src="{{ 'assets/video/vamphell/vampgame.mp4' | relative_url }}" poster="{{ 'assets/video/vamphell/vampgame.webp' | relative_url }}" width="1272" height="730" muted loop playsinline preload="none" aria-label="Vampiric Ascension gameplay against The Sun"></video>
+    <img src="{{ 'assets/images/vamphell/gameshot.jpg' | relative_url }}" alt="Dodging The Sun's bullet patterns, with the score and Sigil HUD" loading="lazy">
+    <img src="{{ 'assets/images/vamphell/NHhPov.webp' | relative_url }}" alt="Luna Siri character art" width="815" height="1080" loading="lazy">
+    <img src="{{ 'assets/images/vamphell/title.webp' | relative_url }}" alt="Vampiric Ascension title screen" width="1920" height="1080" loading="lazy">
   </div>
+</section>
+
+<section class="project-section fade-in">
+  <h2>Play in Browser</h2>
+  <div class="itch-embed">
+    <iframe src="https://itch.io/embed-upload/13665454?color=0f1117" title="Play Vampiric Ascension on itch.io" loading="lazy" allowfullscreen></iframe>
+  </div>
+  <p class="embed-note">Runs in your browser via itch.io — best played on desktop.</p>
 </section>
 
 <section class="project-section fade-in">
@@ -58,7 +66,7 @@ accent: "#ff4d6d"
   </p>
 
   <div class="gif-container fade-in">
-    <img src="/assets/images/vamphell/Graze.gif" alt="Graze mechanic demo" />
+    <video class="lazy-video" data-src="{{ 'assets/video/vamphell/graze.mp4' | relative_url }}" poster="{{ 'assets/video/vamphell/graze.webp' | relative_url }}" width="1280" height="644" muted loop playsinline preload="none" aria-label="Graze mechanic demo"></video>
   </div>
 </section>
 
@@ -150,10 +158,10 @@ private void GigaCrash()
   </p>
 
   <div class="gif-grid fade-in">
-    <img src="/assets/images/vamphell/sunphase1.gif" alt="Sun Phase 1 Boss AI" />
-    <img src="/assets/images/vamphell/sunphase2.gif" alt="Sun Phase 2 Boss AI" />
-    <img src="/assets/images/vamphell/sunphase22.gif" alt="Sun Phase 22 Boss AI" />
-    <img src="/assets/images/vamphell/sunphase3.gif" alt="Sun Phase 3 Boss AI" />
+    <video class="lazy-video" data-src="{{ 'assets/video/vamphell/sunphase1.mp4' | relative_url }}" poster="{{ 'assets/video/vamphell/sunphase1.webp' | relative_url }}" width="1210" height="682" muted loop playsinline preload="none" aria-label="The Sun boss, phase 1"></video>
+    <video class="lazy-video" data-src="{{ 'assets/video/vamphell/sunphase2.mp4' | relative_url }}" poster="{{ 'assets/video/vamphell/sunphase2.webp' | relative_url }}" width="1212" height="678" muted loop playsinline preload="none" aria-label="The Sun boss, phase 2"></video>
+    <video class="lazy-video" data-src="{{ 'assets/video/vamphell/sunphase22.mp4' | relative_url }}" poster="{{ 'assets/video/vamphell/sunphase22.webp' | relative_url }}" width="1210" height="680" muted loop playsinline preload="none" aria-label="The Sun boss, phase 2 part 2"></video>
+    <video class="lazy-video" data-src="{{ 'assets/video/vamphell/sunphase3.mp4' | relative_url }}" poster="{{ 'assets/video/vamphell/sunphase3.webp' | relative_url }}" width="1212" height="680" muted loop playsinline preload="none" aria-label="The Sun boss, phase 3"></video>
   </div>
 </section>
 

@@ -7,7 +7,7 @@ description: "Game developer and CS grad passionate about gameplay programming, 
 
 <section class="about-hero">
   <div class="about-hero-image">
-    <img src="/assets/images/AgyeiProf.jpg" alt="Agyei Lomini">
+    <img src="{{ 'assets/images/AgyeiProf.webp' | relative_url }}" width="220" height="300" alt="Agyei Lomini">
   </div>
   <div class="about-hero-text">
     <p class="hero-label">Game Developer</p>

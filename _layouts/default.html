@@ -37,6 +37,26 @@
 
             sections.forEach(section => observer.observe(section));
 
+            // Gameplay clips: only download a video once it nears the viewport,
+            // and pause it again when scrolled away.
+            const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            const videoObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const video = entry.target;
+                    if (entry.isIntersecting) {
+                        if (!video.getAttribute("src")) video.src = video.dataset.src;
+                        if (!reduceMotion) video.play().catch(() => {});
+                    } else {
+                        video.pause();
+                    }
+                });
+            }, { rootMargin: "200px 0px" });
+
+            document.querySelectorAll("video.lazy-video").forEach(video => {
+                if (reduceMotion) video.controls = true;
+                videoObserver.observe(video);
+            });
+
             const hamburger = document.querySelector(".hamburger");
             const navMenu = document.querySelector(".navbar nav");
             if (hamburger && navMenu) {

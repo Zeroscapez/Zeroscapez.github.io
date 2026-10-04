@@ -4,7 +4,7 @@ title: Greatest Shinobi
 accent: "#5ecb8f"
 ---
 
-<section class="project-hero" style="background-image: url('{{ 'assets/images/gshinobi/title.png' | relative_url }}');">
+<section class="project-hero" style="background-image: url('{{ 'assets/images/gshinobi/title.webp' | relative_url }}');">
   <div class="overlay">
     <h1>Greatest Shinobi</h1>
   </div>
@@ -26,11 +26,19 @@ accent: "#5ecb8f"
   </p>
 
   <div class="media-gallery">
-    <img src="{{ 'assets/images/gshinobi/title.png' | relative_url }}" alt="Greatest Shinobi title screen">
-    <img src="{{ 'assets/images/gshinobi/gs1.jpg' | relative_url }}" alt="Greatest Shinobi screenshot 1">
-    <img src="{{ 'assets/images/gshinobi/gs2.jpg' | relative_url }}" alt="Greatest Shinobi screenshot 2">
-    <img src="{{ 'assets/images/gshinobi/gs3.jpg' | relative_url }}" alt="Greatest Shinobi screenshot 3">
+    <img src="{{ 'assets/images/gshinobi/title.webp' | relative_url }}" alt="Greatest Shinobi title screen" width="1920" height="1080" loading="lazy">
+    <img src="{{ 'assets/images/gshinobi/gs1.jpg' | relative_url }}" alt="Greatest Shinobi screenshot 1" loading="lazy">
+    <img src="{{ 'assets/images/gshinobi/gs2.jpg' | relative_url }}" alt="Greatest Shinobi screenshot 2" loading="lazy">
+    <img src="{{ 'assets/images/gshinobi/gs3.jpg' | relative_url }}" alt="Greatest Shinobi screenshot 3" loading="lazy">
   </div>
+</section>
+
+<section class="project-section fade-in">
+  <h2>Play in Browser</h2>
+  <div class="itch-embed" style="aspect-ratio: 1920 / 1130;">
+    <iframe src="https://itch.io/embed-upload/11061037?color=0f1117" title="Play Greatest Shinobi on itch.io" loading="lazy" allowfullscreen></iframe>
+  </div>
+  <p class="embed-note">Runs in your browser via itch.io — best played on desktop.</p>
 </section>
 
 <section class="project-section fade-in">

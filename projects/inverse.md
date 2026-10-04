@@ -4,7 +4,7 @@ title: Inverse
 accent: "#a685ff"
 ---
 
-<section class="project-hero" style="background-image: url('{{ 'assets/images/inverse/title.png' | relative_url }}');">
+<section class="project-hero" style="background-image: url('{{ 'assets/images/inverse/title.webp' | relative_url }}');">
   <div class="overlay">
     <h1>Inverse</h1>
   </div>
@@ -27,9 +27,17 @@ accent: "#a685ff"
   </p>
 
   <div class="media-gallery">
-    <img src="{{ 'assets/images/inverse/title.png' | relative_url }}" alt="Inverse title screen">
-    <img src="{{ 'assets/images/inverse/inversegame1.gif' | relative_url }}" alt="Inverse gameplay">
+    <img src="{{ 'assets/images/inverse/title.webp' | relative_url }}" alt="Inverse title screen" width="1920" height="1080" loading="lazy">
+    <video class="lazy-video" data-src="{{ 'assets/video/inverse/inversegame1.mp4' | relative_url }}" poster="{{ 'assets/video/inverse/inversegame1.webp' | relative_url }}" width="426" height="240" muted loop playsinline preload="none" aria-label="Inverse gameplay"></video>
   </div>
+</section>
+
+<section class="project-section fade-in">
+  <h2>Play in Browser</h2>
+  <div class="itch-embed">
+    <iframe src="https://itch.io/embed-upload/13304211?color=0f1117" title="Play Inverse on itch.io" loading="lazy" allowfullscreen></iframe>
+  </div>
+  <p class="embed-note">Runs in your browser via itch.io — best played on desktop.</p>
 </section>
 
 <section class="project-section fade-in">
@@ -140,7 +148,7 @@ public class PlayerManager : MonoBehaviour
   </div>
 
   <div class="gif-container fade-in">
-    <img src="{{ 'assets/images/inverse/swap.gif' | relative_url }}" alt="Character swap demo">
+    <video class="lazy-video" data-src="{{ 'assets/video/inverse/swap.mp4' | relative_url }}" poster="{{ 'assets/video/inverse/swap.webp' | relative_url }}" width="1214" height="722" muted loop playsinline preload="none" aria-label="Character swap demo"></video>
   </div>
 </section>
 
@@ -246,6 +254,6 @@ public class LightEmitter : MonoBehaviour
   </div>
 
   <div class="gif-container fade-in">
-    <img src="{{ 'assets/images/inverse/Refraction.gif' | relative_url }}" alt="Light refraction demo">
+    <video class="lazy-video" data-src="{{ 'assets/video/inverse/refraction.mp4' | relative_url }}" poster="{{ 'assets/video/inverse/refraction.webp' | relative_url }}" width="426" height="240" muted loop playsinline preload="none" aria-label="Light refraction demo"></video>
   </div>
 </section>

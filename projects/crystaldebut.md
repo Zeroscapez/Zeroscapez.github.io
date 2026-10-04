@@ -4,7 +4,7 @@ title: Crystal's Debut
 accent: "#ff6ec7"
 ---
 
-<section class="project-hero" style="background-image: url('{{ 'assets/images/crystaldebut/MainMenu.png' | relative_url }}');">
+<section class="project-hero" style="background-image: url('{{ 'assets/images/crystaldebut/MainMenu.webp' | relative_url }}');">
   <div class="overlay">
     <h1>Crystal's Debut</h1>
   </div>
@@ -36,12 +36,18 @@ accent: "#ff6ec7"
   </p>
 
   <div class="media-gallery">
-    <img src="{{ 'assets/images/crystaldebut/CrystalDebut1.jpg' | relative_url }}" alt="Screenshot 1">
-    <img src="{{ 'assets/images/crystaldebut/CrystalDebut2.jpg' | relative_url }}" alt="Screenshot 1">
-    <img src="{{ 'assets/images/crystaldebut/CrystalDebut3.jpg' | relative_url }}" alt="Screenshot 2">
-    <img src="{{ 'assets/images/crystaldebut/CrystalDebut4.jpg' | relative_url }}" alt="Screenshot 2">
-    <img src="{{ 'assets/images/crystaldebut/MainMenu.png' | relative_url }}" alt="Screenshot 3">
+    <img src="{{ 'assets/images/crystaldebut/CrystalDebut1.jpg' | relative_url }}" alt="Crystal's Debut screenshot 1" loading="lazy">
+    <img src="{{ 'assets/images/crystaldebut/CrystalDebut2.jpg' | relative_url }}" alt="Crystal's Debut screenshot 2" loading="lazy">
+    <img src="{{ 'assets/images/crystaldebut/CrystalDebut3.jpg' | relative_url }}" alt="Crystal's Debut screenshot 3" loading="lazy">
+    <img src="{{ 'assets/images/crystaldebut/CrystalDebut4.jpg' | relative_url }}" alt="Crystal's Debut screenshot 4" loading="lazy">
+    <img src="{{ 'assets/images/crystaldebut/MainMenu.webp' | relative_url }}" alt="Crystal's Debut main menu" width="1920" height="1080" loading="lazy">
   </div>
+</section>
+
+<section class="project-section fade-in">
+  <h2>Download &amp; Play</h2>
+  <iframe class="itch-widget" src="https://itch.io/embed/4238606?linkback=true&amp;dark=true" title="Crystal's Debut on itch.io" loading="lazy"><a href="https://crestoriashiro.itch.io/eldritch-vtuber">Crystal's Debut on itch.io</a></iframe>
+  <p class="embed-note">Windows download via itch.io.</p>
 </section>
 
 <section class="project-section fade-in">
@@ -92,7 +98,7 @@ accent: "#ff6ec7"
   </p>
 
   <div class="gif-container fade-in">
-    <img src="/assets/images/crystaldebut/chat.gif" alt="In-game messaging app demo" />
+    <video class="lazy-video" data-src="{{ 'assets/video/crystaldebut/chat.mp4' | relative_url }}" poster="{{ 'assets/video/crystaldebut/chat.webp' | relative_url }}" width="1280" height="714" muted loop playsinline preload="none" aria-label="In-game messaging app demo"></video>
   </div>
 </section>
 
@@ -117,7 +123,7 @@ accent: "#ff6ec7"
   </p>
 
   <div class="gif-container fade-in">
-    <img src="/assets/images/crystaldebut/wordle.gif" alt="Wordle minigame demo" />
+    <video class="lazy-video" data-src="{{ 'assets/video/crystaldebut/wordle.mp4' | relative_url }}" poster="{{ 'assets/video/crystaldebut/wordle.webp' | relative_url }}" width="1278" height="722" muted loop playsinline preload="none" aria-label="Wordle minigame demo"></video>
   </div>
 
   <div class="code-block fade-in">

@@ -4,7 +4,7 @@ title: Project Cultivation
 accent: "#51c5ff"
 ---
 
-<section class="project-hero" style="background-image: url('{{ 'assets/images/cultivate/title.png' | relative_url }}');">
+<section class="project-hero" style="background-image: url('{{ 'assets/images/cultivate/title.webp' | relative_url }}');">
   <div class="overlay">
     <h1>Project Cultivation</h1>
   </div>
@@ -27,9 +27,17 @@ accent: "#51c5ff"
   </p>
 
   <div class="media-gallery">
-    <img src="{{ 'assets/images/cultivate/title.png' | relative_url }}" alt="Screenshot 1">
-    <img src="{{ 'assets/images/cultivate/cultivategame1.gif' | relative_url }}" alt="Screenshot 2">
+    <img src="{{ 'assets/images/cultivate/title.webp' | relative_url }}" alt="Project Cultivation title screen" width="1920" height="1080" loading="lazy">
+    <video class="lazy-video" data-src="{{ 'assets/video/cultivate/cultivategame1.mp4' | relative_url }}" poster="{{ 'assets/video/cultivate/cultivategame1.webp' | relative_url }}" width="426" height="240" muted loop playsinline preload="none" aria-label="Project Cultivation gameplay"></video>
   </div>
+</section>
+
+<section class="project-section fade-in">
+  <h2>Play in Browser</h2>
+  <div class="itch-embed">
+    <iframe src="https://itch.io/embed-upload/14192964?color=0f1117" title="Play Project Cultivation on itch.io" loading="lazy" allowfullscreen></iframe>
+  </div>
+  <p class="embed-note">Runs in your browser via itch.io — best played on desktop.</p>
 </section>
 
 <section class="project-section fade-in">
@@ -140,7 +148,7 @@ void Rewind()
     </code></pre>
   </div>
   <div class="gif-container fade-in">
-    <img src="{{ 'assets/images/cultivate/rewindgameplay.gif' | relative_url }}" alt="Combat Demo">
+    <video class="lazy-video" data-src="{{ 'assets/video/cultivate/rewindgameplay.mp4' | relative_url }}" poster="{{ 'assets/video/cultivate/rewindgameplay.webp' | relative_url }}" width="426" height="240" muted loop playsinline preload="none" aria-label="Rewind mechanic demo"></video>
   </div>
   <p>
     To help players visualize their past path, I implemented the <strong>Rewind Ghost</strong> — a transparent echo of the player's previous self.
@@ -171,7 +179,7 @@ void UpdateRewindGhost()
   </div>
 
   <div class="gif-container fade-in">
-    <img src="{{ 'assets/images/cultivate/timedoublegameplay.gif' | relative_url }}" alt="Combat Demo">
+    <video class="lazy-video" data-src="{{ 'assets/video/cultivate/timedoublegameplay.mp4' | relative_url }}" poster="{{ 'assets/video/cultivate/timedoublegameplay.webp' | relative_url }}" width="426" height="240" muted loop playsinline preload="none" aria-label="Rewind ghost showing the player's past position"></video>
   </div>
 </section>
 
@@ -257,6 +265,6 @@ public class WorldSlowdownManager : MonoBehaviour
   </div>
 
   <div class="gif-container fade-in">
-    <img src="{{ 'assets/images/cultivate/slowdown.gif' | relative_url }}" alt="Combat Demo">
+    <video class="lazy-video" data-src="{{ 'assets/video/cultivate/slowdown.mp4' | relative_url }}" poster="{{ 'assets/video/cultivate/slowdown.webp' | relative_url }}" width="426" height="240" muted loop playsinline preload="none" aria-label="Slow time mechanic demo"></video>
   </div>
 </section>

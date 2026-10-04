@@ -4,9 +4,10 @@ title: Project Gold - Combat Systems & Party Stat Viewer
 accent: "#e6b64d"
 ---
 
-<section class="project-hero" style="background-image: url('{{ 'assets/images/project-gold/title.png' | relative_url }}');">
+<section class="project-hero project-hero--placeholder">
   <div class="overlay">
     <h1>Project Gold: Combat Systems &amp; Party Stat Viewer</h1>
+    <p class="hero-status">In Prototyping</p>
   </div>
 </section>
 
@@ -14,7 +15,7 @@ accent: "#e6b64d"
   <div class="project-info-grid">
     <div><strong>Project Type</strong><br>RPG — Black Star Creatives</div>
     <div><strong>Date</strong><br>August 2026</div>
-    <div><strong>Status</strong><br>In Development</div>
+    <div><strong>Status</strong><br>Prototyping</div>
     <div><strong>Engine</strong><br>Unity Engine 6</div>
     <div><strong>Role</strong><br>Systems Programmer · Designer</div>
   </div>
@@ -23,11 +24,7 @@ accent: "#e6b64d"
     <em>Project Gold</em> is a turn-based RPG in development at Black Star Creatives, built around an Emotion System as its central gimmick — every playable character is aligned to one of the Seven Deadly Sins, and climbing an emotion ladder in battle means giving in to that sin before it resolves into its opposing virtue. This page focuses on the foundational systems work I built that has to exist before any of that can be played: a data-driven character, skill, and gear model, plus a custom Unity Editor tool built with UI Toolkit for authoring and live-tuning it.
   </p>
 
-  <div class="media-gallery">
-    <img src="{{ 'assets/images/project-gold/title.png' | relative_url }}" alt="Party Stat Viewer overview">
-    <img src="{{ 'assets/images/project-gold/viewer-tabs.png' | relative_url }}" alt="Sin-affinity colored tabs">
-    <img src="{{ 'assets/images/project-gold/viewer-gear.png' | relative_url }}" alt="Gear and effective stats panel">
-  </div>
+  <p class="media-note">Screenshots and footage will be added once the project moves out of prototyping.</p>
 </section>
 
 <section class="project-section fade-in">

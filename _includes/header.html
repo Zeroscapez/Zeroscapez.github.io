@@ -7,11 +7,18 @@
     </button>
     <nav>
         <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a>
+        <a href="{{ '/games/' | relative_url }}" {% if page.url contains '/games' or page.url contains '/projects' %}class="active"{% endif %}>Game Dev</a>
+        <a href="{{ '/swe/' | relative_url }}" {% if page.url contains '/swe' %}class="active"{% endif %}>SWE Dev</a>
         <a href="{{ '/about/' | relative_url }}" {% if page.url contains '/about' %}class="active"{% endif %}>About</a>
-        <a href="https://crestoriashiro.itch.io/" target="_blank">itch.io</a>
-        <a href="https://github.com/Zeroscapez" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/agyei-lomini-067340266/" target="_blank">LinkedIn</a>
-        <a href="{{ '/swe/' | relative_url }}" class="nav-switch">SWE Dev →</a>
+        <a href="https://crestoriashiro.itch.io/" target="_blank">{% include icon.html name="itch" %}itch.io</a>
+        <a href="https://github.com/Zeroscapez" target="_blank">{% include icon.html name="github" %}GitHub</a>
+        <a href="https://www.linkedin.com/in/agyei-lomini-067340266/" target="_blank">{% include icon.html name="linkedin" %}LinkedIn</a>
+        {% if page.url == '/' %}
+        <a href="#resume" class="resume-btn">Resume</a>
+        {% elsif page.url contains '/swe' %}
+        <a href="/files/Agyei_Lomini_Resume.pdf" target="_blank" class="resume-btn">Resume</a>
+        {% else %}
         <a href="/files/AgyeiLomini_GameDev_Resume.pdf" target="_blank" class="resume-btn">Resume</a>
+        {% endif %}
     </nav>
 </header>

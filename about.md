@@ -13,7 +13,7 @@ description: "Game developer and CS grad passionate about gameplay programming, 
     <p class="hero-label">Game Developer</p>
     <h1 class="hero-name">Agyei<br>Lomini</h1>
     <p class="hero-tagline">Gameplay Programming · Systems Architecture · AI</p>
-    <p>CS grad from Georgia State University with a minor in Game Design &amp; Development. I build systems that feel good to play — from state-machine combat to modular AI and real-time dialogue.</p>
+    <p>CS grad from Georgia State University with a minor in Game Design &amp; Development, now pursuing an M.S. in Computer Science at Kennesaw State University. I build systems that feel good to play — from state-machine combat to modular AI and real-time dialogue.</p>
     <p>Currently building combat systems and technical architecture for <em>Project Gold</em>, an indie turn-based RPG in development at Black Star Creatives, the studio I co-founded.</p>
     <div class="hero-tags">
       <span class="tag">Unity</span>
@@ -131,7 +131,10 @@ description: "Game developer and CS grad passionate about gameplay programming, 
 <section class="about-edu-resume-section">
   <div class="about-edu-card">
     <p class="skills-label">Education</p>
-    <p class="edu-school">Georgia State University</p>
+    <p class="edu-school">Kennesaw State University</p>
+    <p class="edu-degree">M.S. Computer Science</p>
+    <p class="edu-note">Expected 2027</p>
+    <p class="edu-school edu-next">Georgia State University</p>
     <p class="edu-degree">B.S. Computer Science<br>Minor in Game Design &amp; Development</p>
     <p class="edu-note">Magna Cum Laude · 2021–2024</p>
   </div>
@@ -150,7 +153,7 @@ description: "Game developer and CS grad passionate about gameplay programming, 
   <p>Open to game dev collaborations, internships, and full-time roles.</p>
   <div class="contact-links">
     <a href="mailto:agyeilomini@gmail.com" class="contact-btn">Email Me</a>
-    <a href="https://www.linkedin.com/in/agyei-lomini-067340266/" target="_blank" class="contact-btn contact-btn-outline">LinkedIn</a>
-    <a href="https://github.com/Zeroscapez" target="_blank" class="contact-btn contact-btn-outline">GitHub</a>
+    <a href="https://www.linkedin.com/in/agyei-lomini-067340266/" target="_blank" class="contact-btn contact-btn-outline">{% include icon.html name="linkedin" %}LinkedIn</a>
+    <a href="https://github.com/Zeroscapez" target="_blank" class="contact-btn contact-btn-outline">{% include icon.html name="github" %}GitHub</a>
   </div>
 </section>

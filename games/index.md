@@ -1,0 +1,151 @@
+---
+layout: default
+title: Game Development
+permalink: /games/
+accent: "#e6b64d"
+---
+
+<section class="hero">
+  <div class="hero-text">
+    <p class="hero-label">Unity Game Developer</p>
+    <h1 class="hero-name">Agyei<br>Lomini</h1>
+    <p class="hero-tagline">Gameplay Programming · Systems Architecture · AI</p>
+    <p>Enthusiastic game developer with a flair for Computer Science and Design. Hands-on experience in Unity and C#.</p>
+    <p>Passionate about problem-solving, prototyping, and crafting scalable systems that create unforgettable player experiences.</p>
+    <p>Currently building combat systems and technical architecture for <em>Project Gold</em>, an indie turn-based RPG in development at Black Star Creatives, the studio I co-founded.</p>
+    <div class="hero-tags">
+      <span class="tag">Unity</span>
+      <span class="tag">C#</span>
+      <span class="tag">Unreal</span>
+      <span class="tag">Game Design</span>
+    </div>
+  </div>
+  <div class="hero-image">
+    <div class="image-panel">
+      <img src="{{ 'assets/images/banner.webp' | relative_url }}" alt="Game Banner">
+    </div>
+  </div>
+</section>
+
+<section class="projects-section">
+  <div class="section-header">
+    <h2>Projects</h2>
+    <span class="project-count">6 Projects</span>
+  </div>
+
+  <div class="projects-grid">
+
+    <a href="/projects/project-gold" class="project-card" style="--accent: #e6b64d;">
+      <div class="project">
+        <div class="media-placeholder" aria-hidden="true"><span>In Prototyping</span></div>
+        <div class="overlay">
+          <span>View Project →</span>
+        </div>
+      </div>
+      <div class="project-info">
+        <h3>Project Gold</h3>
+        <p class="project-role">Systems Programmer · Designer</p>
+        <p class="project-desc">Turn-based RPG built around a sin → virtue Emotion System I designed, plus the combat systems and editor tooling that run and tune it.</p>
+        <div class="project-tags">
+          <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Systems Design</span><span class="tag">UI Toolkit</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="/projects/vampiric-ascension" class="project-card" style="--accent: #ff4d6d;">
+      <div class="project">
+        <img src="{{ 'assets/images/vamphell/title-thumb.webp' | relative_url }}" alt="Vampiric Ascension" loading="lazy">
+        <div class="overlay">
+          <span>View Project →</span>
+        </div>
+      </div>
+      <div class="project-info">
+        <h3>Vampiric Ascension</h3>
+        <p class="project-role">PM · Lead Programmer · Lead Designer</p>
+        <p class="project-desc">Touhou-inspired bullet hell for Bullet Jam 2025. State-machine combat and modular enemy AI system.</p>
+        <div class="project-tags">
+          <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Combat AI</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="/projects/project-cultivation" class="project-card" style="--accent: #51c5ff;">
+      <div class="project">
+        <img src="{{ 'assets/images/cultivate/title-thumb.webp' | relative_url }}" alt="Project Cultivation" loading="lazy">
+        <div class="overlay">
+          <span>View Project →</span>
+        </div>
+      </div>
+      <div class="project-info">
+        <h3>Project: Cultivation</h3>
+        <p class="project-role">PM · Lead Programmer · Designer</p>
+        <p class="project-desc">Side-scrolling shooter where player 41155A-Alissa manipulates time through experimental environments.</p>
+        <div class="project-tags">
+          <span class="tag">Unity</span><span class="tag">C#</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="/projects/inverse" class="project-card" style="--accent: #a685ff;">
+      <div class="project">
+        <img src="{{ 'assets/images/inverse/title-thumb.webp' | relative_url }}" alt="Inverse" loading="lazy">
+        <div class="overlay">
+          <span>View Project →</span>
+        </div>
+      </div>
+      <div class="project-info">
+        <h3>Inverse</h3>
+        <p class="project-role">PM · Lead Programmer · Designer</p>
+        <p class="project-desc">3D puzzle platformer with two characters across mirrored worlds, using light refraction to progress.</p>
+        <div class="project-tags">
+          <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">3D</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="/projects/crystaldebut" class="project-card" style="--accent: #ff6ec7;">
+      <div class="project">
+        <img src="{{ 'assets/images/crystaldebut/MainMenu-thumb.webp' | relative_url }}" alt="Crystal's Debut" loading="lazy">
+        <div class="overlay">
+          <span>View Project →</span>
+        </div>
+      </div>
+      <div class="project-info">
+        <h3>Crystal's Debut</h3>
+        <h4 class="badge-winner">Pirate Jam 18 Winner</h4>
+        <p class="project-role">PM · Lead Programmer · Lead Designer</p>
+        <p class="project-desc">Play as Crystal, a new streamer juggling chat's requests in real time to keep her audience devoted. Grew from a jam win into a full demo.</p>
+        <div class="project-tags">
+          <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Yarn Spinner 3</span><span class="tag">FMOD</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="/projects/gshinobi" class="project-card" style="--accent: #5ecb8f;">
+      <div class="project">
+        <img src="{{ 'assets/images/gshinobi/title-thumb.webp' | relative_url }}" alt="Greatest Shinobi" loading="lazy">
+        <div class="overlay">
+          <span>View Project →</span>
+        </div>
+      </div>
+      <div class="project-info">
+        <h3>Greatest Shinobi</h3>
+        <p class="project-role">PM · Lead Gameplay Programmer · Designer</p>
+        <p class="project-desc">2.5D platformer where you transform into a frog to become the greatest shinobi.</p>
+        <div class="project-tags">
+          <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">2.5D</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<section class="contact-section">
+  <h2>Get In Touch</h2>
+  <p>Open to game dev collaborations, internships, and full-time roles.</p>
+  <div class="contact-links">
+    <a href="mailto:agyeilomini@gmail.com" class="contact-btn">Email Me</a>
+    <a href="https://www.linkedin.com/in/agyei-lomini-067340266/" target="_blank" class="contact-btn contact-btn-outline">{% include icon.html name="linkedin" %}LinkedIn</a>
+  </div>
+</section>

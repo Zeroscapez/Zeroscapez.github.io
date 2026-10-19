@@ -432,17 +432,109 @@ section {
    RESUME BUTTON
 ========================= */
 
-.navbar nav a.resume-btn {
-    padding: 6px 14px;
+.resume-menu {
+    position: relative;
+}
+
+.navbar .resume-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px 6px 14px;
     border-radius: 6px;
     border: 1px solid #7aa2ff;
+    background: none;
     color: #7aa2ff;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navbar .resume-btn:hover,
+.navbar .resume-btn[aria-expanded="true"] {
+    background-color: #7aa2ff;
+    color: #0f1117;
+}
+
+.navbar .resume-btn:focus-visible {
+    outline: 2px solid #7aa2ff;
+    outline-offset: 3px;
+}
+
+.resume-caret {
+    width: 12px;
+    height: 12px;
+    transition: transform 0.2s ease;
+}
+
+.resume-btn[aria-expanded="true"] .resume-caret {
+    transform: rotate(180deg);
+}
+
+.resume-options {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    z-index: 1001;
+    width: 280px;
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid #2a2f45;
+    border-top: 3px solid #7aa2ff;
+    background-color: #1a1d29;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+}
+
+.resume-options[hidden] {
+    display: none;
+}
+
+.resume-options-label {
+    padding: 4px 10px 8px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #888;
+}
+
+.navbar nav .resume-option {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent, #7aa2ff);
+    transition: background-color 0.2s ease;
+}
+
+.navbar nav .resume-option + .resume-option {
+    margin-top: 6px;
+}
+
+.navbar nav .resume-option::after {
+    display: none;
+}
+
+.navbar nav .resume-option:hover,
+.navbar nav .resume-option:focus-visible {
+    background-color: #232738;
+}
+
+.resume-option-title {
+    display: block;
+    color: #ffffff;
     font-weight: 500;
 }
 
-.navbar nav a.resume-btn:hover {
-    background-color: #7aa2ff;
-    color: #0f1117;
+.resume-option-desc {
+    display: block;
+    margin-top: 2px;
+    font-size: 12.5px;
+    color: #9aa0b4;
+}
+
+.navbar nav .resume-option:hover .resume-option-title {
+    color: var(--accent, #7aa2ff);
 }
 
 /* =========================
@@ -494,16 +586,35 @@ section {
         display: flex;
     }
 
+    /* Let the open menu drop onto its own row below the name and hamburger */
+    .navbar {
+        flex-wrap: wrap;
+    }
+
     .navbar nav {
         display: none;
         flex-direction: column;
         width: 100%;
         gap: 16px;
-        padding-bottom: 8px;
+        padding: 16px 0 8px;
     }
 
     .navbar nav.open {
         display: flex;
+    }
+
+    .resume-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .resume-options {
+        position: static;
+        width: 100%;
+        margin-top: 10px;
+        box-shadow: none;
     }
 
 }

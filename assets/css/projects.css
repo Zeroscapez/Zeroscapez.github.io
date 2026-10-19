@@ -1,18 +1,22 @@
 /* =========================
    PROJECT HERO
+   A boxed key-art banner with the accent bar on top, matching the
+   panels on the home, game dev and SWE pages.
 ========================= */
 
 .project-hero {
     position: relative;
-    height: 740px;
+    height: 460px;
+    margin: 40px 8% 0;
 
+    border-radius: 12px;
+    border-top: 3px solid var(--accent, #7aa2ff);
+    overflow: hidden;
+
+    background-color: #12141c;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .project-hero .overlay {
@@ -20,42 +24,50 @@
     inset: 0;
     opacity: 1;
 
-    background: rgba(0, 0, 0, 0.65);
-
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 36px 40px;
+    text-align: left;
+
+    background: linear-gradient(to top, rgba(15, 17, 23, 0.95) 0%, rgba(15, 17, 23, 0.55) 35%, rgba(15, 17, 23, 0) 70%);
 }
 
 .project-hero h1 {
-    font-size: 44px;
-    color: white;
-    padding: 0 20px 16px;
+    font-size: 48px;
+    line-height: 1.1;
+    color: #ffffff;
     max-width: 900px;
-    border-bottom: 3px solid var(--accent, #7aa2ff);
+}
+
+.project-hero h1::before {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 3px;
+    margin-bottom: 16px;
+    border-radius: 2px;
+    background-color: var(--accent, #7aa2ff);
 }
 
 /* Hero for projects without key art yet (e.g. still in prototyping) */
 
 .project-hero--placeholder {
-    height: 420px;
-    background-color: #141722;
-    overflow: hidden;
+    height: 320px;
 }
 
 .project-hero--placeholder::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 25% 30%, var(--accent, #7aa2ff), transparent 60%);
-    opacity: 0.25;
+    background: radial-gradient(circle at 80% 20%, var(--accent, #7aa2ff), transparent 60%);
+    opacity: 0.18;
 }
 
 .project-hero--placeholder .overlay {
-    flex-direction: column;
-    gap: 16px;
-    background: rgba(0, 0, 0, 0.35);
+    background: none;
 }
 
 .hero-status {
@@ -71,78 +83,158 @@
 }
 
 /* =========================
+   WINNER BANNER
+========================= */
+
+.winner-banner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 24px 8% 0;
+    padding: 18px 22px;
+
+    background-color: #1a1d29;
+    border: 1px solid #2a2f45;
+    border-left: 3px solid #e6b64d;
+    border-radius: 12px;
+}
+
+.winner-trophy {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #e6b64d;
+}
+
+.winner-trophy svg {
+    width: 22px;
+    height: 22px;
+    fill: #0f1117;
+}
+
+.winner-headline {
+    margin: 0;
+    font-size: 26px;
+    line-height: 1.2;
+    color: #ffffff;
+}
+
+/* =========================
    PROJECT DETAILS
 ========================= */
 
 .project-details {
-    padding: 60px 8%;
+    padding: 40px 8% 20px;
 }
 
 .project-info-grid {
     display: grid;
-
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-
-    gap: 20px;
-
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
     margin-bottom: 30px;
 }
 
 .project-info-grid div {
+    padding: 16px 18px;
+    border-radius: 12px;
     background-color: #1a1d29;
-    padding: 16px;
-    border-radius: 10px;
-
     border: 1px solid #2a2f45;
-
-    transition: transform 0.2s ease;
+    color: #e6e6e6;
+    font-size: 15px;
+    transition: border-color 0.2s ease;
 }
 
 .project-info-grid div:hover {
-    transform: translateY(-4px);
     border-color: var(--accent, #2a2f45);
 }
 
 .project-info-grid strong {
+    display: block;
+    margin-bottom: 4px;
     color: var(--accent, #7aa2ff);
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+/* Labels are block-level now, so the line breaks after them would add a blank line */
+.project-info-grid strong + br {
+    display: none;
+}
+
+.project-info-grid a,
+.project-description a,
+.project-section a:not(.itch-play) {
+    color: var(--accent, #7aa2ff);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
 }
 
 .project-description {
-    font-size: 16px;
-    margin-bottom: 30px;
     max-width: 900px;
+    margin-bottom: 30px;
+    font-size: 17px;
 }
 
 /* =========================
-   MEDIA GALLERY
+   MEDIA
 ========================= */
 
-.media-gallery {
+.media-gallery,
+.gif-grid {
     display: grid;
-
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-
     gap: 16px;
-
     margin-top: 20px;
 }
 
 .media-gallery img,
-.media-gallery video {
+.media-gallery video,
+.gif-grid img,
+.gif-grid video {
     display: block;
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 12px;
     background-color: #1a1d29;
-
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Screenshots and art come in mixed shapes; uniform 16:9 tiles keep the row even */
+.media-gallery img,
+.media-gallery video {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center top;
 }
 
 .media-gallery img:hover,
 .media-gallery video:hover {
-    transform: scale(1.03);
+    transform: translateY(-4px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Single feature image/clip in a section: boxed with the accent bar on top */
+.gif-container {
+    margin: 28px 0;
+}
+
+.gif-container img,
+.gif-container video {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 12px;
+    border-top: 3px solid var(--accent, #7aa2ff);
+    background-color: #12141c;
 }
 
 /* =========================
@@ -150,75 +242,68 @@
 ========================= */
 
 .project-section {
-    padding: 60px 8%;
+    padding: 40px 8%;
 }
 
 .project-section h2 {
-    font-size: 1.6rem;
-    font-weight: 700;
+    margin-bottom: 18px;
+    font-size: 30px;
+    line-height: 1.2;
     color: #ffffff;
-    border-bottom: 2px solid var(--accent, #7aa2ff);
-    display: inline-block;
-    margin-bottom: 1rem;
+}
+
+.project-section h2::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 3px;
+    margin-top: 12px;
+    border-radius: 2px;
+    background-color: var(--accent, #7aa2ff);
+}
+
+.project-section h3 {
+    margin: 24px 0 10px;
+    font-size: 22px;
+    color: #ffffff;
 }
 
 .project-section p {
-    font-size: 16px;
     margin-bottom: 16px;
+    font-size: 16px;
 }
 
 /* The global reset strips list padding, which pushes bullets outside the text column. */
-.project-section ul {
+.project-section ul,
+.project-section ol {
     padding-left: 1.25rem;
     margin-bottom: 16px;
 }
 
 .project-section li {
+    margin-bottom: 6px;
     font-size: 16px;
     color: #b5b5b5;
-    margin-bottom: 6px;
 }
 
-.gif-container {
-    margin-top: 30px;
+.project-section li::marker {
+    color: var(--accent, #7aa2ff);
 }
 
-.gif-container img,
-.gif-container video {
-    width: 80%;
-    max-width: 800px;
-    height: auto;
-    display: block;
-    margin: 1.5rem auto;
-    border-radius: 8px;
-    background-color: #1a1d29;
-    box-shadow: 0 0 14px var(--accent, #7aa2ff);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+.project-section strong {
+    color: #e6e6e6;
 }
 
-.gif-container img:hover,
-.gif-container video:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 26px var(--accent, #7aa2ff);
-}
-
-.gif-grid {
-    display: grid;
-
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-
-    gap: 16px;
-
-    margin-top: 20px;
-}
-
-.gif-grid img,
-.gif-grid video {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    background-color: #1a1d29;
+/* Inline code in prose */
+.project-section p code,
+.project-section li code {
+    padding: 2px 6px;
+    border-radius: 5px;
+    background-color: #1c1f2a;
+    border: 1px solid #2a2f45;
+    color: #d0d6ff;
+    font-family: Consolas, "SFMono-Regular", Menlo, monospace;
+    font-size: 0.88em;
 }
 
 /* =========================
@@ -232,10 +317,11 @@
     position: relative;
     width: 100%;
     max-width: 1100px;
+    margin: 0 auto;
     aspect-ratio: 16 / 9;
-    border-radius: 10px;
     overflow: hidden;
-    border: 1px solid var(--accent, #2a2f45);
+    border-radius: 12px;
+    border-top: 3px solid var(--accent, #7aa2ff);
     background-color: #0d1117;
 }
 
@@ -270,14 +356,13 @@
 
 .itch-play span {
     position: relative;
-    padding: 12px 24px;
-    border: 1px solid var(--accent, #7aa2ff);
+    padding: 12px 28px;
     border-radius: 8px;
-    background-color: rgba(15, 17, 23, 0.8);
-    color: var(--accent, #7aa2ff);
+    background-color: var(--accent, #7aa2ff);
+    color: #0f1117;
     font-size: 16px;
     font-weight: 600;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    transition: transform 0.2s ease;
 }
 
 .itch-play:hover img,
@@ -287,8 +372,7 @@
 
 .itch-play:hover span,
 .itch-play:focus-visible span {
-    background-color: var(--accent, #7aa2ff);
-    color: #0f1117;
+    transform: translateY(-2px);
 }
 
 .itch-widget {
@@ -296,11 +380,14 @@
     width: 552px;
     max-width: 100%;
     height: 167px;
+    margin: 0 auto;
     border: 0;
+    border-radius: 12px;
 }
 
 .embed-note {
     margin-top: 12px;
+    text-align: center;
     font-size: 14px;
 }
 
@@ -309,60 +396,24 @@
 ========================= */
 
 .code-block {
-    margin-top: 30px;
+    margin: 24px 0 28px;
 }
 
 .code-block pre {
-    background-color: #0d1117;
-    padding: 20px;
-    border-radius: 10px;
     overflow-x: auto;
-    border: 1px solid var(--accent, #2a2f45);
+    padding: 22px 26px;
+    border-radius: 12px;
+    border-top: 3px solid var(--accent, #7aa2ff);
+    background:
+        radial-gradient(circle at 85% 0%, color-mix(in srgb, var(--accent, #7aa2ff) 10%, transparent), transparent 55%),
+        #12141c;
 }
 
 .code-block code {
-    font-family: Consolas, monospace;
+    font-family: Consolas, "SFMono-Regular", Menlo, monospace;
     font-size: 14px;
-    color: #e6edf3;
-}
-
-/* =========================
-   WINNER BANNER
-========================= */
-
-.winner-banner {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background: #faeeda;
-    border: 1px solid #ef9f27;
-    border-radius: 10px;
-    padding: 1rem 1.25rem;
-    margin: 1.5rem 0 2rem;
-}
-
-.winner-trophy {
-    width: 44px;
-    height: 44px;
-    background: #ba7517;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.winner-trophy svg {
-    width: 22px;
-    height: 22px;
-    fill: #faeeda;
-}
-
-.winner-headline {
-    font-size: 30px;
-    font-weight: 600;
-    color: #633806;
-    margin: 0;
+    line-height: 1.7;
+    color: #cfd6ff;
 }
 
 /* =========================
@@ -372,10 +423,82 @@
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
-    transition: all 0.6s ease;
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+    .project-hero {
+        height: 320px;
+        margin: 24px 6% 0;
+    }
+
+    .project-hero--placeholder {
+        height: 240px;
+    }
+
+    .project-hero .overlay {
+        padding: 24px;
+    }
+
+    .project-hero h1 {
+        font-size: 34px;
+    }
+
+    .winner-banner {
+        margin: 20px 6% 0;
+    }
+
+    .winner-headline {
+        font-size: 21px;
+    }
+
+    .project-details {
+        padding: 32px 6% 12px;
+    }
+
+    .project-section {
+        padding: 32px 6%;
+    }
+
+    .project-section h2 {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 500px) {
+    .project-hero {
+        height: 240px;
+    }
+
+    .project-hero h1 {
+        font-size: 28px;
+    }
+
+    .project-info-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .project-info-grid div {
+        padding: 12px 14px;
+        font-size: 14px;
+        overflow-wrap: anywhere;
+    }
+
+    .code-block pre {
+        padding: 16px 18px;
+    }
+
+    .code-block code {
+        font-size: 12.5px;
+    }
 }

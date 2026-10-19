@@ -91,6 +91,31 @@
                 });
             });
 
+            // Resume chooser in the navbar: toggles open, closes on outside click or Escape.
+            const resumeBtn = document.querySelector(".resume-menu .resume-btn");
+            const resumeOptions = document.getElementById("resume-options");
+            if (resumeBtn && resumeOptions) {
+                const setResumeOpen = open => {
+                    resumeOptions.hidden = !open;
+                    resumeBtn.setAttribute("aria-expanded", String(open));
+                };
+                resumeBtn.addEventListener("click", event => {
+                    event.stopPropagation();
+                    setResumeOpen(resumeOptions.hidden);
+                });
+                document.addEventListener("click", event => {
+                    if (!resumeOptions.hidden && !event.target.closest(".resume-menu")) setResumeOpen(false);
+                });
+                document.addEventListener("keydown", event => {
+                    if (event.key === "Escape" && !resumeOptions.hidden) {
+                        setResumeOpen(false);
+                        resumeBtn.focus();
+                    }
+                });
+                resumeOptions.querySelectorAll("a").forEach(link =>
+                    link.addEventListener("click", () => setResumeOpen(false)));
+            }
+
             const hamburger = document.querySelector(".hamburger");
             const navMenu = document.querySelector(".navbar nav");
             if (hamburger && navMenu) {

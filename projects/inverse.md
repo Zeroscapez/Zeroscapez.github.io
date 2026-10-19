@@ -68,8 +68,7 @@ accent: "#a685ff"
   </ul>
 
   <div class="code-block fade-in">
-    <pre><code class="language-csharp">
-using UnityEngine;
+    <pre><code class="language-csharp">using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -146,8 +145,7 @@ public class PlayerManager : MonoBehaviour
             Debug.LogError(&quot;Characters with specified IDs not found.&quot;);
         }
     }
-}
-    </code></pre>
+}</code></pre>
   </div>
 
   <div class="gif-container fade-in">
@@ -165,8 +163,7 @@ public class PlayerManager : MonoBehaviour
   </p>
 
   <div class="code-block fade-in">
-    <pre><code class="language-csharp">
-using UnityEngine;
+    <pre><code class="language-csharp">using UnityEngine;
 
 public class LightEmitter : MonoBehaviour
 {
@@ -252,8 +249,7 @@ public class LightEmitter : MonoBehaviour
         lineRenderer.positionCount = lightPoints.Count;
         lineRenderer.SetPositions(lightPoints.ToArray());
     }
-}
-    </code></pre>
+}</code></pre>
   </div>
 
   <div class="gif-container fade-in">

@@ -64,8 +64,7 @@ accent: "#5ecb8f"
   </p>
 
   <div class="code-block fade-in">
-    <pre><code class="language-csharp">
-public class FormManager : MonoBehaviour
+    <pre><code class="language-csharp">public class FormManager : MonoBehaviour
 {
     public bool isfrog = false;
     public Animator animator;
@@ -92,8 +91,7 @@ private void OnTriggerEnter(Collider other)
 
         Destroy(gameObject);
     }
-}
-    </code></pre>
+}</code></pre>
   </div>
 </section>
 
@@ -107,8 +105,7 @@ private void OnTriggerEnter(Collider other)
   </p>
 
   <div class="code-block fade-in">
-    <pre><code class="language-csharp">
-void Attack()
+    <pre><code class="language-csharp">void Attack()
 {
     Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
     animator.Play("Hit");
@@ -130,8 +127,7 @@ private void OnTriggerExit(Collider other)
 {
     if (other.CompareTag("Player"))
         enemyChase.StopChase();
-}
-    </code></pre>
+}</code></pre>
   </div>
 </section>
 
@@ -142,8 +138,7 @@ private void OnTriggerExit(Collider other)
   </p>
 
   <div class="code-block fade-in">
-    <pre><code class="language-csharp">
-void Start()
+    <pre><code class="language-csharp">void Start()
 {
     cinemachineCamera = GetComponent&lt;CinemachineVirtualCamera&gt;();
     GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -151,8 +146,7 @@ void Start()
     {
         cinemachineCamera.Follow = player.transform;
     }
-}
-    </code></pre>
+}</code></pre>
   </div>
 </section>
 

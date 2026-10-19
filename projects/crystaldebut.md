@@ -79,16 +79,14 @@ accent: "#ff6ec7"
   </p>
 
   <div class="code-block fade-in">
-    <pre><code class="language-csharp">
-// Inside FinalizeRequest(), after the rewards are paid out
+    <pre><code class="language-csharp">// Inside FinalizeRequest(), after the rewards are paid out
 if (request.Data.ConflictingRequest != null)
 {
     _requestsById.TryGetValue(request.Data.ConflictingRequest.RequestID, out var conflicting);
 
     if (conflicting != null &amp;&amp; conflicting.Status == RequestStatus.Active)
         FinalizeRequest(conflicting, RequestStatus.Failed);
-}
-    </code></pre>
+}</code></pre>
   </div>
 
   <p>
@@ -168,8 +166,7 @@ if (request.Data.ConflictingRequest != null)
   </div>
 
   <div class="code-block fade-in">
-    <pre><code class="language-csharp">
-// Pass 1 — exact matches
+    <pre><code class="language-csharp">// Pass 1 — exact matches
 for (int i = 0; i &lt; row.tiles.Length; i++)
 {
     WordleTile tile = row.tiles[i];
@@ -198,8 +195,7 @@ for (int i = 0; i &lt; row.tiles.Length; i++)
     {
         tile.SetState(incorrectState);
     }
-}
-    </code></pre>
+}</code></pre>
   </div>
 </section>
 

@@ -67,8 +67,7 @@ accent: "#e6b64d"
   </ul>
 
   <div class="code-block fade-in">
-    <pre><code class="language-csharp">
-public override void OnTookDamage(CombatActor self, CombatActor attacker, DamageBreakdown breakdown)
+    <pre><code class="language-csharp">public override void OnTookDamage(CombatActor self, CombatActor attacker, DamageBreakdown breakdown)
 {
     // Plundered — but only in the Sin State. Below it the hoard is safe, and Resolute lifts the flaw
     // again, which is why IsInSinState is an exact level match rather than a threshold.
@@ -89,8 +88,7 @@ public override int ModifyOutgoingDamage(CombatActor self, CombatActor target, i
     }
 
     return damage + bonus;
-}
-    </code></pre>
+}</code></pre>
   </div>
 
   <p>
@@ -111,8 +109,7 @@ public override int ModifyOutgoingDamage(CombatActor self, CombatActor target, i
   </ul>
 
   <div class="code-block fade-in">
-    <pre><code class="language-csharp">
-// Built from the serialized fields rather than written out, so retuning any of them retunes the
+    <pre><code class="language-csharp">// Built from the serialized fields rather than written out, so retuning any of them retunes the
 // Party Stat Viewer's ladder readout with it.
 public override string DescribeEmotionLevel(int level)
 {
@@ -124,8 +121,7 @@ public override string DescribeEmotionLevel(int level)
     }
 
     // ...one branch per level this passive affects; null for levels where it does nothing
-}
-    </code></pre>
+}</code></pre>
   </div>
 </section>
 
@@ -139,8 +135,7 @@ public override string DescribeEmotionLevel(int level)
   </p>
 
   <div class="code-block fade-in">
-    <pre><code class="language-csharp">
-public int GetEffectiveStat(StatType stat)
+    <pre><code class="language-csharp">public int GetEffectiveStat(StatType stat)
 {
     int value = GetBaseStat(stat);
 
@@ -179,8 +174,7 @@ public int GetEffectiveStat(StatType stat)
     }
 
     return Mathf.RoundToInt(value * (1f + percentBonus));
-}
-    </code></pre>
+}</code></pre>
   </div>
 
   <p>
@@ -198,16 +192,14 @@ public int GetEffectiveStat(StatType stat)
   </p>
 
   <div class="code-block fade-in">
-    <pre><code class="language-csharp">
-[System.Serializable]
+    <pre><code class="language-csharp">[System.Serializable]
 public class WeaponInstance
 {
     public WeaponData definition;
 
     [Range(1, 5)]
     public int currentLevel = 1;
-}
-    </code></pre>
+}</code></pre>
   </div>
 
   <p>
@@ -237,13 +229,11 @@ public class WeaponInstance
   </p>
 
   <div class="code-block fade-in">
-    <pre><code class="language-csharp">
-currentSerializedObject = new SerializedObject(member);
+    <pre><code class="language-csharp">currentSerializedObject = new SerializedObject(member);
 detailContainer.Bind(currentSerializedObject);
 
 // One subscription covering every field, so edits anywhere refresh the derived panels.
-detailContainer.TrackSerializedObjectValue(currentSerializedObject, _ =&gt; RefreshAll());
-    </code></pre>
+detailContainer.TrackSerializedObjectValue(currentSerializedObject, _ =&gt; RefreshAll());</code></pre>
   </div>
 
   <p>

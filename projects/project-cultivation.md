@@ -67,8 +67,7 @@ accent: "#51c5ff"
     The TimeStopObject script handles physics objects by saving their velocity and stopping their motion during a time stop, then restoring it when time resumes:
   </p>
   <div class="code-block fade-in">
-    <pre><code class="language-csharp">
-using UnityEngine;
+    <pre><code class="language-csharp">using UnityEngine;
 
 public class TimeStopObject : MonoBehaviour, ITimeStoppable
 {
@@ -109,8 +108,7 @@ public class TimeStopObject : MonoBehaviour, ITimeStoppable
         rb.isKinematic = true;
         isStopped = true;
     }
-}
-    </code></pre>
+}</code></pre>
   </div>
 </section>
 
@@ -127,8 +125,7 @@ public class TimeStopObject : MonoBehaviour, ITimeStoppable
   </p>
 
   <div class="code-block fade-in">
-    <pre><code class="language-csharp">
-void Rewind()
+    <pre><code class="language-csharp">void Rewind()
 {
     float targetTime = Time.time - rewindTime;
     PositionRecord rewindRecord = positionHistory[0];
@@ -147,8 +144,7 @@ void Rewind()
     // Clear old trail & start fresh
     positionHistory.Clear();
     positionHistory.Add(new PositionRecord { position = transform.position, time = Time.time });
-}
-    </code></pre>
+}</code></pre>
   </div>
   <div class="gif-container fade-in">
     <video class="lazy-video" data-src="{{ 'assets/video/cultivate/rewindgameplay.mp4' | relative_url }}" poster="{{ 'assets/video/cultivate/rewindgameplay.webp' | relative_url }}" width="426" height="240" muted loop playsinline preload="none" aria-label="Rewind mechanic demo"></video>
@@ -160,8 +156,7 @@ void Rewind()
   </p>
 
   <div class="code-block fade-in">
-    <pre><code class="language-csharp">
-void UpdateRewindGhost()
+    <pre><code class="language-csharp">void UpdateRewindGhost()
 {
     if (positionHistory.Count == 0 || rewindGhost == null) return;
 
@@ -177,8 +172,7 @@ void UpdateRewindGhost()
     }
 
     rewindGhost.position = closest.position;
-}
-    </code></pre>
+}</code></pre>
   </div>
 
   <div class="gif-container fade-in">
@@ -196,8 +190,7 @@ void UpdateRewindGhost()
   </p>
 
   <div class="code-block fade-in">
-    <pre><code class="language-csharp">
-using UnityEngine;
+    <pre><code class="language-csharp">using UnityEngine;
 
 public class WorldSlowdownManager : MonoBehaviour
 {
@@ -263,8 +256,7 @@ public class WorldSlowdownManager : MonoBehaviour
     }
 
     public bool IsSlowing => isSlowing;
-}
-</code></pre>
+}</code></pre>
   </div>
 
   <div class="gif-container fade-in">

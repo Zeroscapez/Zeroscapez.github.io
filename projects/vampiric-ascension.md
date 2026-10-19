@@ -96,8 +96,7 @@ accent: "#ff4d6d"
   </p>
 
   <div class="code-block fade-in">
-    <pre><code class="language-csharp">
-private void GigaCrash()
+    <pre><code class="language-csharp">private void GigaCrash()
 {
     EnemyBullet[] enemyBullets = FindObjectsOfType&lt;EnemyBullet&gt;();
 
@@ -121,8 +120,7 @@ private void GigaCrash()
 
         Debug.Log($"Cleared {bulletsCleared} bullets and awarded {bulletsCleared * pointsGained} points.");
     }
-}
-    </code></pre>
+}</code></pre>
   </div>
 </section>
 

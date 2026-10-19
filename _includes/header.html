@@ -13,12 +13,22 @@
         <a href="https://crestoriashiro.itch.io/" target="_blank">{% include icon.html name="itch" %}itch.io</a>
         <a href="https://github.com/Zeroscapez" target="_blank">{% include icon.html name="github" %}GitHub</a>
         <a href="https://www.linkedin.com/in/agyei-lomini-067340266/" target="_blank">{% include icon.html name="linkedin" %}LinkedIn</a>
-        {% if page.url == '/' %}
-        <a href="#resume" class="resume-btn">Resume</a>
-        {% elsif page.url contains '/swe' %}
-        <a href="/files/Agyei_Lomini_Resume.pdf" target="_blank" class="resume-btn">Resume</a>
-        {% else %}
-        <a href="/files/AgyeiLomini_GameDev_Resume.pdf" target="_blank" class="resume-btn">Resume</a>
-        {% endif %}
+        <div class="resume-menu">
+            <button type="button" class="resume-btn" aria-haspopup="true" aria-expanded="false" aria-controls="resume-options">
+                Resume
+                <svg class="resume-caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="resume-options" id="resume-options" hidden>
+                <p class="resume-options-label">Choose a resume</p>
+                <a href="/files/AgyeiLomini_GameDev_Resume.pdf" target="_blank" class="resume-option" style="--accent: #e6b64d;">
+                    <span class="resume-option-title">Game Dev Resume</span>
+                    <span class="resume-option-desc">Unity, C#, gameplay systems &amp; AI</span>
+                </a>
+                <a href="/files/Agyei_Lomini_Resume.pdf" target="_blank" class="resume-option" style="--accent: #5ecb8f;">
+                    <span class="resume-option-title">Software Dev Resume</span>
+                    <span class="resume-option-desc">React, Node.js, C# / .NET, REST APIs</span>
+                </a>
+            </div>
+        </div>
     </nav>
 </header>

@@ -67,7 +67,7 @@ Then visit `http://localhost:4000` in your browser.
 - 🎮 [itch.io](https://crestoriashiro.itch.io/)
 - 💼 [LinkedIn](https://www.linkedin.com/in/agyei-lomini-067340266/)
 - 🐙 [GitHub](https://github.com/Zeroscapez)
-- 📄 [Resume](https://zeroscapez.github.io/files/Game%20Dev_AgyeiLomini.pdf)
+- 📄 [Resume](https://zeroscapez.github.io/files/AgyeiLomini_GameDev_Resume.pdf)
 
 ---
 

@@ -139,7 +139,7 @@ description: "Game developer and CS grad passionate about gameplay programming, 
     <p class="skills-label">Resume</p>
     <p>Download a copy tailored to the role you're hiring for.</p>
     <div class="resume-links">
-      <a href="/files/Game Dev_AgyeiLomini.pdf" target="_blank" class="contact-btn">Game Dev Resume</a>
+      <a href="/files/AgyeiLomini_GameDev_Resume.pdf" target="_blank" class="contact-btn">Game Dev Resume</a>
       <a href="/files/Agyei_Lomini_Resume.pdf" target="_blank" class="contact-btn contact-btn-outline">Software Dev Resume</a>
     </div>
   </div>
